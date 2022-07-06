@@ -1,8 +1,29 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 
+import Futura_Reg from "./assets/fonts/Futura-Reg.woff";
+import Futura_SemiBold from "./assets/fonts/Futura-SemiBold.woff";
+import Futura_Bold from "./assets/fonts/Futura-Bold.woff";
+
 export const GlobalStyles = createGlobalStyle`
     ${normalize}
+
+    
+
+@font-face {
+    font-family: "futura_reg";
+    src: url(${Futura_Reg}) format("eot"), url(${Futura_Reg}) format("woff")
+}
+
+@font-face {
+    font-family: "futura_semibold";
+    src: url(${Futura_SemiBold}) format("eot"), url(${Futura_SemiBold}) format("woff")
+}
+
+@font-face {
+    font-family: "futura_bold";
+    src: url(${Futura_Bold}) format("eot"), url(${Futura_Bold}) format("woff")
+}
 
 
 *,
@@ -17,14 +38,14 @@ export const GlobalStyles = createGlobalStyle`
 
 html {
   font-size: 62.5%; 
-  box-sizing: border-box;
-  overflow-x: hidden;
+  -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-x: hidden;
 
-  /* Set core root defaults */
-  &:focus-within {
+ 
     scroll-behavior: smooth;
     
-  }
+  
 
   
   // 'max-width: 1200px'
@@ -61,13 +82,23 @@ html {
 }
 
 body {
-  font-family: "Raleway", sans-serif;
-  font-size: 1.6rem;
+  font-family: 'futura_reg','Helvetica Neue','Helvetica','Arial','Avenir','Hiragino Sans', sans-serif;
+    font-size: 1.6rem;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    ${"" /* color: #828c96; */}
+    overflow-x: hidden;
+  
   
   font-weight: 400;
   line-height: 1.5;
 
   min-height: 100vh;
+
+
+  
 }
 
 ::selection {
