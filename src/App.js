@@ -1,10 +1,18 @@
+import React from "react";
 import { GlobalStyles } from "./GlobalStyles";
+import { ThemeProvider } from "styled-components";
+
+import { darkTheme } from "./data/ThemeData";
+
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <GlobalStyles />
-      <h1>MIKEL</h1>
+      <ThemeProvider theme={darkTheme}>
+        <GlobalStyles />
+        <Home />
+      </ThemeProvider>
     </>
   );
 }
