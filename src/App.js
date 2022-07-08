@@ -1,17 +1,36 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
 import { GlobalStyles } from "./GlobalStyles";
 import { ThemeProvider } from "styled-components";
 
 import { darkTheme } from "./data/ThemeData";
 
-import Home from "./pages/Home";
+import Header from "./layout/Header/Header";
+import Main from "./layout/Main/Main";
+import HomePage from "./pages/HomePage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
     <>
       <ThemeProvider theme={darkTheme}>
         <GlobalStyles />
-        <Home />
+
+        <Header />
+
+        <Main>
+          <Switch>
+            <Route path="/" exact>
+              <HomePage />
+            </Route>
+
+            {/* Fallback Route */}
+            <Route path="*">
+              {/* <Redirect to="/" /> */}
+              <NotFoundPage />
+            </Route>
+          </Switch>
+        </Main>
       </ThemeProvider>
     </>
   );

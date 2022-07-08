@@ -30,42 +30,41 @@ export const GlobalStyles = createGlobalStyle`
       padding: 0;
       margin: 0;
       box-sizing: inherit;
+      font-size: 100%;
       font: inherit;
       vertical-align: baseline;
     }
 
     html {
       font-size: 62.5%;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      
+      background-color: ${({ theme }) => theme.backgrounds.body};
 
       
       // 'max-width: 1200px'
       @media only screen and (max-width: 75em) {
-        font-size: 56%;
+        ${"" /* font-size: 56%; */}
       }
       
-      @include responsive(tab-land) {
-        
-      }
-
+      
       // 'max-width: 900px'
       @media only screen and (max-width: 56.25em) {
-        font-size: 50%;
+        ${"" /* font-size: 50%; */}
       }
     
 
       // 'max-width: 600px'
       @media only screen and (max-width: 37.5em) {
-        font-size: 46%;
+        ${"" /* font-size: 46%; */}
       }
 
 
       // 'max-width: 375px'
       @media only screen and (max-width: 23.5em) {
-        font-size: 36%;
+        ${"" /* font-size: 36%; */}
       }
       
 
@@ -84,6 +83,7 @@ export const GlobalStyles = createGlobalStyle`
       font-weight: 400;
       line-height: 1.5; 
       min-height: 100vh;
+
       color: ${({ theme }) => theme.colors.primary};
       background-color: ${({ theme }) => theme.backgrounds.body};
     }
@@ -107,12 +107,6 @@ export const GlobalStyles = createGlobalStyle`
       display: block;
     }
 
-    a {
-      color: inherit;
-      text-decoration: inherit;
-      outline: none;
-    }
-
     h1,
     h2,
     h3,
@@ -120,6 +114,17 @@ export const GlobalStyles = createGlobalStyle`
     h5,
     h6 {
       line-height: 1.2;
+    }
+
+    a {
+      &:link,
+      &:visited,
+      &:active,
+      &:focus {
+        color: inherit;
+        text-decoration: none;
+        outline: none;
+      }
     }
 
     p {
@@ -142,6 +147,7 @@ export const GlobalStyles = createGlobalStyle`
       max-width: 100%;
       display: block;
       image-rendering: -webkit-optimize-contrast;
+      ${"" /* image-rendering: smooth; */}
     }
 
     blockquote,

@@ -5,7 +5,7 @@ import Projects from "../components/Projects/Projects";
 import AboutMe from "../components/AboutMe/AboutMe";
 import ContactMe from "../components/ContactMe/ContactMe";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Hero />
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
