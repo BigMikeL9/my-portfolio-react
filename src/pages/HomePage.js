@@ -1,15 +1,15 @@
 import React from "react";
 
 import Hero from "../components/Hero/Hero";
-import Projects from "../components/Projects/Projects";
+import Works from "../components/Works/Works";
 import AboutMe from "../components/AboutMe/AboutMe";
 import ContactMe from "../components/ContactMe/ContactMe";
 
-const HomePage = () => {
+const HomePage = (props) => {
   return (
     <>
       <Hero />
-      <Projects />
+      <Works />
       <AboutMe />
       <ContactMe />
     </>

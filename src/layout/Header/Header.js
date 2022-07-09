@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaLessThanEqual } from "react-icons/fa";
 
 import NavBar from "../../components/NavBar/NavBar";
 import NavBarDrawer from "../../components/NavBarDrawer/NavBarDrawer";
@@ -12,7 +11,7 @@ const Header = () => {
   };
 
   const closeMenuHandler = () => {
-    setIsOpen(FaLessThanEqual);
+    setIsOpen(false);
   };
 
   return (

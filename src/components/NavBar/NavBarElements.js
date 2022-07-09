@@ -8,13 +8,12 @@ export const NavContainer = styled.header`
   left: 0;
   width: 100%;
   background-color: transparent;
-  padding: 40px 40px 0;
+  padding: 4rem 4rem 0;
   z-index: 1000;
 `;
 
 export const Nav = styled.nav`
   width: 100%;
-  padding: 0 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +21,7 @@ export const Nav = styled.nav`
 
 export const NavLogo = styled(LinkR)`
   color: ${({ theme }) => theme.colors.primary};
-  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  font-size: max(14px, 2.4rem);
   letter-spacing: 6.5px;
   cursor: pointer;
   transition: all 0.3s;
@@ -68,7 +67,13 @@ export const MenuIcon = styled(Button)`
   cursor: pointer;
   background: none;
   border: none;
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ isOpen, theme }) =>
+    isOpen ? theme.colors.primary : theme.colors.secondary};
+
+  @media only screen and (max-width: 48em) {
+    width: 25px;
+    height: 15px;
+  }
 
   &:hover,
   &:active {
@@ -77,6 +82,7 @@ export const MenuIcon = styled(Button)`
 
   &:focus {
     outline: none;
+    color: ${({ theme }) => theme.colors.primary};
   }
 
   &:before,
@@ -84,11 +90,14 @@ export const MenuIcon = styled(Button)`
     content: "";
     width: 100%;
     height: 3px;
-    background-color: ${({ isOpen, theme }) =>
-      isOpen ? theme.colors.primary : theme.colors.secondary};
+    background-color: currentColor;
     position: absolute;
     right: 0;
     transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+    @media only screen and (max-width: 48em) {
+      height: 2px;
+    }
   }
 
   &:before {

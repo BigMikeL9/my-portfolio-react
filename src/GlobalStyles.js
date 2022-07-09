@@ -46,7 +46,7 @@ export const GlobalStyles = createGlobalStyle`
       
       // 'max-width: 1200px'
       @media only screen and (max-width: 75em) {
-        ${"" /* font-size: 56%; */}
+         font-size: 56%; 
       }
       
       
@@ -58,13 +58,13 @@ export const GlobalStyles = createGlobalStyle`
 
       // 'max-width: 600px'
       @media only screen and (max-width: 37.5em) {
-        ${"" /* font-size: 46%; */}
+        font-size: 46%; 
       }
 
 
       // 'max-width: 375px'
       @media only screen and (max-width: 23.5em) {
-        ${"" /* font-size: 36%; */}
+       font-size: 36%; 
       }
       
 
