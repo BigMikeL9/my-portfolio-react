@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 
 import { Link as LinkS } from "react-scroll";
+import device from "../../styles/Devices";
 
 export const NavDrawer = styled.div`
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
@@ -41,7 +42,7 @@ export const NavDrawerContainer = styled.div`
   /* backdrop-filter: saturate(180%) blur(20px); */
   transition: all 0.5s cubic-bezier(0.88, 0.03, 0.13, 1.01);
 
-  @media only screen and (max-width: 48em) {
+  @media only screen and (${device.tablet_Port}) {
     width: 100%;
     text-align: center;
     border-radius: unset;

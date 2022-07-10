@@ -2,6 +2,8 @@ import styled from "styled-components/macro";
 import { Link as LinkR } from "react-router-dom";
 import Button from "../UI/Button/Button";
 
+import device from "../../styles/Devices";
+
 export const NavContainer = styled.header`
   position: fixed;
   top: 0;
@@ -23,7 +25,7 @@ export const Nav = styled.nav`
 
 export const NavLogo = styled(LinkR)`
   color: ${({ theme }) => theme.colors.primary};
-  font-size: max(14px, 2.4rem);
+  font-size: max(14px, 2rem);
   letter-spacing: 6.5px;
   cursor: pointer;
   transition: all 0.3s;
@@ -72,7 +74,7 @@ export const MenuIcon = styled(Button)`
   color: ${({ isOpen, theme }) =>
     isOpen ? theme.colors.primary : theme.colors.secondary};
 
-  @media only screen and (max-width: 48em) {
+  @media only screen and (${device.mobile_L}) {
     width: 25px;
     height: 15px;
   }
@@ -97,7 +99,7 @@ export const MenuIcon = styled(Button)`
     right: 0;
     transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
-    @media only screen and (max-width: 48em) {
+    @media only screen and (${device.mobile_L}) {
       height: 2px;
     }
   }

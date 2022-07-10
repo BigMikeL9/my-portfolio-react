@@ -1,4 +1,5 @@
 import React from "react";
+import Parallax from "parallax-js";
 
 import Divider from "../UI/Divider/Divider";
 
@@ -31,8 +32,14 @@ import {
   MoonContainer,
   LightsContainer,
 } from "./Hero.style";
+import { useEffect } from "react";
 
 const Hero = () => {
+  useEffect(() => {
+    var scene = document.getElementById("scene");
+    var parallaxInstance = new Parallax(scene);
+  }, []);
+
   return (
     <HeroSection id="hero">
       <HeroContainer>
@@ -47,54 +54,56 @@ const Hero = () => {
         </HeroTitleContainer>
 
         <HeroImageContainer>
-          <HeroImage>
-            <HeroImageFront>
+          <HeroImage id="scene">
+            <HeroImageFront data-depth="0.2">
               <PortfolioText>
                 <p>Portfolio</p>
               </PortfolioText>
             </HeroImageFront>
 
-            <HeroImageFront>
+            <HeroImageFront data-depth="0.5">
               <Cloud1fContainer>
                 <img src={Cloud1} alt="Cloud" />
               </Cloud1fContainer>
             </HeroImageFront>
 
-            <HeroImageFront>
+            <HeroImageFront data-depth="0.3">
               <Cloud2fContainer>
                 <img src={Cloud2} alt="Cloud" />
               </Cloud2fContainer>
             </HeroImageFront>
 
-            <HeroImageFront>
+            <HeroImageFront data-depth="0.4">
               <Cloud3fContainer>
                 <img src={Cloud3} alt="Cloud" />
               </Cloud3fContainer>
             </HeroImageFront>
 
-            <HeroImageBack>
+            <HeroImageBack data-depth="0.3">
               <Cloud1bContainer>
                 <img src={Cloud1_b} alt="Cloud" />
               </Cloud1bContainer>
             </HeroImageBack>
 
-            <HeroImageBack>
+            <HeroImageBack data-depth="0.4">
               <Cloud2bContainer>
                 <img src={Cloud2_b} alt="Cloud" />
               </Cloud2bContainer>
             </HeroImageBack>
 
-            <HeroImageBack>
+            <HeroImageBack data-depth="0.4">
               <StarsContainer>
                 <img src={Stars} alt="Stars" />
               </StarsContainer>
             </HeroImageBack>
 
-            <HeroImageFront>
-              <img src={Moon} alt="Moon" />
-            </HeroImageFront>
+            <HeroImageBack data-depth="0.2">
+              <MoonContainer>
+                <img src={Moon} alt="Moon" />
+              </MoonContainer>
+            </HeroImageBack>
 
-            <HeroImageBack>
+            <HeroImageBack data-depth="0.2">
               <LightsContainer>
                 <img src={Lights} alt="Lights" />
               </LightsContainer>

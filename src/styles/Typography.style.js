@@ -1,9 +1,11 @@
 import styled from "styled-components/macro";
+import device from "./Devices";
 
 export const H1 = styled.h1`
-  font-size: 12rem;
-  line-height: 1;
-  letter-spacing: 0.1em;
+  font-size: 14rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 0.2em;
   margin-bottom: 1.6rem;
   text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
 
@@ -11,6 +13,14 @@ export const H1 = styled.h1`
   margin-bottom: ${({ mb }) => (mb ? mb : "")};
   margin-top: ${({ mt }) => (mt ? mt : "")};
   color: ${({ theme }) => theme.colors.primary};
+
+  @media only screen and (${device.mobile_L}) {
+    font-size: 9rem;
+  }
+
+  @media only screen and (max-width: 25em) {
+    font-size: 8rem;
+  }
 `;
 
 // -- Section title
@@ -28,7 +38,7 @@ export const H2 = styled.h2`
 // -- Lead text
 export const H3 = styled.h3`
   font-size: 2.8rem;
-  line-height: 1.5;
+  line-height: 1.8;
   letter-spacing: 0.1em;
   text-transform: lowercase;
 
@@ -36,6 +46,10 @@ export const H3 = styled.h3`
   margin-bottom: ${({ mb }) => (mb ? mb : "")};
   margin-top: ${({ mt }) => (mt ? mt : "")};
   color: ${({ theme }) => theme.colors.primary};
+
+  @media only screen and (max-width: 25em) {
+    font-size: 2.2rem;
+  }
 `;
 
 // -- Project description text

@@ -5,6 +5,8 @@ import Futura_Reg from "../assets/fonts/Futura-Reg.woff";
 import Futura_SemiBold from "../assets/fonts/Futura-SemiBold.woff";
 import Futura_Bold from "../assets/fonts/Futura-Bold.woff";
 
+import device from "./Devices";
+
 export const GlobalStyles = createGlobalStyle`
     ${normalize}
 
@@ -45,31 +47,31 @@ export const GlobalStyles = createGlobalStyle`
 
       
       // 'max-width: 1200px'
-      @media only screen and (max-width: 75em) {
+      @media only screen and (${device.tablet_Land}) {
          font-size: 56%; 
       }
       
       
       // 'max-width: 900px'
-      @media only screen and (max-width: 56.25em) {
+      @media only screen and (${device.tablet_Port}) {
         ${"" /* font-size: 50%; */}
       }
     
 
       // 'max-width: 600px'
-      @media only screen and (max-width: 37.5em) {
+      @media only screen and (${device.mobile_L}) {
         font-size: 46%; 
       }
 
 
       // 'max-width: 375px'
-      @media only screen and (max-width: 23.5em) {
+      @media only screen and (${device.mobile_S}) {
        font-size: 36%; 
       }
       
 
       // 'min-width: 1800px'
-      @media only screen and (min-width: 112.5em) {
+      @media only screen and (${device.desktop_L}) {
         
       }
     }
@@ -114,6 +116,7 @@ export const GlobalStyles = createGlobalStyle`
     h5,
     h6 {
       line-height: 1.2;
+      margin: 0;
     }
 
     a {
