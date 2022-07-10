@@ -5,7 +5,7 @@ import Works from "../components/Works/Works";
 import AboutMe from "../components/AboutMe/AboutMe";
 import ContactMe from "../components/ContactMe/ContactMe";
 
-const HomePage = (props) => {
+const HomePage = () => {
   return (
     <>
       <Hero />

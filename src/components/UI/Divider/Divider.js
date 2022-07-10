@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const DividerS = styled.div`
   display: inline-block;
@@ -13,11 +13,11 @@ export const DividerS = styled.div`
     background-color: ${({ theme }) => theme.colors.secondary};
   }
 
-  &:first-child {
+  span:first-child {
     margin-bottom: 1.4rem;
   }
 
-  &:last-child {
+  span:last-child {
     margin-left: 54px;
   }
 `;

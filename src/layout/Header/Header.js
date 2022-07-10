@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import NavBar from "../../components/NavBar/NavBar";
-import NavBarDrawer from "../../components/NavBarDrawer/NavBarDrawer";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +15,11 @@ const Header = () => {
 
   return (
     <>
-      <NavBar isOpen={isOpen} onToggleMenu={menuToggleHandler} />
-      <NavBarDrawer isOpen={isOpen} onClose={closeMenuHandler} />
+      <NavBar
+        isOpen={isOpen}
+        onToggleMenu={menuToggleHandler}
+        onClose={closeMenuHandler}
+      />
     </>
   );
 };

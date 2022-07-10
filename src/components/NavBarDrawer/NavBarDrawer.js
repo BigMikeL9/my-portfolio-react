@@ -9,7 +9,7 @@ import {
   NavList,
   NavItem,
   NavLinkS,
-} from "./NavBarDrawerElements";
+} from "./NavBarDrawer.style";
 
 const NavBarDrawer = (props) => {
   return (
@@ -25,7 +25,7 @@ const NavBarDrawer = (props) => {
                   spy={true}
                   smooth={true}
                   // offset={50}
-                  duration={500}
+                  duration={100}
                   to={el.to}
                   isOpen={props.isOpen}
                   onClick={props.onClose}

@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { GlobalStyles } from "./GlobalStyles";
-import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./styles/GlobalStyles";
 
-import { darkTheme } from "./data/ThemeData";
+import { ThemeProvider } from "styled-components";
+import { darkTheme } from "./styles/Theme";
 
 import Header from "./layout/Header/Header";
 import Main from "./layout/Main/Main";

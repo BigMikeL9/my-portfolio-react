@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { Link as LinkR } from "react-router-dom";
 import Button from "../UI/Button/Button";
 
@@ -9,7 +9,7 @@ export const NavContainer = styled.header`
   width: 100%;
   background-color: transparent;
   padding: 4rem 4rem 0;
-  z-index: 1000;
+  z-index: 3000;
 `;
 
 export const Nav = styled.nav`
@@ -17,6 +17,8 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1000;
 `;
 
 export const NavLogo = styled(LinkR)`

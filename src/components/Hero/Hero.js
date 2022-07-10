@@ -1,120 +1,107 @@
 import React from "react";
 
-import { DividerS } from "../UI/Divider/Divider";
-import { heroData } from "../../data/HeroData";
+import Divider from "../UI/Divider/Divider";
 
-import moon from "../../assets/img/moon.svg";
-import lights from "../../assets/img/lights.svg";
-import stars from "../../assets/img/stars.svg";
-import cloud1 from "../../assets/img/fog1.svg";
-import cloud2 from "../../assets/img/fog2.svg";
-import cloud3 from "../../assets/img/fog3.svg";
-import cloud1_b from "../../assets/img/b_fog1.svg";
-import cloud2_b from "../../assets/img/b_fog2.svg";
+import Moon from "../../assets/img/moon.svg";
+import Lights from "../../assets/img/lights.svg";
+import Stars from "../../assets/img/stars.svg";
+import Cloud1 from "../../assets/img/fog1.svg";
+import Cloud2 from "../../assets/img/fog2.svg";
+import Cloud3 from "../../assets/img/fog3.svg";
+import Cloud1_b from "../../assets/img/b_fog1.svg";
+import Cloud2_b from "../../assets/img/b_fog2.svg";
+
+import { H1, H3 } from "../../styles/Typography.style";
 
 import {
   HeroSection,
-  HeroCont,
-  HeroTitleCont,
-  HeroTitle,
-  HeroLead,
-  HeroImageCont,
+  HeroContainer,
+  HeroTitleContainer,
+  HeroImageContainer,
   HeroImage,
-  HeroFront,
+  HeroImageFront,
+  HeroImageBack,
   PortfolioText,
-  Cloud1f,
-  Cloud2f,
-  Cloud3f,
-  Cloud1b,
-  Cloud2b,
-  HeroBack,
-  Stars,
-  Moon,
-  Lights,
-} from "./HeroElements";
+  Cloud1fContainer,
+  Cloud2fContainer,
+  Cloud3fContainer,
+  Cloud1bContainer,
+  Cloud2bContainer,
+  StarsContainer,
+  MoonContainer,
+  LightsContainer,
+} from "./Hero.style";
 
 const Hero = () => {
-  console.log(heroData);
-
   return (
     <HeroSection id="hero">
-      <HeroCont>
-        <HeroTitleCont>
-          <HeroTitle></HeroTitle>
-          <DividerS />
-          <HeroLead></HeroLead>
-        </HeroTitleCont>
+      <HeroContainer>
+        <HeroTitleContainer>
+          <H1>
+            Mikel <br /> Kamel
+          </H1>
+          <Divider />
+          <H3>
+            Web Developer / <br /> Gameplay Programmer
+          </H3>
+        </HeroTitleContainer>
 
-        <HeroImageCont>
+        <HeroImageContainer>
           <HeroImage>
-            <HeroFront>
-              <PortfolioText />
-            </HeroFront>
+            <HeroImageFront>
+              <PortfolioText>
+                <p>Portfolio</p>
+              </PortfolioText>
+            </HeroImageFront>
 
-            <HeroFront>
-              <Cloud1f>
-                <moon />
-              </Cloud1f>
-            </HeroFront>
+            <HeroImageFront>
+              <Cloud1fContainer>
+                <img src={Cloud1} alt="Cloud" />
+              </Cloud1fContainer>
+            </HeroImageFront>
 
-            <HeroFront>
-              <Cloud2f
-                className=""
-                href={heroData.heroImages.cloud2.image}
-                alt={heroData.heroImages.cloud2.altText}
-              />
-            </HeroFront>
+            <HeroImageFront>
+              <Cloud2fContainer>
+                <img src={Cloud2} alt="Cloud" />
+              </Cloud2fContainer>
+            </HeroImageFront>
 
-            <HeroFront>
-              <Cloud3f
-                className=""
-                href={heroData.heroImages.cloud3.image}
-                alt={heroData.heroImages.cloud3.altText}
-              />
-            </HeroFront>
+            <HeroImageFront>
+              <Cloud3fContainer>
+                <img src={Cloud3} alt="Cloud" />
+              </Cloud3fContainer>
+            </HeroImageFront>
 
-            <HeroBack>
-              <Cloud1b
-                className=""
-                href={heroData.heroImages.cloud1_b.image}
-                alt={heroData.heroImages.cloud1_b.altText}
-              />
-            </HeroBack>
+            <HeroImageBack>
+              <Cloud1bContainer>
+                <img src={Cloud1_b} alt="Cloud" />
+              </Cloud1bContainer>
+            </HeroImageBack>
 
-            <HeroBack>
-              <Cloud2b
-                className=""
-                href={heroData.heroImages.cloud2_b.image}
-                alt={heroData.heroImages.cloud2_b.altText}
-              />
-            </HeroBack>
+            <HeroImageBack>
+              <Cloud2bContainer>
+                <img src={Cloud2_b} alt="Cloud" />
+              </Cloud2bContainer>
+            </HeroImageBack>
 
-            <HeroBack>
-              <Stars
-                className=""
-                href={heroData.heroImages.stars.image}
-                alt={heroData.heroImages.stars.altText}
-              />
-            </HeroBack>
+            <HeroImageBack>
+              <StarsContainer>
+                <img src={Stars} alt="Stars" />
+              </StarsContainer>
+            </HeroImageBack>
 
-            <HeroBack>
-              <Moon
-                className=""
-                href={heroData.heroImages.moon.image}
-                alt={heroData.heroImages.moon.altText}
-              />
-            </HeroBack>
+            <HeroImageFront>
+              <img src={Moon} alt="Moon" />
+            </HeroImageFront>
 
-            <HeroBack>
-              <Lights
-                className=""
-                href={heroData.heroImages.lights.image}
-                alt={heroData.heroImages.lights.altText}
-              />
-            </HeroBack>
+            <HeroImageBack>
+              <LightsContainer>
+                <img src={Lights} alt="Lights" />
+              </LightsContainer>
+            </HeroImageBack>
           </HeroImage>
-        </HeroImageCont>
-      </HeroCont>
+        </HeroImageContainer>
+      </HeroContainer>
     </HeroSection>
   );
 };

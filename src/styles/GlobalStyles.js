@@ -1,9 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 
-import Futura_Reg from "./assets/fonts/Futura-Reg.woff";
-import Futura_SemiBold from "./assets/fonts/Futura-SemiBold.woff";
-import Futura_Bold from "./assets/fonts/Futura-Bold.woff";
+import Futura_Reg from "../assets/fonts/Futura-Reg.woff";
+import Futura_SemiBold from "../assets/fonts/Futura-SemiBold.woff";
+import Futura_Bold from "../assets/fonts/Futura-Bold.woff";
 
 export const GlobalStyles = createGlobalStyle`
     ${normalize}
