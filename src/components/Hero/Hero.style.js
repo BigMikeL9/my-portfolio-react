@@ -19,23 +19,18 @@ export const HeroTitleContainer = styled.div`
   position: relative;
   z-index: 300;
 
-  @media only screen and (${device.tablet_Land}) {
-    margin-bottom: 10rem;
-  }
-
-  @media only screen and (${device.tablet_Port}) {
+  // 900px
+  @media screen and (${device.tablet_Port}) {
     align-self: flex-end;
-  }
-
-  @media only screen and (max-width: 25em) {
-    margin-bottom: 4rem;
+    bottom: 6rem;
   }
 `;
 
 export const HeroImageContainer = styled.div`
-  position: relative;
+  position: absolute;
   top: 0;
-  left: 10%;
+  bottom: 0;
+  left: 32%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,43 +41,40 @@ export const HeroImageContainer = styled.div`
   height: 1385px;
   width: 1385px;
 
-  @media only screen and (max-width: 87.5em) {
-    top: -10%;
-    left: -5%;
+  transform: scale(1.1);
+
+  @media screen and (${device.tablet_Port}) {
+    transform: unset;
   }
 
-  @media only screen and (${device.tablet_Port}) {
-    left: -50rem;
+  // 900px
+  @media screen and (${device.tablet_Port}) {
+    width: 100vw;
+    height: 100vw;
+    left: 23%;
   }
 
-  @media only screen and (${device.mobile_L}) {
-    top: -50%;
-    left: -42%;
-    transform: scale(0.4);
+  @media screen and (${device.mobile_L}) {
+    width: 135vw;
+    height: 135vw;
+    left: 50%;
+    top: -18%;
+    bottom: auto;
+    transform: translate3d(-50%, 0, 0);
   }
 
-  @media only screen and (max-width: 25em) {
-    top: -65%;
-    transform: scale(0.35);
-  }
-
-  @media only screen and (max-width: 22em) {
-    top: -75%;
-    transform: scale(0.35);
-  }
-
-  @media only screen and (max-width: 22em) and (max-height: 30em) {
-    top: -98%;
-    transform: scale(0.35);
+  @media screen and (${device.mobile_M}) {
+    width: 160vw;
+    height: 160vw;
+    top: -15%;
+    left: 55%;
   }
 `;
 
 export const HeroImage = styled.div`
   position: relative;
-  top: -13%;
-  right: 4%;
-  width: 100%;
-  height: 100%;
+  width: 39.350180505%;
+  height: 39.350180505%;
 `;
 
 export const HeroImageFront = styled.div`
@@ -99,93 +91,104 @@ export const HeroImageBack = styled.div`
 
 export const PortfolioText = styled.div`
   position: absolute;
-  left: 39%;
+  left: -15.5963%;
   top: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  z-index: 200;
+  transform: translate3d(0, -50%, 0);
 
   p {
     font-family: "futura_bold";
     text-transform: uppercase;
-    font-size: max(55px, 7rem);
+    font-size: max(60px, 7rem);
     letter-spacing: 0.1em;
     text-shadow: 0 10px 15px rgb(2 11 22 / 20%);
 
     color: ${({ theme }) => theme.colors.secondary};
+
+    /* @media screen and (${device.tablet_Land}) {
+      font-size: 6rem;
+    } */
+
+    @media screen and (${device.tablet_Port}) {
+      font-size: min(40px, 3.8rem);
+    }
+
+    /* 🔴🏮🔴🏮🔴🔴 */
+    @media screen and (max-width: 28em) {
+      font-size: max(24px, 3rem);
+    }
   }
 `;
 
 export const Cloud1fContainer = styled.div`
   position: absolute;
 
-  right: -6%;
-  top: 45%;
-  transform: translate3d(-50%, -50%, 0);
+  top: 20.55045%;
+  right: -49.357798%;
+  width: 88.44%;
 `;
 
 export const Cloud2fContainer = styled.div`
   position: absolute;
 
-  right: -2%;
-  bottom: 15%;
-  transform: translate3d(-50%, -50%, 0);
+  bottom: -18.53211%;
+  right: -28.6238532%;
+  width: 87.155%;
 `;
 
 export const Cloud3fContainer = styled.div`
   position: absolute;
 
-  left: 32%;
-  bottom: 20%;
-  transform: translate3d(-50%, -50%, 0);
+  bottom: -5.137614678%;
+  left: -49.357798%;
+  width: 87.155%;
 `;
 
 export const Cloud1bContainer = styled.div`
   position: absolute;
 
-  right: 17%;
-  top: 27%;
-  transform: translate3d(-50%, -50%, 0);
+  top: -22.38532%;
+  right: -7.706422%;
+  width: 69.724%;
 `;
 
 export const Cloud2bContainer = styled.div`
   position: absolute;
 
-  left: 32%;
-  top: 35%;
-  transform: translate3d(-50%, -50%, 0);
+  top: -5.504587%;
+  left: -38.715596%;
+  width: 87.155%;
 `;
 
-export const MoonContainer = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0);
-
-  height: 545px;
-  width: 545px;
-
-  /* @media only screen and (${device.tablet_Land}) {
-    top: 65%;
-    width: 100%;
-    height: 100%;
-    transform: translate3d(-50%, -50%, 0) scale(0.4);
-  } */
-`;
+export const MoonContainer = styled.div``;
 
 export const StarsContainer = styled.div`
-  position: absolute;
-  left: 45%;
-  top: 67%;
-  transform: translate3d(-50%, -50%, 0);
-
   height: 1385px;
   width: 1385px;
+  position: absolute;
+  top: -43%;
+  bottom: 0;
+  right: -83%;
 
-  /* @media only screen and (${device.tablet_Land}) {
-    top: 85%;
-    width: 100%;
-    height: 100%;
-  } */
+  // 900px
+  @media screen and (${device.tablet_Port}) {
+    width: 100vw;
+    height: 100vw;
+    left: 23%;
+  }
+
+  @media screen and (${device.mobile_L}) {
+    width: 135vw;
+    height: 135vw;
+    left: 50%;
+    top: -18%;
+    bottom: auto;
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  @media screen and (${device.mobile_M}) {
+    width: 160vw;
+    height: 160vw;
+  }
 `;
 
 export const LightsContainer = styled.div`
@@ -197,9 +200,24 @@ export const LightsContainer = styled.div`
   height: 1385px;
   width: 1385px;
 
-  /* @media only screen and (${device.tablet_Land}) {
-    top: 65%;
-    width: 100%;
-    height: 100%;
-  } */
+  // 900px
+  @media screen and (${device.tablet_Port}) {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  @media screen and (${device.mobile_L}) {
+    width: 135vw;
+    height: 135vw;
+    left: 50%;
+    top: -75%;
+    bottom: auto;
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  @media screen and (${device.mobile_M}) {
+    width: 160vw;
+    height: 160vw;
+    top: -77%;
+  }
 `;

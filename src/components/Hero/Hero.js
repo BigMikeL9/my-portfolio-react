@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Parallax from "parallax-js";
 
 import Divider from "../UI/Divider/Divider";
@@ -35,9 +35,10 @@ import {
 import { useEffect } from "react";
 
 const Hero = () => {
+  const heroImageRef = useRef();
+
   useEffect(() => {
-    var scene = document.getElementById("scene");
-    var parallaxInstance = new Parallax(scene);
+    new Parallax(heroImageRef.current);
   }, []);
 
   return (
@@ -54,7 +55,7 @@ const Hero = () => {
         </HeroTitleContainer>
 
         <HeroImageContainer>
-          <HeroImage id="scene">
+          <HeroImage ref={heroImageRef}>
             <HeroImageFront data-depth="0.2">
               <PortfolioText>
                 <p>Portfolio</p>

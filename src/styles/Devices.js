@@ -1,27 +1,42 @@
-/* 
-Desktop-First approach 👇
-0- 375px            --> Mobile - small                    [max-width: 23.5em]
-0 - 600px           --> Mobile                            [max-width: 37.5em]
-600px - 900px       --> Tablet-Portrait                   [max-width: 56.25em]
-900px - 1200px      --> Tablet-Landscape                  [max-width: 75em]
-[1200px - 1800px]   --> Where our NORMAL STYLES APPLY
-1800px ++           --> Big Desktop                       [min-width: 112.5em]
+// const sizes = {
+//   mobileS: "320px",
+//   mobileM: "375px",
+//   mobileL: "425px",
+//   tablet: "768px",
+//   laptop: "1024px",
+//   laptopL: "1440px",
+//   desktop: "2560px",
+// };
 
+// export const devices = {
+//   mobileS: `(min-width: ${sizes.mobileS})`,
+//   mobileM: `(min-width: ${sizes.mobileM})`,
+//   mobileL: `(min-width: ${sizes.mobileL})`,
+//   tablet: `(min-width: ${sizes.tablet})`,
+//   laptop: `(min-width: ${sizes.laptop})`,
+//   laptopL: `(min-width: ${sizes.laptopL})`,
+//   desktop: `(min-width: ${sizes.desktop})`,
+// };
 
-👇 $breakpoint argument choices 👇
---> mobile-small                 [375px]
---> mobile                       [600px]
---> tablet-portrait             [900px]
---> tablet-landscape            [1200px]
---> big-desktop                 [1800px]
+// import styled from 'styled-components';
+// import { device } from './device';
 
+// const ProfilePage = styled.div`
+//   margin: auto;
+//   text-align: center;
 
-1em = 16px (default root font-size)
-*/
+//   @media ${device.laptop} {
+//     max-width: 800px;
+//   }
 
-// device size for media query
+//   @media ${device.desktop} {
+//     max-width: 1400px;
+//   }
+// `;
+
 const device = {
   mobile_S: `max-width:${"23.75em"}`, // 375px
+  mobile_M: `max-width:${"26.25em"}`, // 420px
   mobile_L: `max-width:${"37.5em"}`, // 600px
   tablet_Port: `max-width:${"56.25em"}`, // 900px
   tablet_Land: `max-width:${"75em"}`, // 1200px

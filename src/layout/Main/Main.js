@@ -7,26 +7,23 @@ export const MainGrid = styled.main`
 
   grid-template-columns:
     [full-content-start]
-    minmax(12rem, 1fr)
-    [centered-content-start] repeat(
-      4,
-      [column-start] minmax(min-content, 14rem) [column-end]
-    )
+    minmax(6rem, 14rem)
+    [centered-content-start] repeat(4, [column-start] 1fr [column-end])
     [centered-content-end]
-    minmax(12rem, 1fr)
+    minmax(6rem, 14rem)
     [full-content-end];
 
   // --------
   @media only screen and (${device.tablet_Land}) {
     grid-template-columns:
       [full-content-start]
-      minmax(8rem, 1fr)
+      minmax(3rem, 5rem)
       [centered-content-start] repeat(
         4,
         [column-start] minmax(min-content, 14rem) [column-end]
       )
       [centered-content-end]
-      minmax(8rem, 1fr)
+      minmax(3rem, 5rem)
       [full-content-end];
   }
 
@@ -34,13 +31,13 @@ export const MainGrid = styled.main`
   @media only screen and (${device.mobile_L}) {
     grid-template-columns:
       [full-content-start]
-      minmax(4rem, 1fr)
+      minmax(2rem, 3rem)
       [centered-content-start] repeat(
         4,
         [column-start] minmax(min-content, 14rem) [column-end]
       )
       [centered-content-end]
-      minmax(4rem, 1fr)
+      minmax(2rem, 3rem)
       [full-content-end];
   }
 `;

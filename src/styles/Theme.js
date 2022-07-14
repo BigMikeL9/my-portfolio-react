@@ -19,4 +19,4 @@ export const darkTheme = {
   },
 };
 
-
+// background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);

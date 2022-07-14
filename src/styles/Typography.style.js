@@ -14,12 +14,12 @@ export const H1 = styled.h1`
   margin-top: ${({ mt }) => (mt ? mt : "")};
   color: ${({ theme }) => theme.colors.primary};
 
-  @media only screen and (${device.mobile_L}) {
-    font-size: 9rem;
+  @media screen and (${device.tablet_Land}) {
+    font-size: 11rem;
   }
 
-  @media only screen and (max-width: 25em) {
-    font-size: 8rem;
+  @media screen and (${device.tablet_Port}) {
+    font-size: max(38px, 8rem);
   }
 `;
 
@@ -47,8 +47,8 @@ export const H3 = styled.h3`
   margin-top: ${({ mt }) => (mt ? mt : "")};
   color: ${({ theme }) => theme.colors.primary};
 
-  @media only screen and (max-width: 25em) {
-    font-size: 2.2rem;
+  @media screen and (${device.tablet_Port}) {
+    font-size: max(12px, 2.4rem);
   }
 `;
 

@@ -32,7 +32,6 @@ export const GlobalStyles = createGlobalStyle`
       padding: 0;
       margin: 0;
       box-sizing: inherit;
-      font-size: 100%;
       font: inherit;
       vertical-align: baseline;
     }
@@ -66,7 +65,7 @@ export const GlobalStyles = createGlobalStyle`
 
       // 'max-width: 375px'
       @media only screen and (${device.mobile_S}) {
-       font-size: 36%; 
+       ${"" /* font-size: 36%;  */}
       }
       
 
@@ -150,7 +149,6 @@ export const GlobalStyles = createGlobalStyle`
       max-width: 100%;
       display: block;
       image-rendering: -webkit-optimize-contrast;
-      ${"" /* image-rendering: smooth; */}
     }
 
     blockquote,
