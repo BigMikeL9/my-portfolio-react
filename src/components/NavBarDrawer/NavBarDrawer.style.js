@@ -28,7 +28,6 @@ export const NavDrawerContainer = styled.div`
   z-index: 2;
   transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(110%)")};
   height: 100%;
-  /* max-width: 80vw; */
 
   padding: 8rem;
   border-radius: 2rem 0 0 2rem;
@@ -39,7 +38,7 @@ export const NavDrawerContainer = styled.div`
     #8c2b7a 42%,
     #ff4d5a
   );
-  /* backdrop-filter: saturate(180%) blur(20px); */
+
   transition: all 0.5s cubic-bezier(0.88, 0.03, 0.13, 1.01);
 
   @media only screen and (${device.tablet_Port}) {
@@ -64,6 +63,11 @@ export const NavItem = styled.li`
   position: relative;
   overflow: hidden;
   cursor: pointer;
+
+  & > * {
+    transform: ${({ isOpen }) =>
+      isOpen ? "translate3d(0, 0, 0)" : "translate3d(0, 100%, 0)"};
+  }
 `;
 
 export const NavLinkS = styled(LinkS)`
@@ -76,9 +80,6 @@ export const NavLinkS = styled(LinkS)`
   text-shadow: 0 10px 30px rgb(2 11 22 / 20%);
   transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s;
   position: relative;
-
-  transform: ${({ isOpen }) =>
-    isOpen ? "translate3d(0, 0, 0)" : "translate3d(0, 100%, 0)"};
 
   &:after {
     content: "";

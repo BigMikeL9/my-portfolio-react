@@ -15,6 +15,7 @@ import {
 } from "./NavBar.style";
 
 const NavBar = (props) => {
+  console.log(props);
   return (
     <>
       <NavContainer>

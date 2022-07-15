@@ -19,7 +19,7 @@ const NavBarDrawer = (props) => {
         <NavDrawerContainer isOpen={props.isOpen}>
           <NavList>
             {data.map((el) => (
-              <NavItem key={el.to}>
+              <NavItem key={el.to} isOpen={props.isOpen}>
                 <NavLinkS
                   hashSpy={true}
                   spy={true}
@@ -27,7 +27,6 @@ const NavBarDrawer = (props) => {
                   // offset={50}
                   duration={100}
                   to={el.to}
-                  isOpen={props.isOpen}
                   onClick={props.onClose}
                 >
                   {el.text}
