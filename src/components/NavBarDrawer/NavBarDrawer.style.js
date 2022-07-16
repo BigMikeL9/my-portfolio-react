@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 import { Link as LinkS } from "react-scroll";
-import device from "../../styles/Devices";
+import devices from "../../styles/Devices";
 
 export const NavDrawer = styled.div`
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
@@ -21,13 +21,14 @@ export const Backdrop = styled.div`
   cursor: pointer;
 `;
 
-export const NavDrawerContainer = styled.div`
+export const NavDrawerContainer = styled.nav`
   position: fixed;
   right: 0;
   top: 0;
   z-index: 2;
   transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(110%)")};
   height: 100%;
+  min-width: 60rem;
 
   padding: 8rem;
   border-radius: 2rem 0 0 2rem;
@@ -41,10 +42,20 @@ export const NavDrawerContainer = styled.div`
 
   transition: all 0.5s cubic-bezier(0.88, 0.03, 0.13, 1.01);
 
-  @media only screen and (${device.tablet_Port}) {
+  @media ${devices.tablet} {
+    min-width: unset;
     width: 100%;
+    height: 100vh;
+
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     border-radius: unset;
+    background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a);
     transform: ${({ isOpen }) =>
       isOpen ? "translateY(0)" : "translateY(-100%)"};
   }
@@ -52,10 +63,22 @@ export const NavDrawerContainer = styled.div`
 
 export const NavList = styled.ul`
   margin-top: 12rem;
-  height: 100%;
 
   & > *:not(:first-child) {
     padding-top: 6rem;
+  }
+
+  & > *:last-child {
+    display: none;
+  }
+
+  @media ${devices.tablet} {
+    text-align: center;
+    margin-top: unset;
+
+    & > *:last-child {
+      display: flex;
+    }
   }
 `;
 
@@ -71,15 +94,25 @@ export const NavItem = styled.li`
 `;
 
 export const NavLinkS = styled(LinkS)`
-  display: inline-block;
+  font-family: "futura_medium";
+
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 5rem;
   color: ${({ theme }) => theme.colors.primary};
   line-height: 1;
   letter-spacing: 8px;
   text-shadow: 0 10px 30px rgb(2 11 22 / 20%);
   transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s;
   position: relative;
+
+  @media ${devices.tablet} {
+    font-size: 7.6rem;
+  }
+
+  @media ${devices.mobile_M} {
+    font-size: 5rem;
+    text-shadow: 0 3px 20px rgb(2 11 22 / 20%);
+  }
 
   &:after {
     content: "";

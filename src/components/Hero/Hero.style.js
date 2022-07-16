@@ -1,11 +1,24 @@
 import styled from "styled-components/macro";
-import device from "../../styles/Devices";
+import devices from "../../styles/Devices";
 
 export const HeroSection = styled.section`
   height: 100vh;
   width: 100%;
 
+  /* position: relative; */
+
   grid-column: centered-content-start / centered-content-end;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: ${({ theme }) => theme.backgrounds.hero};
+  }
 `;
 
 export const HeroContainer = styled.div`
@@ -19,9 +32,13 @@ export const HeroTitleContainer = styled.div`
   position: relative;
   z-index: 300;
 
-  // 900px
-  @media screen and (${device.tablet_Port}) {
+  @media ${devices.tablet} {
+    margin-top: -12rem;
+  }
+
+  @media ${devices.mobile_M} {
     align-self: flex-end;
+    margin-top: unset;
     bottom: 6rem;
   }
 `;
@@ -43,31 +60,18 @@ export const HeroImageContainer = styled.div`
 
   transform: scale(1.1);
 
-  @media screen and (${device.tablet_Port}) {
-    transform: unset;
-  }
-
-  // 900px
-  @media screen and (${device.tablet_Port}) {
+  @media ${devices.tablet} {
     width: 100vw;
     height: 100vw;
     left: 23%;
   }
 
-  @media screen and (${device.mobile_L}) {
-    width: 135vw;
-    height: 135vw;
+  @media ${devices.mobile_M} {
+    width: 165vw;
+    height: 165vw;
     left: 50%;
-    top: -18%;
-    bottom: auto;
+    top: -28rem;
     transform: translate3d(-50%, 0, 0);
-  }
-
-  @media screen and (${device.mobile_M}) {
-    width: 160vw;
-    height: 160vw;
-    top: -15%;
-    left: 55%;
   }
 `;
 
@@ -96,7 +100,8 @@ export const PortfolioText = styled.div`
   transform: translate3d(0, -50%, 0);
 
   p {
-    font-family: "futura_bold";
+    font-family: "futura_extrabold";
+    font-weight: 400;
     text-transform: uppercase;
     font-size: max(60px, 7rem);
     letter-spacing: 0.1em;
@@ -104,17 +109,8 @@ export const PortfolioText = styled.div`
 
     color: ${({ theme }) => theme.colors.secondary};
 
-    /* @media screen and (${device.tablet_Land}) {
-      font-size: 6rem;
-    } */
-
-    @media screen and (${device.tablet_Port}) {
+    @media ${devices.tablet} {
       font-size: min(40px, 3.8rem);
-    }
-
-    /* 🔴🏮🔴🏮🔴🔴 */
-    @media screen and (max-width: 28em) {
-      font-size: max(24px, 3rem);
     }
   }
 `;
@@ -169,25 +165,18 @@ export const StarsContainer = styled.div`
   bottom: 0;
   right: -83%;
 
-  // 900px
-  @media screen and (${device.tablet_Port}) {
+  @media ${devices.tablet} {
     width: 100vw;
     height: 100vw;
-    left: 23%;
+    right: -90%;
   }
 
-  @media screen and (${device.mobile_L}) {
-    width: 135vw;
-    height: 135vw;
+  @media ${devices.mobile_M} {
+    width: 165vw;
+    height: 165vw;
     left: 50%;
-    top: -18%;
-    bottom: auto;
+    top: -8rem;
     transform: translate3d(-50%, 0, 0);
-  }
-
-  @media screen and (${device.mobile_M}) {
-    width: 160vw;
-    height: 160vw;
   }
 `;
 
@@ -201,23 +190,16 @@ export const LightsContainer = styled.div`
   width: 1385px;
 
   // 900px
-  @media screen and (${device.tablet_Port}) {
+  @media ${devices.tablet} {
     width: 100vw;
     height: 100vw;
   }
 
-  @media screen and (${device.mobile_L}) {
-    width: 135vw;
-    height: 135vw;
+  @media ${devices.mobile_M} {
+    width: 165vw;
+    height: 165vw;
     left: 50%;
-    top: -75%;
-    bottom: auto;
+    top: -28rem;
     transform: translate3d(-50%, 0, 0);
-  }
-
-  @media screen and (${device.mobile_M}) {
-    width: 160vw;
-    height: 160vw;
-    top: -77%;
   }
 `;

@@ -10,13 +10,17 @@ export const darkTheme = {
   },
 
   backgrounds: {
-    body: "#061f3d",
-    hero: "linear-gradient(#061f3d, #040e1b);",
-    webDev: "linear-gradient(#040e1b, #061f3c);",
-    gameDev: "linear-gradient(#061f3c, #061f3c);",
-    aboutMe: "linear-gradient(#061f3c, #061f3d);",
-    contactMe: "linear-gradient(#061e3b, #040e1b);",
+    body: "linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);",
+    hero: "linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);",
+    webDev:
+      "linear-gradient(to bottom, #020b16, #061220, #07182b, #061c37, #072142);",
+    gameDev:
+      "linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);",
+    aboutMe:
+      "linear-gradient(to bottom, #020b16, #061220, #07182b, #061c37, #072142);",
+    contactMe:
+      "linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);",
   },
 };
 
-// background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
+// background-image: linear-gradient(to bottom, #020b16, #020b16, #020b16, #020b16, #020b16);

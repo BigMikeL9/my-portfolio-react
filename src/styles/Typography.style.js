@@ -1,11 +1,12 @@
 import styled from "styled-components/macro";
-import device from "./Devices";
+import devices from "./Devices";
 
 export const H1 = styled.h1`
-  font-size: 14rem;
+  font-family: "futura_reg";
+  font-size: 140px;
   text-transform: uppercase;
-  line-height: 1.2;
-  letter-spacing: 0.2em;
+  line-height: 1.1;
+  letter-spacing: 0.15em;
   margin-bottom: 1.6rem;
   text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
 
@@ -14,20 +15,21 @@ export const H1 = styled.h1`
   margin-top: ${({ mt }) => (mt ? mt : "")};
   color: ${({ theme }) => theme.colors.primary};
 
-  @media screen and (${device.tablet_Land}) {
-    font-size: 11rem;
+  @media ${devices.tablet} {
+    font-size: 80px;
   }
 
-  @media screen and (${device.tablet_Port}) {
-    font-size: max(38px, 8rem);
+  @media ${devices.mobile_L} {
+    font-size: clamp(44px, 14vw, 75px);
   }
 `;
 
 // -- Section title
 export const H2 = styled.h2`
-  font-size: 8.5rem;
+  font-size: 10rem;
   letter-spacing: 0.2em;
   line-height: 1.2;
+  margin-bottom: 1rem;
 
   margin: ${({ margin }) => (margin ? margin : "")};
   margin-bottom: ${({ mb }) => (mb ? mb : "")};
@@ -47,8 +49,13 @@ export const H3 = styled.h3`
   margin-top: ${({ mt }) => (mt ? mt : "")};
   color: ${({ theme }) => theme.colors.primary};
 
-  @media screen and (${device.tablet_Port}) {
+  @media ${devices.tablet} {
+    line-height: 1.7;
     font-size: max(12px, 2.4rem);
+  }
+
+  @media ${devices.mobile_M} {
+    font-size: 14px;
   }
 `;
 

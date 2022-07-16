@@ -1,7 +1,9 @@
 import React from "react";
 
-const AboutMe = () => {
-  return <div id="about">AboutMe</div>;
+import { AboutSection } from "./About.style";
+
+const About = () => {
+  return <AboutSection id="about">AboutMe</AboutSection>;
 };
 
-export default AboutMe;
+export default About;

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { navBarData as data } from "../../data/NavBarData";
+import SocialIcons from "../SocialIcons/SocialIcons";
 
 import {
   Backdrop,
@@ -33,6 +34,8 @@ const NavBarDrawer = (props) => {
                 </NavLinkS>
               </NavItem>
             ))}
+
+            <SocialIcons />
           </NavList>
         </NavDrawerContainer>
       </NavDrawer>

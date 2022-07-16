@@ -1,49 +1,112 @@
-import React from "react";
-import styled from "styled-components/macro";
-import device from "../../styles/Devices";
+import React, { useRef } from "react";
+import { useEffect } from "react";
+import Scrollbar from "react-scrollbars-custom";
+import styled from "styled-components";
 
-export const MainGrid = styled.main`
-  display: grid;
+import { MainS } from "./Main.style";
 
-  grid-template-columns:
-    [full-content-start]
-    minmax(6rem, 14rem)
-    [centered-content-start] repeat(4, [column-start] 1fr [column-end])
-    [centered-content-end]
-    minmax(6rem, 14rem)
-    [full-content-end];
+export const ScrollBarS = styled(Scrollbar)`
+  > .ScrollbarsCustom {
+    position: relative;
+    width: 100%;
 
-  // --------
-  @media only screen and (${device.tablet_Land}) {
-    grid-template-columns:
-      [full-content-start]
-      minmax(3rem, 5rem)
-      [centered-content-start] repeat(
-        4,
-        [column-start] minmax(min-content, 14rem) [column-end]
-      )
-      [centered-content-end]
-      minmax(3rem, 5rem)
-      [full-content-end];
+    &:not(.native) {
+      width: 100vw;
+      height: 100vh;
+
+      & > .ScrollbarsCustom-Wrapper {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        & > .ScrollbarsCustom-Scroller {
+          display: block;
+
+          & > .ScrollbarsCustom-Content {
+            padding: 0.05px;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      & > .ScrollbarsCustom-Track {
+        position: absolute;
+        border-radius: 0.25rem;
+
+        & > .ScrollbarsCustom-Thumb {
+          background: rgba(255, 255, 255, 0.12);
+          cursor: pointer;
+          border-radius: 0.25rem;
+
+          &:hover,
+          &.dragging {
+            background: #9ed6ff;
+          }
+        }
+      }
+
+      & > .ScrollbarsCustom-TrackY {
+        width: 1rem;
+        height: calc(100% - 2rem);
+        top: 1rem;
+        right: 0.5rem;
+        background: rgba(255, 255, 255, 0.04);
+
+        & > .ScrollbarsCustom-ThumbY {
+          width: 100%;
+        }
+      }
+
+      &.trackYVisible {
+        & > .ScrollbarsCustom-Wrapper {
+          right: 1.5rem;
+        }
+      }
+    }
   }
 
-  // --------
-  @media only screen and (${device.mobile_L}) {
-    grid-template-columns:
-      [full-content-start]
-      minmax(2rem, 3rem)
-      [centered-content-start] repeat(
-        4,
-        [column-start] minmax(min-content, 14rem) [column-end]
-      )
-      [centered-content-end]
-      minmax(2rem, 3rem)
-      [full-content-end];
+  #App {
+    width: 100%;
+
+    a.link {
+      color: #3996da;
+      text-shadow: none;
+
+      &:hover {
+        color: #9ed6ff;
+      }
+    }
+
+    @media (min-width: 620px) {
+      max-width: 1280px;
+      margin: auto;
+    }
   }
 `;
 
 const Main = (props) => {
-  return <MainGrid>{props.children}</MainGrid>;
+  const mainRef = useRef();
+
+  useEffect(() => {
+    console.log(mainRef);
+  }, []);
+
+  return (
+    <>
+      <ScrollBarS
+        native
+        trackXVisible
+        trackYVisible
+        noDefaultStyles
+        disableTracksWidthCompensation
+        style={{ position: "" }}
+      >
+        <MainS ref={mainRef}>{props.children}</MainS>
+      </ScrollBarS>
+    </>
+  );
 };
 
 export default Main;

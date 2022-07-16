@@ -1,7 +1,9 @@
 import React from "react";
 
-const ContactMe = () => {
-  return <div id="contact">ContactMe</div>;
+import { ContactSection } from "./Contact.style";
+
+const Contact = () => {
+  return <ContactSection id="contact">ContactMe</ContactSection>;
 };
 
-export default ContactMe;
+export default Contact;

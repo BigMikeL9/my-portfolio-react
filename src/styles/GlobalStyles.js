@@ -2,75 +2,105 @@ import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 
 import Futura_Reg from "../assets/fonts/Futura-Reg.woff";
-import Futura_SemiBold from "../assets/fonts/Futura-SemiBold.woff";
+import Futura_Medium from "../assets/fonts/Futura-Medium.woff";
 import Futura_Bold from "../assets/fonts/Futura-Bold.woff";
+import Futura_ExtraBold from "../assets/fonts/Futura-ExtraBold.woff";
+import Futura_D from "../assets/fonts/Futura-Dem.woff";
 
-import device from "./Devices";
+import devices from "./Devices";
 
 export const GlobalStyles = createGlobalStyle`
     ${normalize}
+
+    ${"" /* font-family: 'Abril Fatface', cursive; */}
+    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
     @font-face {
       font-family: "futura_reg";
       src: url(${Futura_Reg}) format("eot"), url(${Futura_Reg}) format("woff");
     }
-
+    
     @font-face {
-      font-family: "futura_semibold";
-      src: url(${Futura_SemiBold}) format("eot"),
-        url(${Futura_SemiBold}) format("woff");
+      font-family: "futura_medium";
+      src: url(${Futura_Medium}) format("eot"),
+        url(${Futura_Medium}) format("woff");
     }
 
     @font-face {
       font-family: "futura_bold";
       src: url(${Futura_Bold}) format("eot"), url(${Futura_Bold}) format("woff");
     }
+    
+    @font-face {
+      font-family: "futura_extrabold";
+      src: url(${Futura_ExtraBold}) format("eot"),
+        url(${Futura_ExtraBold}) format("woff");
+    }
+    
+    @font-face {
+      font-family: "futura_d";
+      src: url(${Futura_D}) format("eot"),
+        url(${Futura_D}) format("woff");
+    }
 
+    ${
+      "" /* ::-webkit-scrollbar {
+        display: none;
+    } */
+    }
+
+    ::selection {
+      background-color: ${({ theme }) => theme.colors.secondary};
+      color: ${({ theme }) => theme.colors.primary};
+    }
+   
     *,
     *::after,
     *::before {
       padding: 0;
       margin: 0;
       box-sizing: inherit;
+      font-size: 100%;
       font: inherit;
       vertical-align: baseline;
     }
 
     html {
       font-size: 62.5%;
+      text-size-adjust: 100%;
       box-sizing: border-box;
       overflow-x: hidden;
       scroll-behavior: smooth;
       
-      background-color: ${({ theme }) => theme.backgrounds.body};
+      background-image: ${({ theme }) => theme.backgrounds.body};
 
       
       // 'max-width: 1200px'
-      @media only screen and (${device.tablet_Land}) {
+      @media ${devices.laptop} {
          font-size: 56%; 
       }
       
       
       // 'max-width: 900px'
-      @media only screen and (${device.tablet_Port}) {
+      @media ${devices.tablet} {
         ${"" /* font-size: 50%; */}
       }
     
 
       // 'max-width: 600px'
-      @media only screen and (${device.mobile_L}) {
+      @media ${devices.mobile_L} {
         font-size: 46%; 
       }
 
 
       // 'max-width: 375px'
-      @media only screen and (${device.mobile_S}) {
+      @media ${devices.mobile_S} {
        ${"" /* font-size: 36%;  */}
       }
       
 
       // 'min-width: 1800px'
-      @media only screen and (${device.desktop_L}) {
+      @media ${devices.desktop} {
         
       }
     }
@@ -86,14 +116,10 @@ export const GlobalStyles = createGlobalStyle`
       min-height: 100vh;
 
       color: ${({ theme }) => theme.colors.primary};
-      background-color: ${({ theme }) => theme.backgrounds.body};
+      background-image: ${({ theme }) => theme.backgrounds.body};
     }
 
-    ::selection {
-      background-color: ${({ theme }) => theme.colors.secondary};
-      color: ${({ theme }) => theme.colors.primary};
-    }
-
+    
     article,
     aside,
     details,

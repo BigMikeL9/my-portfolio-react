@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import { Link as LinkR } from "react-router-dom";
 import Button from "../UI/Button/Button";
 
-import device from "../../styles/Devices";
+import devices from "../../styles/Devices";
 
 export const NavContainer = styled.header`
   position: fixed;
@@ -14,7 +14,7 @@ export const NavContainer = styled.header`
   z-index: 3000;
 `;
 
-export const Nav = styled.nav`
+export const Nav = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -40,27 +40,11 @@ export const NavWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
 
-export const NavIcons = styled.div`
-  display: flex;
-  gap: 0 3rem;
-  margin-right: 6.4rem;
-`;
-
-export const NavIcon = styled.a`
-  font-size: 2.4rem;
-  display: inline-block;
-  transition: all 0.3s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-
-  color: ${({ theme }) => theme.colors.primary};
-
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.primary_Hover};
+  @media ${devices.tablet} {
+    & > *:first-child {
+      display: none;
+    }
   }
 `;
 
@@ -74,7 +58,7 @@ export const MenuIcon = styled(Button)`
   color: ${({ isOpen, theme }) =>
     isOpen ? theme.colors.primary : theme.colors.secondary};
 
-  @media only screen and (${device.mobile_L}) {
+  @media ${devices.mobile_L} {
     width: 25px;
     height: 15px;
   }
@@ -99,7 +83,7 @@ export const MenuIcon = styled(Button)`
     right: 0;
     transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
-    @media only screen and (${device.mobile_L}) {
+    @media ${devices.mobile_L} {
       height: 2px;
     }
   }

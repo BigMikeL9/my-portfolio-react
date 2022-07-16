@@ -1,8 +1,6 @@
-import { RiLinkedinFill } from "react-icons/ri";
-import { AiFillGithub } from "react-icons/ai";
-import { FaItchIo } from "react-icons/fa";
-
 import NavBarDrawer from "../NavBarDrawer/NavBarDrawer";
+
+import SocialIcons from "../SocialIcons/SocialIcons";
 
 import {
   NavContainer,
@@ -15,7 +13,6 @@ import {
 } from "./NavBar.style";
 
 const NavBar = (props) => {
-  console.log(props);
   return (
     <>
       <NavContainer>
@@ -23,20 +20,7 @@ const NavBar = (props) => {
           <NavLogo to="/">Mikel Kamel</NavLogo>
 
           <NavWrap>
-            <NavIcons>
-              <NavIcon
-                href="https://www.linkedin.com/in/mikel-kamel-65502b209/"
-                target="_blank"
-              >
-                <RiLinkedinFill />
-              </NavIcon>
-              <NavIcon href="https://github.com/BigMikeL9" target="_blank">
-                <AiFillGithub />
-              </NavIcon>
-              <NavIcon href="https://mikejam.itch.io/" target="_blank">
-                <FaItchIo />
-              </NavIcon>
-            </NavIcons>
+            <SocialIcons />
 
             <MenuIcon
               onClick={props.onToggleMenu}

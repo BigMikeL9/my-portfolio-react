@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 import { ThemeProvider } from "styled-components";
@@ -19,17 +19,12 @@ function App() {
         <Header />
 
         <Main>
-          <Switch>
-            <Route path="/" exact>
-              <HomePage />
-            </Route>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
 
             {/* Fallback Route */}
-            <Route path="*">
-              {/* <Redirect to="/" /> */}
-              <NotFoundPage />
-            </Route>
-          </Switch>
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
         </Main>
       </ThemeProvider>
     </>

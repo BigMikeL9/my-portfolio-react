@@ -49,9 +49,7 @@ const Hero = () => {
             Mikel <br /> Kamel
           </H1>
           <Divider />
-          <H3>
-            Web Developer / <br /> Gameplay Programmer
-          </H3>
+          <H3>Front-End Web Developer</H3>
         </HeroTitleContainer>
 
         <HeroImageContainer>

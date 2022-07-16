@@ -1,46 +1,21 @@
-// const sizes = {
-//   mobileS: "320px",
-//   mobileM: "375px",
-//   mobileL: "425px",
-//   tablet: "768px",
-//   laptop: "1024px",
-//   laptopL: "1440px",
-//   desktop: "2560px",
-// };
-
-// export const devices = {
-//   mobileS: `(min-width: ${sizes.mobileS})`,
-//   mobileM: `(min-width: ${sizes.mobileM})`,
-//   mobileL: `(min-width: ${sizes.mobileL})`,
-//   tablet: `(min-width: ${sizes.tablet})`,
-//   laptop: `(min-width: ${sizes.laptop})`,
-//   laptopL: `(min-width: ${sizes.laptopL})`,
-//   desktop: `(min-width: ${sizes.desktop})`,
-// };
-
-// import styled from 'styled-components';
-// import { device } from './device';
-
-// const ProfilePage = styled.div`
-//   margin: auto;
-//   text-align: center;
-
-//   @media ${device.laptop} {
-//     max-width: 800px;
-//   }
-
-//   @media ${device.desktop} {
-//     max-width: 1400px;
-//   }
-// `;
-
-const device = {
-  mobile_S: `max-width:${"23.75em"}`, // 375px
-  mobile_M: `max-width:${"26.25em"}`, // 420px
-  mobile_L: `max-width:${"37.5em"}`, // 600px
-  tablet_Port: `max-width:${"56.25em"}`, // 900px
-  tablet_Land: `max-width:${"75em"}`, // 1200px
-  desktop_L: `min-width:${"112.5em"}`, // 1800px
+const sizes = {
+  mobile_S: "23.75em", // 375px
+  mobile_M: "26.25em", // 420px
+  mobile_L: "37.5em", // 600px
+  tablet: "56.25em", // 900px
+  laptop: "75em", // 1200px
+  laptop_L: "90em", // 1440px;
+  desktop: "112.5em", // 1800px
 };
 
-export default device;
+const devices = {
+  mobile_S: `only screen and (max-width: ${sizes.mobile_S})`,
+  mobile_M: `only screen and (max-width: ${sizes.mobile_M})`,
+  mobile_L: `only screen and (max-width: ${sizes.mobile_L})`,
+  tablet: `only screen and (max-width: ${sizes.tablet})`,
+  laptop: `only screen and (max-width: ${sizes.laptop})`,
+  laptop_L: `only screen and (max-width: ${sizes.laptop_L})`,
+  desktop: `only screen and (min-width: ${sizes.desktop})`,
+};
+
+export default devices;
