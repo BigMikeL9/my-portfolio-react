@@ -23,7 +23,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
 
             {/* Fallback Route */}
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="*" element={<Navigate to="/" replace={true} />} />
           </Routes>
         </Main>
       </ThemeProvider>

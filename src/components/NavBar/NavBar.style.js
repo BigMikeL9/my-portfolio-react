@@ -55,22 +55,21 @@ export const MenuIcon = styled(Button)`
   cursor: pointer;
   background: none;
   border: none;
-  color: ${({ isOpen, theme }) =>
-    isOpen ? theme.colors.primary : theme.colors.secondary};
+
+  color: ${({ theme }) => theme.colors.primary};
 
   @media ${devices.mobile_L} {
     width: 25px;
     height: 15px;
   }
 
-  &:hover,
-  &:active {
-    color: ${({ theme }) => theme.colors.secondary_Hover};
+  &:hover {
+    /* color: ${({ theme }) => theme.colors.secondary}; */
   }
 
   &:focus {
     outline: none;
-    color: ${({ theme }) => theme.colors.primary};
+    /* color: ${({ theme }) => theme.colors.secondary}; */
   }
 
   &:before,

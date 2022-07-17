@@ -12,7 +12,7 @@ import Cloud3 from "../../assets/img/fog3.svg";
 import Cloud1_b from "../../assets/img/b_fog1.svg";
 import Cloud2_b from "../../assets/img/b_fog2.svg";
 
-import { H1, H3 } from "../../styles/Typography.style";
+import { H1, H4 } from "../../styles/Typography.style";
 
 import {
   HeroSection,
@@ -49,7 +49,7 @@ const Hero = () => {
             Mikel <br /> Kamel
           </H1>
           <Divider />
-          <H3>Front-End Web Developer</H3>
+          <H4>Front-End Web Developer</H4>
         </HeroTitleContainer>
 
         <HeroImageContainer>

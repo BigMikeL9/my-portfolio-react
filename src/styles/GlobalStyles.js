@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
+import "atropos/css";
 
 import Futura_Reg from "../assets/fonts/Futura-Reg.woff";
 import Futura_Medium from "../assets/fonts/Futura-Medium.woff";

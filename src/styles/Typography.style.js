@@ -37,8 +37,21 @@ export const H2 = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
+// -- Works Item Title
+export const H3 = styled.h4`
+  font-family: "futura_medium";
+  font-size: 5rem;
+  letter-spacing: 0.2em;
+
+  margin: ${({ margin }) => (margin ? margin : "")};
+  margin-bottom: ${({ mb }) => (mb ? mb : "")};
+  margin-top: ${({ mt }) => (mt ? mt : "")};
+  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
 // -- Lead text
-export const H3 = styled.h3`
+export const H4 = styled.h3`
   font-size: 2.8rem;
   line-height: 1.8;
   letter-spacing: 0.1em;
@@ -57,18 +70,6 @@ export const H3 = styled.h3`
   @media ${devices.mobile_M} {
     font-size: 14px;
   }
-`;
-
-// -- Project description text
-export const H4 = styled.h4`
-  font-size: 3.2rem;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-
-  margin: ${({ margin }) => (margin ? margin : "")};
-  margin-bottom: ${({ mb }) => (mb ? mb : "")};
-  margin-top: ${({ mt }) => (mt ? mt : "")};
-  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const H5 = styled.h5``;

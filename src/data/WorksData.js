@@ -1,5 +1,5 @@
-import BankitWeb from "../assets/img/bankit-app.webp";
-import BankitApp from "../assets/img/bankit-website.webp";
+import BankitApp from "../assets/img/bankit-app.webp";
+import BankitWeb from "../assets/img/bankit-website.webp";
 import BatNewsLetter from "../assets/img/bat-newletter-api.webp";
 import CountryStates from "../assets/img/country-states.webp";
 import DiceGame from "../assets/img/dice-game.webp";
@@ -16,9 +16,10 @@ import TopDoge from "../assets/img/topdoge.webp";
 const worksData = [
   {
     id: "bankit-website",
-    image: { BankitWeb },
+    image: BankitWeb,
+    altText: "An image of Bankit. A website that advertises the Bankit App.",
     title: "Bankit Website",
-    stack: "HTML, CSS, Vanilla JavaScript",
+    stack: "HTML / CSS / JavaScript",
     description: `A Fully Responsive landing page that advertises the Bankit App. Where users can explore all the App's features and services, and even sign-up an account to the Bankit Web Application. 
     ${(<br></br>)}
     This landing page features multiple DOM Manipulation and DOM Traversing techniques through Capturing and Bubbling, by using the Event Delegation event handling pattern. Featured techniques include smooth scrolling and hover animations to child elements through their parent element, lazy loading images and sections reveal on scroll through the Intersection Observer API, a tab and slider components and multiple other techniques that brings the page to life. This landing page was created using HTML5, CSS3, and`,
