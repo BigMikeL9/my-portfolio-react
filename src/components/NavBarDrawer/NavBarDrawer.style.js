@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import { Link as LinkS } from "react-scroll";
+import { HashLink } from "react-router-hash-link";
 import devices from "../../styles/Devices";
 
 export const NavDrawer = styled.div`
@@ -93,7 +93,7 @@ export const NavItem = styled.li`
   }
 `;
 
-export const NavLinkS = styled(LinkS)`
+export const HashLinkS = styled(HashLink)`
   font-family: "futura_medium";
 
   text-transform: uppercase;

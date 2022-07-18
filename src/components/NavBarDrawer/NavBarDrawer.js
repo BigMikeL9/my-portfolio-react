@@ -1,6 +1,7 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
-import { navBarData as data } from "../../data/NavBarData";
+import { navBarData as navData } from "../../data/NavBarData";
 import SocialIcons from "../SocialIcons/SocialIcons";
 
 import {
@@ -9,29 +10,28 @@ import {
   NavDrawerContainer,
   NavList,
   NavItem,
-  NavLinkS,
+  HashLinkS,
 } from "./NavBarDrawer.style";
 
 const NavBarDrawer = (props) => {
+  const location = useLocation();
+
   return (
     <>
       <NavDrawer isOpen={props.isOpen}>
         <Backdrop onClick={props.onClose} />
         <NavDrawerContainer isOpen={props.isOpen}>
           <NavList>
-            {data.map((el) => (
-              <NavItem key={el.to} isOpen={props.isOpen}>
-                <NavLinkS
-                  hashSpy={true}
-                  spy={true}
-                  smooth={true}
-                  // offset={50}
-                  duration={100}
-                  to={el.to}
+            {navData.map((data) => (
+              <NavItem key={data.to} isOpen={props.isOpen}>
+                <HashLinkS
+                  smooth
+                  to={data.to}
                   onClick={props.onClose}
+                  className={`/${location.hash}` === data.to ? "active" : ""}
                 >
-                  {el.text}
-                </NavLinkS>
+                  {data.text}
+                </HashLinkS>
               </NavItem>
             ))}
 

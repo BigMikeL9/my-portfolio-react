@@ -1,9 +1,10 @@
-import React from "react";
 import styled from "styled-components/macro";
 import devices from "../../styles/Devices";
+import { motion } from "framer-motion";
 
-export const MainS = styled.main`
+export const GridLayoutS = styled(motion.div)`
   display: grid;
+  transition: all 0.3s;
 
   grid-template-columns:
     [full-content-start]

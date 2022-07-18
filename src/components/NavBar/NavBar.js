@@ -2,15 +2,7 @@ import NavBarDrawer from "../NavBarDrawer/NavBarDrawer";
 
 import SocialIcons from "../SocialIcons/SocialIcons";
 
-import {
-  NavContainer,
-  Nav,
-  NavLogo,
-  NavWrap,
-  NavIcons,
-  NavIcon,
-  MenuIcon,
-} from "./NavBar.style";
+import { NavContainer, Nav, NavLogo, NavWrap, MenuIcon } from "./NavBar.style";
 
 const NavBar = (props) => {
   return (

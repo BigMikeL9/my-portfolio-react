@@ -14,9 +14,8 @@ import { H3 } from "../../../styles/Typography.style";
 import { VisitLink } from "../../UI/VisitLink/VisitLink";
 
 const WorksItem = (props) => {
-  console.log(props);
   return (
-    <WorksItemS>
+    <WorksItemS id={props.id}>
       <Atropos className="my-atropos" rotateXMax={5} rotateYMax={5}>
         <WorksImageContainer>
           <WorksImage src={props.image} alt={props.alt} />
@@ -29,7 +28,7 @@ const WorksItem = (props) => {
 
         <WorksStack>{props.stack}</WorksStack>
 
-        <VisitLink to="/">Show me more</VisitLink>
+        <VisitLink to={`/works-detail/${props.id}`}>Show me more</VisitLink>
       </WorksDescription>
     </WorksItemS>
   );

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import devices from "../../styles/Devices";
 
 export const IconsContainer = styled.div`

@@ -1,16 +1,22 @@
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 import { ThemeProvider } from "styled-components";
 import { darkTheme } from "./styles/Theme";
 
 import Header from "./layout/Header/Header";
-import Main from "./layout/Main/Main";
-import HomePage from "./pages/HomePage";
-import NotFoundPage from "./pages/NotFoundPage";
+import Home from "./pages/Home";
+import WorkDetail from "./pages/WorkDetail";
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log("ADD Loading screen here");
+  }, []);
+
   return (
     <>
       <ThemeProvider theme={darkTheme}>
@@ -18,14 +24,18 @@ function App() {
 
         <Header />
 
-        <Main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
+        <main>
+          <AnimatePresence>
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
 
-            {/* Fallback Route */}
-            <Route path="*" element={<Navigate to="/" replace={true} />} />
-          </Routes>
-        </Main>
+              <Route path="/works-detail/:workId" element={<WorkDetail />} />
+
+              {/* Fallback Route */}
+              <Route path="*" element={<Navigate to="/" replace={true} />} />
+            </Routes>
+          </AnimatePresence>
+        </main>
       </ThemeProvider>
     </>
   );

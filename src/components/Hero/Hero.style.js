@@ -9,14 +9,14 @@ export const HeroSection = styled.section`
 
   grid-column: centered-content-start / centered-content-end;
 
-  &:after {
+  &:before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
+
     background-image: ${({ theme }) => theme.backgrounds.hero};
   }
 `;
@@ -26,6 +26,7 @@ export const HeroContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  position: relative;
 `;
 
 export const HeroTitleContainer = styled.div`
