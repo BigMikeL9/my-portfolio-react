@@ -8,7 +8,7 @@ import { darkTheme } from "./styles/Theme";
 
 import Header from "./layout/Header/Header";
 import Home from "./pages/Home";
-import WorkDetail from "./pages/WorkDetail";
+import WorkDetail from "./pages/WorksDetail/WorkDetail";
 
 function App() {
   const location = useLocation();

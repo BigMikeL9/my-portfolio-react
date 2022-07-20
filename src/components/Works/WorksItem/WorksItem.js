@@ -11,7 +11,7 @@ import {
 } from "../WorksItem/WorksItem.style";
 
 import { H3 } from "../../../styles/Typography.style";
-import { VisitLink } from "../../UI/VisitLink/VisitLink";
+import { VisitLinkR } from "../../UI/VisitLink/VisitLink";
 
 const WorksItem = (props) => {
   return (
@@ -35,7 +35,7 @@ const WorksItem = (props) => {
 
         <WorksStack>{props.stack}</WorksStack>
 
-        <VisitLink to={`/works-detail/${props.id}`}>Show me more</VisitLink>
+        <VisitLinkR to={`/works-detail/${props.id}`}>Show me more</VisitLinkR>
       </WorksDescription>
     </WorksItemS>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import { navBarData as navData } from "../../data/NavBarData";
+import { navBarData as navData } from "../../data/navBarData";
 import SocialIcons from "../SocialIcons/SocialIcons";
 
 import {
