@@ -35,7 +35,7 @@ const NavBarDrawer = (props) => {
               </NavItem>
             ))}
 
-            <SocialIcons />
+            <SocialIcons isOpen={props.isOpen} />
           </NavList>
         </NavDrawerContainer>
       </NavDrawer>

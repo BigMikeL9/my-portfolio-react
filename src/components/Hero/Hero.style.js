@@ -1,24 +1,12 @@
 import styled from "styled-components/macro";
 import devices from "../../styles/Devices";
 
-export const HeroSection = styled.section`
+import { Section } from "../../layout/Section/Section.style";
+
+export const HeroSection = styled(Section)`
   height: 100vh;
   width: 100%;
-
-  /* position: relative; */
-
-  grid-column: centered-content-start / centered-content-end;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-
-    background-image: ${({ theme }) => theme.backgrounds.hero};
-  }
+  background-image: ${({ theme }) => theme.backgrounds.hero};
 `;
 
 export const HeroContainer = styled.div`

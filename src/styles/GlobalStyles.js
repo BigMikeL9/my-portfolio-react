@@ -90,13 +90,13 @@ export const GlobalStyles = createGlobalStyle`
 
       // 'max-width: 600px'
       @media ${devices.mobile_L} {
-        font-size: 46%; 
+        font-size: 44%; 
       }
 
 
       // 'max-width: 375px'
       @media ${devices.mobile_S} {
-       ${"" /* font-size: 36%;  */}
+       font-size: 40%;  
       }
       
 

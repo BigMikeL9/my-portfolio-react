@@ -1,14 +1,18 @@
 import styled from "styled-components";
+import devices from "../../../styles/Devices";
 
 export const WorksItemS = styled.li`
   display: flex;
   justify-content: center;
-  gap: 6rem;
+  gap: 5rem 8rem;
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+  }
 
   .my-atropos {
     flex: 0 1 60%;
-    /* box-shadow: 0 0 2rem red; */
-    box-shadow: 0 0 4rem rgb(255 255 255 / 40%);
+    box-shadow: 0 0 4rem rgb(255 255 255 / 50%);
     background-color: rgb(255 255 255 / 50%);
     border-radius: 8px;
   }
@@ -16,13 +20,12 @@ export const WorksItemS = styled.li`
 
 export const WorksImageContainer = styled.div`
   border-radius: 8px;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 `;
 
 export const GlowWrap = styled.span`
-  /* overflow: hidden; */
   position: absolute;
   top: 0;
   left: 0;
@@ -69,4 +72,5 @@ export const WorksStack = styled.p`
   font-family: "futura_medium";
   font-size: 1.8rem;
   letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
 `;

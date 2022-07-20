@@ -8,7 +8,7 @@ export const VisitLink = styled(Link)`
   background: ${({ theme }) => theme.colors.secondary};
   line-height: 1;
   font-weight: bold;
-  padding: 14px 28px;
+  padding: 1.4rem 2.8rem;
   border-radius: 50px;
   transition: 0.3s;
   letter-spacing: 0.1em;

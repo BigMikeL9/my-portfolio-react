@@ -11,14 +11,16 @@ export const darkTheme = {
 
   backgrounds: {
     body: "linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);",
+
     hero: "linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);",
-    webDev:
+
+    works:
       "linear-gradient(to bottom, #020b16, #061220, #07182b, #061c37, #072142);",
-    gameDev:
-      "linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);",
-    aboutMe:
+
+    contact:
       "linear-gradient(to bottom, #020b16, #061220, #07182b, #061c37, #072142);",
-    contactMe:
+
+    about:
       "linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);",
   },
 };

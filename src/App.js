@@ -24,7 +24,7 @@ function App() {
 
         <Header />
 
-        <main>
+        <main aria-live="polite">
           <AnimatePresence>
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />

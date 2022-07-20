@@ -6,10 +6,10 @@ import { RiLinkedinFill } from "react-icons/ri";
 import { AiFillGithub } from "react-icons/ai";
 import { FaItchIo } from "react-icons/fa";
 
-const SocialIcons = () => {
+const SocialIcons = (props) => {
   return (
     <>
-      <IconsContainer>
+      <IconsContainer isOpen={props.isOpen}>
         <Icon
           href="https://www.linkedin.com/in/mikel-kamel-65502b209/"
           target="_blank"

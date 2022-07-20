@@ -1,3 +1,9 @@
 import styled from "styled-components";
 
-export const WorksListS = styled.ul``;
+export const WorksListS = styled.ul`
+  margin-top: 4rem;
+
+  & > *:not(:last-child) {
+    margin-bottom: 20rem;
+  }
+`;

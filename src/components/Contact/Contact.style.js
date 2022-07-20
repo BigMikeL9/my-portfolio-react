@@ -1,9 +1,11 @@
 import styled from "styled-components/macro";
 
-export const ContactSection = styled.section`
-  width: 100%;
+import { Section } from "../../layout/Section/Section.style";
 
-  grid-column: centered-content-start / centered-content-end;
+export const ContactSection = styled(Section)`
+  width: 100%;
+  padding-top: 10rem;
+  background-image: ${({ theme }) => theme.backgrounds.contact};
 
   min-height: 100vh;
 `;

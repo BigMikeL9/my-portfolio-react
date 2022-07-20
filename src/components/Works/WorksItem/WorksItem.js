@@ -16,10 +16,17 @@ import { VisitLink } from "../../UI/VisitLink/VisitLink";
 const WorksItem = (props) => {
   return (
     <WorksItemS id={props.id}>
-      <Atropos className="my-atropos" rotateXMax={5} rotateYMax={5}>
+      <Atropos className="my-atropos" rotateXMax={3} rotateYMax={3}>
         <WorksImageContainer>
-          <WorksImage src={props.image} alt={props.alt} />
-          <GlowWrap />
+          <a
+            href={props.url}
+            aria-label={`Go to ${props.title} Website`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <WorksImage src={props.image} alt={props.alt} />
+            <GlowWrap />
+          </a>
         </WorksImageContainer>
       </Atropos>
 

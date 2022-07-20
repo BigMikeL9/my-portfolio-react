@@ -95,14 +95,15 @@ export const NavItem = styled.li`
 
 export const HashLinkS = styled(HashLink)`
   font-family: "futura_medium";
-
+  display: inline-block;
   text-transform: uppercase;
   font-size: 5rem;
   color: ${({ theme }) => theme.colors.primary};
   line-height: 1;
   letter-spacing: 8px;
   text-shadow: 0 10px 30px rgb(2 11 22 / 20%);
-  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s;
+  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s;
+
   position: relative;
 
   @media ${devices.tablet} {

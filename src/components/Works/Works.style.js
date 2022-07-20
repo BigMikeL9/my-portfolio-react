@@ -1,7 +1,11 @@
 import styled from "styled-components/macro";
 
-export const WorksSection = styled.section`
+import { Section } from "../../layout/Section/Section.style";
+
+export const WorksSection = styled(Section)`
   width: 100%;
-  grid-column: centered-content-start / centered-content-end;
-  margin-top: 15rem;
+  padding-top: 10rem;
+  background-image: ${({ theme }) => theme.backgrounds.works};
+
+  min-height: 100vh;
 `;
