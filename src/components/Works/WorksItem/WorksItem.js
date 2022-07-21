@@ -11,7 +11,7 @@ import {
 } from "../WorksItem/WorksItem.style";
 
 import { H3 } from "../../../styles/Typography.style";
-import { VisitLinkR } from "../../UI/VisitLink/VisitLink";
+import { VisitLinkR } from "../../UI/Links/Links.style";
 
 const WorksItem = (props) => {
   return (

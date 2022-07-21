@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 import worksData from "../../data/worksData";
 
 import { CurtainPage } from "../../components/Curtain/Curtain.style";
-import { H1, H4 } from "../../styles/Typography.style";
+import { H4 } from "../../styles/Typography.style";
 import Divider from "../../components/UI/Divider/Divider";
-import { AnchorTagS } from "../../components/UI/VisitLink/VisitLink";
+import { AnchorTagS } from "../../components/UI/Links/Links.style";
 
 import {
   HeroSection,
+  HeroSectionInner,
   HeroTitleContainer,
+  HeroTitle,
   HeroImageContainer,
   HeroImage,
   InfoContainer,
@@ -21,6 +23,8 @@ import {
   DescriptionImage,
   DescriptionDescription,
 } from "./WorksDetail.style";
+
+import { Section, SectionInner } from "../../layout/Section/Section.style";
 
 const WorkDetail = () => {
   const params = useParams();
@@ -33,16 +37,18 @@ const WorkDetail = () => {
   return (
     <>
       <HeroSection>
-        <HeroTitleContainer>
-          <H1>{currentWork.title}</H1>
-          <Divider />
-          <H4>{currentWork.type}</H4>
-          <AnchorTagS href={currentWork.url}>Visit Site</AnchorTagS>
-        </HeroTitleContainer>
+        <HeroSectionInner>
+          <HeroTitleContainer>
+            <HeroTitle>{currentWork.title}</HeroTitle>
+            <Divider />
+            <H4>{currentWork.type}</H4>
+            <AnchorTagS href={currentWork.url}>Visit Site</AnchorTagS>
+          </HeroTitleContainer>
 
-        <HeroImageContainer>
-          <HeroImage src={currentWork.image} alt={currentWork.altText} />
-        </HeroImageContainer>
+          <HeroImageContainer>
+            <HeroImage src={currentWork.image} alt={currentWork.altText} />
+          </HeroImageContainer>
+        </HeroSectionInner>
       </HeroSection>
 
       <DescriptionSection>

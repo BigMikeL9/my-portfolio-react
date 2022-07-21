@@ -23,6 +23,7 @@ export const AnchorTagS = styled.a`
   }
 `;
 
+// -- React Router styled link
 export const VisitLinkR = styled(Link)`
   display: inline-block;
   font-size: 1.8rem;

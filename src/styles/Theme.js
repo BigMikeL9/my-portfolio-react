@@ -22,6 +22,8 @@ export const darkTheme = {
 
     about:
       "linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);",
+
+    detailPage_Hero: "#020b16",
   },
 };
 
