@@ -11,11 +11,10 @@ const WorksList = () => {
         <WorkItem
           key={data.id}
           id={data.id}
-          image={data.image}
+          image_Main={data.images.overview}
           alt={data.altText}
           title={data.title}
           stack={data.stack}
-          description={data.description}
           url={data.url}
         />
       ))}

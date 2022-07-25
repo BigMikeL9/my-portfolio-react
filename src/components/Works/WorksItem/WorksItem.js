@@ -24,7 +24,7 @@ const WorksItem = (props) => {
             target="_blank"
             rel="noreferrer"
           >
-            <WorksImage src={props.image} alt={props.alt} />
+            <WorksImage src={props.image_Main} alt={props.alt} />
             <GlowWrap />
           </a>
         </WorksImageContainer>

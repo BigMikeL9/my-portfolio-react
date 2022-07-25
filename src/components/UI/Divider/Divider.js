@@ -6,6 +6,10 @@ const DividerS = styled.div`
   display: inline-block;
   margin-bottom: 3.2rem;
 
+  margin: ${({ margin }) => (margin ? margin : "")};
+  margin-bottom: ${({ mb }) => (mb ? mb : "")};
+  margin-top: ${({ mt }) => (mt ? mt : "")};
+
   span {
     display: block;
     width: 88px;
@@ -44,9 +48,9 @@ const DividerS = styled.div`
   }
 `;
 
-const Divider = () => {
+const Divider = (props) => {
   return (
-    <DividerS>
+    <DividerS {...props}>
       <span />
       <span />
     </DividerS>

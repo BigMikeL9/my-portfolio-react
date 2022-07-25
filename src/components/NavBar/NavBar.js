@@ -7,7 +7,7 @@ import { NavContainer, Nav, NavLogo, NavWrap, MenuIcon } from "./NavBar.style";
 const NavBar = (props) => {
   return (
     <>
-      <NavContainer>
+      <NavContainer detailPageHeroInView={props.detailPageHeroInView}>
         <Nav>
           <NavLogo to="/">Mikel Kamel</NavLogo>
 

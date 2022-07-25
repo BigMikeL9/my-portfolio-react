@@ -27,6 +27,7 @@ export const NavDrawerContainer = styled.nav`
   top: 0;
   z-index: 2;
   transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(110%)")};
+  color: ${({ theme }) => theme.colors.primary};
   height: 100%;
   min-width: 60rem;
 

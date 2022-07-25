@@ -12,6 +12,10 @@ export const NavContainer = styled.header`
   background-color: transparent;
   padding: 4rem 4rem 0;
   z-index: 3000;
+
+  /* -- change color when in 'WorkDetail.js' page and its hero section is NOT in viewport. */
+  color: ${({ theme, detailPageHeroInView }) =>
+    detailPageHeroInView ? theme.colors.primary : "#020b16"};
 `;
 
 export const Nav = styled.div`
@@ -55,8 +59,7 @@ export const MenuIcon = styled(Button)`
   cursor: pointer;
   background: none;
   border: none;
-
-  color: ${({ theme }) => theme.colors.primary};
+  color: inherit;
 
   @media ${devices.mobile_L} {
     width: 25px;

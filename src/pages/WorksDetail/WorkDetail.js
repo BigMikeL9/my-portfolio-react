@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+
 import worksData from "../../data/worksData";
 
 import { CurtainPage } from "../../components/Curtain/Curtain.style";
@@ -18,36 +20,72 @@ import {
   InfoContainer,
   InfoList,
   InfoItem,
+  InfoTitle,
   DescriptionSection,
-  DescriptionImageContainer,
-  DescriptionImage,
-  DescriptionDescription,
+  DetailGrid,
+  DetailImageContainer,
+  DetailImage,
+  DetailContainer,
+  DetailNumber,
+  DetailWrap,
+  DetailTitle,
+  DetailText,
 } from "./WorksDetail.style";
 
-import { Section, SectionInner } from "../../layout/Section/Section.style";
+import Stars from "../../assets/img/stars.svg";
+import Lights from "../../assets/img/lights.svg";
 
-const WorkDetail = () => {
+const WorkDetail = (props) => {
   const params = useParams();
+
+  // -----------------------------------------------------------
+  const { ref, inView, entry } = useInView();
+
+  /* -- Pass 'inView' value to Navbar thought props drilling, inorder to change color when 'WorkDetail' page's Hero section is NOT in view. 
+   ⭐ Lifting state up to 'App.js' --> then passing it down to 'Header.js'  -->  then to 'NavBar.js'
+  */
+  const { onDetailPageHeroExitView } = props;
+
+  useEffect(() => {
+    onDetailPageHeroExitView(inView);
+  }, [inView, onDetailPageHeroExitView]);
+  // -----------------------------------------------------------
 
   // -- Find current work object
   const currentWork = worksData.find(
     (currentWork) => currentWork.id === params.workId
   );
 
+  const workDetails = Object.entries(currentWork.details).map((detail) => {
+    return {
+      id: currentWork.title,
+      title: detail[0],
+      content: detail[1],
+      image: currentWork.images[detail[0]],
+    };
+  });
+
   return (
     <>
-      <HeroSection>
+      <HeroSection ref={ref}>
         <HeroSectionInner>
           <HeroTitleContainer>
             <HeroTitle>{currentWork.title}</HeroTitle>
-            <Divider />
+            <Divider mb={"2rem"} />
             <H4>{currentWork.type}</H4>
-            <AnchorTagS href={currentWork.url}>Visit Site</AnchorTagS>
+
+            <AnchorTagS href={currentWork.url} target="_blank" mt={"4rem"}>
+              Visit Site
+            </AnchorTagS>
           </HeroTitleContainer>
 
-          <HeroImageContainer>
-            <HeroImage src={currentWork.image} alt={currentWork.altText} />
+          {/* <HeroImageContainer>
+            <HeroImage src={Stars} alt="Stars" />
           </HeroImageContainer>
+
+          <HeroImageContainer>
+            <HeroImage src={Lights} alt="Moon Lights" />
+          </HeroImageContainer> */}
         </HeroSectionInner>
       </HeroSection>
 
@@ -55,27 +93,57 @@ const WorkDetail = () => {
         <InfoContainer>
           <InfoList>
             <InfoItem>
-              <h6>Role</h6>
+              <InfoTitle>Role</InfoTitle>
               <p>{currentWork.role}</p>
             </InfoItem>
 
             <InfoItem>
-              <h6>Overview</h6>
+              <InfoTitle>Tools</InfoTitle>
+              <p>{currentWork.stack}</p>
+            </InfoItem>
+
+            <InfoItem>
+              <InfoTitle>Overview</InfoTitle>
               <p>{currentWork.overview}</p>
             </InfoItem>
           </InfoList>
         </InfoContainer>
 
-        <DescriptionImageContainer>
-          <DescriptionImage src={currentWork.image} alt={currentWork.altText} />
-        </DescriptionImageContainer>
+        <DetailGrid>
+          {workDetails.map((detail, detail_Index) => {
+            return (
+              <React.Fragment key={detail.title}>
+                {detail.content.length > 0 && (
+                  <>
+                    {detail.image && (
+                      <DetailImageContainer>
+                        <DetailImage
+                          src={detail.image}
+                          alt={`${detail.title} of ${detail.id}`}
+                        />
+                      </DetailImageContainer>
+                    )}
 
-        <DescriptionDescription>
-          {currentWork.description}
-        </DescriptionDescription>
+                    <DetailContainer>
+                      <DetailNumber>
+                        {(detail_Index + 1).toLocaleString("en-US", {
+                          minimumIntegerDigits: 2,
+                          useGrouping: false,
+                        })}
+                      </DetailNumber>
+
+                      <DetailWrap>
+                        <DetailTitle>{detail.title}</DetailTitle>
+                        <DetailText>{detail.content}</DetailText>
+                      </DetailWrap>
+                    </DetailContainer>
+                  </>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </DetailGrid>
       </DescriptionSection>
-
-      <p>{params.workId}</p>
     </>
   );
 };

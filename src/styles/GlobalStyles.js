@@ -11,10 +11,7 @@ import Futura_D from "../assets/fonts/Futura-Dem.woff";
 import devices from "./Devices";
 
 export const GlobalStyles = createGlobalStyle`
-    ${normalize}
-
-    ${"" /* font-family: 'Abril Fatface', cursive; */}
-    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+    ${normalize}  
 
     @font-face {
       font-family: "futura_reg";

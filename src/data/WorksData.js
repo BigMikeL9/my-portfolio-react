@@ -13,17 +13,24 @@ import SimonGame from "../assets/img/simon-game.webp";
 import PigGame from "../assets/img/the-pig-game.webp";
 import TopDoge from "../assets/img/topdoge.webp";
 
+// NOTE: 'images' property can have nested 'overview, development, prototyping & challenges' properties just like 'details' property. And will show that image before its corresponding text.
+// If any if the nested potteries inside 'details' property have empty stings, then they will not be rendered.
+
 const worksData = [
   {
     id: "bankit-website",
     type: "website",
-    image: BankitWeb,
+    images: { overview: BankitWeb },
     altText: "An image of Bankit. A website that advertises the Bankit App.",
     title: "Bankit Website",
     stack: "HTML / CSS / JavaScript",
-    description: `A Fully Responsive landing page that advertises the Bankit App. Where users can explore all the App's features and services, and even sign-up an account to the Bankit Web Application. 
-    ${(<br></br>)}
-    This landing page features multiple DOM Manipulation and DOM Traversing techniques through Capturing and Bubbling, by using the Event Delegation event handling pattern. Featured techniques include smooth scrolling and hover animations to child elements through their parent element, lazy loading images and sections reveal on scroll through the Intersection Observer API, a tab and slider components and multiple other techniques that brings the page to life. This landing page was created using HTML5, CSS3, and`,
+    details: {
+      overview: `A Fully Responsive landing page that advertises the Bankit App. Where users can explore all the App's features and services, and even sign-up an account to the Bankit Web Application. 
+      `,
+      development: `This landing page features multiple DOM Manipulation and DOM Traversing techniques through Capturing and Bubbling, by using the Event Delegation event handling pattern. Featured techniques include smooth scrolling and hover animations to child elements through their parent element, lazy loading images and sections reveal on scroll through the Intersection Observer API, a tab and slider components and multiple other techniques that brings the page to life. This landing page was created using HTML5, CSS3, and`,
+      prototyping: `Add prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details here`,
+      challenges: `Add challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details here`,
+    },
     url: `http://bankit.mikelkamel.com/`,
     role: "Development",
     overview: "Landing page that advertises the Bankit App",
