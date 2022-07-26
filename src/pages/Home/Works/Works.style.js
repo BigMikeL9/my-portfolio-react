@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import { Section } from "../../layout/Section/Section.style";
+import { Section } from "../../../layout/Section/Section.style";
 
 export const WorksSection = styled(Section)`
   width: 100%;

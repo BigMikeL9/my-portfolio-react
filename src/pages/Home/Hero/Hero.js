@@ -1,18 +1,19 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import Parallax from "parallax-js";
 
-import Divider from "../UI/Divider/Divider";
+import Divider from "../../../components/UI/Divider/Divider";
 
-import Moon from "../../assets/img/moon.svg";
-import Lights from "../../assets/img/lights.svg";
-import Stars from "../../assets/img/stars.svg";
-import Cloud1 from "../../assets/img/fog1.svg";
-import Cloud2 from "../../assets/img/fog2.svg";
-import Cloud3 from "../../assets/img/fog3.svg";
-import Cloud1_b from "../../assets/img/b_fog1.svg";
-import Cloud2_b from "../../assets/img/b_fog2.svg";
+import Moon from "../../../assets/img/moon.svg";
+import Lights from "../../../assets/img/lights.svg";
+import Stars from "../../../assets/img/stars.svg";
+import Cloud1 from "../../../assets/img/fog1.svg";
+import Cloud2 from "../../../assets/img/fog2.svg";
+import Cloud3 from "../../../assets/img/fog3.svg";
+import Cloud1_b from "../../../assets/img/b_fog1.svg";
+import Cloud2_b from "../../../assets/img/b_fog2.svg";
 
-import { H1, H4 } from "../../styles/Typography.style";
+import { H1, H4 } from "../../../styles/Typography.style";
+import { SectionInner } from "../../../layout/Section/Section.style";
 
 import {
   HeroSection,
@@ -32,8 +33,6 @@ import {
   MoonContainer,
   LightsContainer,
 } from "./Hero.style";
-import { useEffect } from "react";
-import { SectionInner } from "../../layout/Section/Section.style";
 
 const Hero = () => {
   const heroImageRef = useRef();

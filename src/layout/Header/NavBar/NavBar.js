@@ -1,13 +1,17 @@
 import NavBarDrawer from "../NavBarDrawer/NavBarDrawer";
 
-import SocialIcons from "../SocialIcons/SocialIcons";
+import SocialIcons from "../../../components/SocialIcons/SocialIcons";
 
 import { NavContainer, Nav, NavLogo, NavWrap, MenuIcon } from "./NavBar.style";
 
 const NavBar = (props) => {
   return (
     <>
-      <NavContainer detailPageHeroInView={props.detailPageHeroInView}>
+      <NavContainer
+        detailPageMounted={props.detailPageMounted}
+        detailPageHeroInView={props.detailPageHeroInView}
+        isOpen={props.isOpen}
+      >
         <Nav>
           <NavLogo to="/">Mikel Kamel</NavLogo>
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Hero from "../components/Hero/Hero";
-import Works from "../components/Works/Works";
-import About from "../components/About/About";
-import Contact from "../components/Contact/Contact";
+import Hero from "./Hero/Hero";
+import Works from "./Works/Works";
+import About from "./About/About";
+import Contact from "./Contact/Contact";
 
 const Home = () => {
   return (

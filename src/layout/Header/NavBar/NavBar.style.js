@@ -1,8 +1,9 @@
 import styled from "styled-components/macro";
 import { Link as LinkR } from "react-router-dom";
-import Button from "../UI/Button/Button";
 
-import devices from "../../styles/Devices";
+import Button from "../../../components/UI/Button/Button";
+
+import devices from "../../../styles/Devices";
 
 export const NavContainer = styled.header`
   position: fixed;
@@ -13,9 +14,11 @@ export const NavContainer = styled.header`
   padding: 4rem 4rem 0;
   z-index: 3000;
 
-  /* -- change color when in 'WorkDetail.js' page and its hero section is NOT in viewport. */
-  color: ${({ theme, detailPageHeroInView }) =>
-    detailPageHeroInView ? theme.colors.primary : "#020b16"};
+  /* -- If detail page is mounted && Detail page - hero section is not inView && Navbar is not open -->  set nav color to dark blue else to white */
+  color: ${({ theme, detailPageMounted, detailPageHeroInView, isOpen }) =>
+    detailPageMounted && !detailPageHeroInView && !isOpen
+      ? "#020b16"
+      : theme.colors.primary};
 `;
 
 export const Nav = styled.div`

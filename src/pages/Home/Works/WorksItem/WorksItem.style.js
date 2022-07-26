@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import devices from "../../../styles/Devices";
+
+import devices from "../../../../styles/Devices";
 
 export const WorksItemS = styled.li`
   display: flex;

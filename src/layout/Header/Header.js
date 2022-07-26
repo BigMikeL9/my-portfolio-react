@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import NavBar from "../../components/NavBar/NavBar";
+import NavBar from "./NavBar/NavBar";
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +16,7 @@ const Header = (props) => {
   return (
     <>
       <NavBar
+        detailPageMounted={props.detailPageMounted}
         detailPageHeroInView={props.detailPageHeroInView}
         isOpen={isOpen}
         onToggleMenu={menuToggleHandler}

@@ -20,7 +20,12 @@ const worksData = [
   {
     id: "bankit-website",
     type: "website",
-    images: { overview: BankitWeb },
+    images: {
+      overview: BankitWeb,
+      development: BankitWeb,
+      prototyping: BankitWeb,
+      challenges: null,
+    },
     altText: "An image of Bankit. A website that advertises the Bankit App.",
     title: "Bankit Website",
     stack: "HTML / CSS / JavaScript",
@@ -29,7 +34,7 @@ const worksData = [
       `,
       development: `This landing page features multiple DOM Manipulation and DOM Traversing techniques through Capturing and Bubbling, by using the Event Delegation event handling pattern. Featured techniques include smooth scrolling and hover animations to child elements through their parent element, lazy loading images and sections reveal on scroll through the Intersection Observer API, a tab and slider components and multiple other techniques that brings the page to life. This landing page was created using HTML5, CSS3, and`,
       prototyping: `Add prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details here`,
-      challenges: `Add challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details hereAdd challenges details here`,
+      challenges: null,
     },
     url: `http://bankit.mikelkamel.com/`,
     role: "Development",

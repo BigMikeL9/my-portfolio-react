@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SectionInner } from "../../layout/Section/Section.style";
+import { SectionInner } from "../../../layout/Section/Section.style";
 import { ContactSection } from "./Contact.style";
 
 const Contact = () => {

@@ -1,7 +1,8 @@
 import styled from "styled-components/macro";
-import devices from "../../styles/Devices";
 
-import { Section } from "../../layout/Section/Section.style";
+import devices from "../../../styles/Devices";
+
+import { Section } from "../../../layout/Section/Section.style";
 
 export const HeroSection = styled(Section)`
   height: 100vh;

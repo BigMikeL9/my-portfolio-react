@@ -1,11 +1,12 @@
 import React from "react";
 
-import { H2 } from "../../styles/Typography.style";
-import Divider from "../UI/Divider/Divider";
-import { WorksSection } from "./Works.style";
-import { SectionInner } from "../../layout/Section/Section.style";
+import { H2 } from "../../../styles/Typography.style";
+import Divider from "../../../components/UI/Divider/Divider";
+import { SectionInner } from "../../../layout/Section/Section.style";
 
 import WorksList from "./WorksList/WorksList";
+
+import { WorksSection } from "./Works.style";
 
 const Works = () => {
   return (

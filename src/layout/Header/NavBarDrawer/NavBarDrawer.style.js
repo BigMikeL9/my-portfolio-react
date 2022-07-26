@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 import { HashLink } from "react-router-hash-link";
-import devices from "../../styles/Devices";
+import devices from "../../../styles/Devices";
 
 export const NavDrawer = styled.div`
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
