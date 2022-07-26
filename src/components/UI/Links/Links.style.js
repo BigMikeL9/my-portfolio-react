@@ -31,7 +31,7 @@ export const VisitLinkR = styled(Link)`
   background: ${({ theme }) => theme.colors.secondary};
   line-height: 1;
   font-weight: bold;
-  padding: 1.4rem 2.8rem;
+  padding: 1.2rem 2.6rem;
   border-radius: 50px;
   transition: 0.3s;
   letter-spacing: 0.1em;

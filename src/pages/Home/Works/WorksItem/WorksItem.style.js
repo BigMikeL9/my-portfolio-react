@@ -71,7 +71,6 @@ export const WorksDescription = styled.div`
 
 export const WorksStack = styled.p`
   font-family: "futura_medium";
-  font-size: 1.8rem;
+  font-size: max(12px, 1.8rem);
   letter-spacing: 0.1em;
-  margin-bottom: 1.5rem;
 `;

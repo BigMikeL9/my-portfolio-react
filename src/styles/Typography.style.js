@@ -38,7 +38,7 @@ export const H2 = styled.h2`
 `;
 
 // -- Works Item Title
-export const H3 = styled.h4`
+export const H3 = styled.h3`
   font-family: "futura_medium";
   font-size: 5rem;
   letter-spacing: 0.2em;
@@ -51,7 +51,7 @@ export const H3 = styled.h4`
 `;
 
 // -- Lead text
-export const H4 = styled.h3`
+export const H4 = styled.h4`
   font-size: 2.8rem;
   line-height: 1.8;
   letter-spacing: 0.1em;

@@ -13,7 +13,19 @@ import {
 import { H3 } from "../../../../styles/Typography.style";
 import { VisitLinkR } from "../../../../components/UI/Links/Links.style";
 
+const RandomlinkTextArr = [
+  "Scout",
+  "Show me more",
+  "Check Out",
+  "I want More",
+  "Explore",
+  "Why Not!",
+];
+
 const WorksItem = (props) => {
+  // const RandomButtonText =
+  //   RandomlinkTextArr[Math.floor(Math.random() * RandomlinkTextArr.length + 1)];
+
   return (
     <WorksItemS id={props.id}>
       <Atropos className="my-atropos" rotateXMax={3} rotateYMax={3}>
@@ -35,7 +47,9 @@ const WorksItem = (props) => {
 
         <WorksStack>{props.stack}</WorksStack>
 
-        <VisitLinkR to={`/works-detail/${props.id}`}>Show me more</VisitLinkR>
+        <VisitLinkR to={`/works-detail/${props.id}`} mt={"2rem}"}>
+          Show Me More
+        </VisitLinkR>
       </WorksDescription>
     </WorksItemS>
   );

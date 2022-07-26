@@ -12,7 +12,7 @@ export const HeroSection = styled(Section)`
   background-color: ${({ theme }) => theme.backgrounds.detailPage_Hero};
 
   @media ${devices.tablet} {
-    height: 70vh;
+    /* height: 70vh; */
   }
 `;
 

@@ -70,12 +70,11 @@ export const MenuIcon = styled(Button)`
   }
 
   &:hover {
-    /* color: ${({ theme }) => theme.colors.secondary}; */
   }
 
   &:focus {
     outline: none;
-    /* color: ${({ theme }) => theme.colors.secondary}; */
+    color: ${({ theme }) => theme.colors.primary_Hover};
   }
 
   &:before,

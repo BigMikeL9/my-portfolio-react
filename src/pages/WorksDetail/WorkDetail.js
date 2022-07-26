@@ -1,26 +1,43 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useIsPresent } from "framer-motion";
 
 import worksData from "../../data/worksData";
-
-import { CurtainPage } from "../../components/Curtain/Curtain.style";
 
 import Hero from "./Hero/Hero";
 import Content from "./Content/Content";
 import Back from "./Back/Back";
 
+const transition = {
+  duration: 0.6,
+  delay: 0.5,
+  ease: [0.43, 0.13, 0.23, 0.96],
+};
+
 const WorkDetail = (props) => {
   const params = useParams();
+  const isPresent = useIsPresent();
+
+  const { onPageTransition } = props;
+
+  useEffect(() => {
+    onPageTransition(isPresent);
+  }, [onPageTransition, isPresent]);
 
   // --------------------------------------------------------------
   // -- Scroll to top of page as Work detail page mounts.
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
+    const runLater = setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant",
+      });
+    }, 1000);
+
+    return () => {
+      clearTimeout(runLater);
+    };
   }, []);
   // --------------------------------------------------------------
 
@@ -41,7 +58,13 @@ const WorkDetail = (props) => {
   // --------------------------------------------------------------
 
   return (
-    <>
+    <motion.div
+      key="detail"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={transition}
+    >
       <Hero
         currentWork={currentWork}
         onDetailPageHeroExitView={props.onDetailPageHeroExitView}
@@ -50,7 +73,7 @@ const WorkDetail = (props) => {
       <Content currentWork={currentWork} workDetails={workDetails} />
 
       <Back />
-    </>
+    </motion.div>
   );
 };
 

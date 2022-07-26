@@ -9,28 +9,39 @@ import { darkTheme } from "./styles/Theme";
 import Header from "./layout/Header/Header";
 import Home from "./pages/Home/Home";
 import WorkDetail from "./pages/WorksDetail/WorkDetail";
+import Curtain from "./components/Curtain/Curtain";
 
 function App() {
   const location = useLocation();
-
-  const { pathname } = location;
-
-  // -- If detail page is mounted && Detail page hero section is not inView  -->  Change nav color
+  const [homePagePresent, setHomePagePresent] = useState();
+  const [detailPagePresent, setDetailPagePresent] = useState();
   const [detailPageMounted, setDetailPageMounted] = useState();
   const [detailPageHeroInView, setDetailPageHeroInView] = useState();
 
-  useEffect(() => {
-    console.log("ADD Loading screen here");
+  const { pathname } = location;
 
+  // -----------------------------------------------------------
+  // -- If detail page is mounted && Detail page hero section is not inView  -->  Change nav color
+
+  useEffect(() => {
     // -- Check if detail page is mounted
     setDetailPageMounted(pathname.includes("works-detail"));
   }, [detailPageMounted, pathname]);
 
-  // -----------------------------------------------------------
   // -- Get 'InView' state of 'Hero section' in 'WorkDetail' page inorder to pass it down to 'NavBar.js' through 'Header.js'
-
   const detailPageHeroExitViewHandler = useCallback((inView) => {
     setDetailPageHeroInView(inView);
+  }, []);
+  // -----------------------------------------------------------
+
+  // -----------------------------------------------------------
+  // -- Curtain page transition animation
+  const homePageTransitionHandler = useCallback((pagePresent) => {
+    setHomePagePresent(pagePresent);
+  }, []);
+
+  const detailPageTransitionHandler = useCallback((pagePresent) => {
+    setDetailPagePresent(pagePresent);
   }, []);
   // -----------------------------------------------------------
 
@@ -39,21 +50,29 @@ function App() {
       <ThemeProvider theme={darkTheme}>
         <GlobalStyles />
 
+        <Curtain main />
+
+        {!homePagePresent && <Curtain page />}
+        {!detailPagePresent && <Curtain page />}
+
         <Header
           detailPageMounted={detailPageMounted}
           detailPageHeroInView={detailPageHeroInView}
         />
-
         <main aria-live="polite">
-          <AnimatePresence>
+          <AnimatePresence initial={false}>
             <Routes location={location} key={pathname}>
-              <Route path="/" element={<Home />} />
+              <Route
+                path="/"
+                element={<Home onPageTransition={homePageTransitionHandler} />}
+              />
 
               <Route
                 path="/works-detail/:workId"
                 element={
                   <WorkDetail
                     onDetailPageHeroExitView={detailPageHeroExitViewHandler}
+                    onPageTransition={detailPageTransitionHandler}
                   />
                 }
               />
