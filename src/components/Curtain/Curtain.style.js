@@ -14,6 +14,20 @@ const slideDownUp = keyframes`
     }
 `;
 
+const slideLeftRight = keyframes`
+    0% {
+        transform: translateX(-100%)
+    }
+
+    40%, 60%{
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+`;
+
 const slideUp = keyframes`
     0%, 90%{
         transform: translateY(0);
@@ -21,6 +35,16 @@ const slideUp = keyframes`
 
     100% {
         transform: translateY(-100%);
+    }
+`;
+
+const fadeOut = keyframes`
+     0%, 90%{
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
     }
 `;
 
@@ -70,26 +94,31 @@ export const CurtainS = styled.div`
   ${(props) =>
     props.page &&
     css`
-      animation: ${slideDownUp} 2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      animation: ${slideLeftRight} 2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
       z-index: 999;
     `}
+`;
+
+export const CurtainMainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: max(6vh, 8vh);
 `;
 
 const typeWriterText_Config = {
   bg_color: " #020b16",
   typewriterSpeed: "4s",
-  typewriterCharacters: "44",
+  typewriterCharacters: "26",
 };
 
 export const TypeWriterText = styled.h1`
-  /* font-family: "futura_medium"; */
   font-family: "Source Code Pro", monospace;
   letter-spacing: 0.1em;
-  /* font-size: clamp(4rem, 3vw + 1rem, 8rem); */
-  font-size: clamp(2rem, 3vw + 1rem, 6rem);
+  font-size: clamp(25px, 5vw, 60px);
 
   position: relative;
-  top: -10rem;
   line-height: 1;
   width: max-content;
 

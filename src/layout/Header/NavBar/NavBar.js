@@ -1,3 +1,5 @@
+import React, { useRef } from "react";
+
 import NavBarDrawer from "../NavBarDrawer/NavBarDrawer";
 
 import SocialIcons from "../../../components/SocialIcons/SocialIcons";
@@ -5,6 +7,15 @@ import SocialIcons from "../../../components/SocialIcons/SocialIcons";
 import { NavContainer, Nav, NavLogo, NavWrap, MenuIcon } from "./NavBar.style";
 
 const NavBar = (props) => {
+  const navLogoHandler = (event) => {
+    event.target.blur();
+  };
+
+  const menuIconHandler = (event) => {
+    props.onToggleMenu();
+    event.target.blur();
+  };
+
   return (
     <>
       <NavContainer
@@ -13,13 +24,15 @@ const NavBar = (props) => {
         isOpen={props.isOpen}
       >
         <Nav>
-          <NavLogo to="/">Mikel Kamel</NavLogo>
+          <NavLogo to="/" onClick={navLogoHandler}>
+            Mikel Kamel
+          </NavLogo>
 
           <NavWrap>
             <SocialIcons />
 
             <MenuIcon
-              onClick={props.onToggleMenu}
+              onClick={menuIconHandler}
               isOpen={props.isOpen}
               aria-label="Menu"
             />

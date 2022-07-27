@@ -17,6 +17,7 @@ const Home = (props) => {
 
   const { onPageTransition } = props;
 
+  // 'isPresent' equal to 'false' -> if page is about to unmount
   useEffect(() => {
     onPageTransition(isPresent);
   }, [onPageTransition, isPresent]);

@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import Parallax from "parallax-js";
+import { useInView } from "react-intersection-observer";
 
 import Divider from "../../../components/UI/Divider/Divider";
 
@@ -35,14 +36,18 @@ import {
 } from "./Hero.style";
 
 const Hero = () => {
+  const [ref, inView, entry] = useInView();
   const heroImageRef = useRef();
+
+  // console.log(inView);
+  // console.log(entry);
 
   useEffect(() => {
     new Parallax(heroImageRef.current);
   }, []);
 
   return (
-    <HeroSection id="hero">
+    <HeroSection id="hero" ref={ref}>
       <SectionInner>
         <HeroContainer>
           <HeroTitleContainer>

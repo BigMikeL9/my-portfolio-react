@@ -1,23 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { CurtainS, TypeWriterText } from "./Curtain.style";
+import {
+  CurtainMainContainer,
+  CurtainS,
+  TypeWriterText,
+} from "./Curtain.style";
+import BongoCat from "../BongoCat/BongoCat";
 
 const CurtainComp = (props) => {
-  console.log(props);
+  // console.log(props);
+
   return (
     <CurtainS {...props}>
       {props.main && (
-        <>
-          <TypeWriterText>Hello, my name is Mikel.</TypeWriterText>
-        </>
+        <CurtainMainContainer>
+          <TypeWriterText>Hello, Stranger.</TypeWriterText>
+          <BongoCat />
+        </CurtainMainContainer>
       )}
     </CurtainS>
   );
 };
 
 const Curtain = (props) => {
-  console.log(props);
+  // console.log(props);
 
   return (
     <>

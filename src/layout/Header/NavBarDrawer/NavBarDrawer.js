@@ -26,6 +26,12 @@ const NavBarDrawer = (props) => {
               <NavItem key={data.to} isOpen={props.isOpen}>
                 <HashLinkS
                   smooth
+                  scroll={(el) =>
+                    setTimeout(
+                      () => el.scrollIntoView({ behavior: "smooth" }),
+                      location.pathname.includes("works-detail") ? 500 : 0
+                    )
+                  }
                   to={data.to}
                   onClick={props.onClose}
                   className={`/${location.hash}` === data.to ? "active" : ""}
