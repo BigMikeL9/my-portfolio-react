@@ -1,23 +1,26 @@
 import React from "react";
 
-import { LabelS, InputS } from "./Input.style";
+import { LabelS, TextAreaS } from "./TextArea.style";
 
-const Input = (props) => {
+const TextArea = (props) => {
   return (
     <>
-      <InputS
+      <TextAreaS
         id={props.id}
         name={props.id}
-        type={props.type}
         placeholder={props.placeholder}
+        rows={props.rows}
+        cols={props.cols}
         value={props.value}
         isValid={props.isValid}
         onChange={props.onChange}
         onBlur={props.onBlur}
-      />
+      >
+        {props.value}
+      </TextAreaS>
       <LabelS htmlFor={props.id} />
     </>
   );
 };
 
-export default Input;
+export default TextArea;

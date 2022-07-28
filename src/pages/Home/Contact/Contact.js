@@ -5,6 +5,7 @@ import { SectionInner } from "../../../layout/Section/Section.style";
 import { H2 } from "../../../styles/Typography.style";
 import Divider from "../../../components/UI/Divider/Divider";
 import { MailToLink } from "../../../components/UI/MailToLink/MailToLink.style";
+import EmailForm from "../../../components/EmailForm/EmailForm";
 
 const Contact = () => {
   return (
@@ -16,6 +17,8 @@ const Contact = () => {
         <MailToLink href="mailto:mikel1832yahoo.com">
           mikel1832yahoo.com
         </MailToLink>
+
+        <EmailForm />
       </SectionInner>
     </ContactSection>
   );

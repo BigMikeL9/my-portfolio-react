@@ -10,6 +10,7 @@ import Header from "./layout/Header/Header";
 import Home from "./pages/Home/Home";
 import WorkDetail from "./pages/WorksDetail/WorkDetail";
 import Curtain from "./components/Curtain/Curtain";
+import SecretMessage from "./components/SecretMessage/SecretMessage";
 
 function App() {
   const location = useLocation();
@@ -49,6 +50,7 @@ function App() {
     <>
       <ThemeProvider theme={darkTheme}>
         <GlobalStyles />
+        <SecretMessage />
 
         <Curtain main />
 
