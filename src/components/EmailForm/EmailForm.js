@@ -133,7 +133,8 @@ const EmailForm = () => {
 
   const messageBlurHandler = () => {};
 
-  const submitHandler = (event) => {
+  // ----------
+  const submitHandler = async (event) => {
     event.preventDefault();
 
     dispatchEmail({ type: "EMAIL_SUBMIT" });
@@ -151,21 +152,18 @@ const EmailForm = () => {
     console.log(enteredData);
 
     // --- Send Email with emailJS package
-    emailjs
-      .send(
+    try {
+      const response = await emailjs.send(
         "service_m6p05tp",
         "template_m435ep8",
         enteredData,
         "eFCMDW8FMMSuUmchN"
-      )
-      .then(
-        (result) => {
-          console.log(result);
-        },
-        (error) => {
-          console.log(error.text);
-        }
       );
+
+      console.log(response);
+    } catch (error) {
+      console.log(error.text);
+    }
 
     // --- Reset Inputs
     dispatchName({ type: "NAME_RESET" });

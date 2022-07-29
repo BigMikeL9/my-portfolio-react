@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion, useIsPresent } from "framer-motion";
 
 import worksData from "../../data/worksData";
@@ -15,6 +16,7 @@ const transition = {
 };
 
 const WorkDetail = (props) => {
+  const location = useLocation();
   const params = useParams();
   const isPresent = useIsPresent();
 
@@ -59,22 +61,37 @@ const WorkDetail = (props) => {
   // --------------------------------------------------------------
 
   return (
-    <motion.div
-      key="detail"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={transition}
-    >
-      <Hero
-        currentWork={currentWork}
-        onDetailPageHeroExitView={props.onDetailPageHeroExitView}
-      />
+    <>
+      <Helmet prioritizeSeoTags>
+        <title>{`Mikel Kamel |  ${currentWork.title}`}</title>
+        <meta name="description" content={`${currentWork.overview}`} />
 
-      <Content currentWork={currentWork} workDetails={workDetails} />
+        <meta property="og:title" content={`${currentWork.title}`} />
+        <meta property="og:type" content={`${currentWork.type}`} />
+        <meta
+          property="og:url"
+          content={`https://mikelkamel.com${location.pathname}`}
+        />
+        <meta property="og:description" content={`${currentWork.overview}`} />
+      </Helmet>
 
-      <Back />
-    </motion.div>
+      <motion.div
+        key="detail"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={transition}
+      >
+        <Hero
+          currentWork={currentWork}
+          onDetailPageHeroExitView={props.onDetailPageHeroExitView}
+        />
+
+        <Content currentWork={currentWork} workDetails={workDetails} />
+
+        <Back />
+      </motion.div>
+    </>
   );
 };
 

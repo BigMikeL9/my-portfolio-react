@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, useIsPresent } from "framer-motion";
 
 import Hero from "./Hero/Hero";
@@ -23,18 +24,38 @@ const Home = (props) => {
   }, [onPageTransition, isPresent]);
 
   return (
-    <motion.div
-      key="home"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={transition}
-    >
-      <Hero />
-      <Works />
-      <About />
-      <Contact />
-    </motion.div>
+    <>
+      {/* // ! DONT FORGET TO EDIT THIS 👇👇👇👇 */}
+      <Helmet prioritizeSeoTags>
+        <title>Mikel Kamel</title>
+        <meta
+          name="description"
+          content="Complete description of the content showed in this sample page."
+        />
+
+        <meta property="og:title" content="My Sample Page" />
+
+        <meta
+          property="og:description"
+          content="Complete description of the content showed in this sample page for Open Graph."
+        />
+        <meta property="og:url" content="https://mikelkamel.com/" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
+      <motion.div
+        key="home"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={transition}
+      >
+        <Hero />
+        <Works />
+        <About />
+        <Contact />
+      </motion.div>
+    </>
   );
 };
 
