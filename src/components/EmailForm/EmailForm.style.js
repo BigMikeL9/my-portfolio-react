@@ -13,25 +13,4 @@ export const FormContainer = styled.div`
   }
 `;
 
-export const ControlGroup = styled.div`
-  position: relative;
-  overflow: hidden;
-
-  /* .invalid {
-    label {
-      &:focus {
-        &:after {
-          background-color: red;
-          transform: translateX(0);
-        }
-      }
-
-      &:after {
-        background-color: red;
-        transform: translateX(0);
-      }
-    }
-  } */
-`;
-
 export const SubmitButton = styled(Button)``;

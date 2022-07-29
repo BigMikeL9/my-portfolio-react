@@ -1,9 +1,10 @@
 import React, { useReducer } from "react";
+import emailjs from "@emailjs/browser";
 
 import Input from "../UI/Input/Input";
 import TextArea from "../UI/TextArea/TextArea";
 
-import { FormContainer, ControlGroup, SubmitButton } from "./EmailForm.style";
+import { FormContainer, SubmitButton } from "./EmailForm.style";
 
 // ---------------------------------------------
 // Name
@@ -12,6 +13,10 @@ const reducerName = (state, action) => {
     return {
       value: action.value,
     };
+  }
+
+  if (action.type === "NAME_RESET") {
+    return initialNameState;
   }
 
   return initialNameState;
@@ -36,6 +41,10 @@ const reducerEmail = (state, action) => {
     };
   }
 
+  if (action.type === "EMAIL_RESET") {
+    return initialEmailState;
+  }
+
   return initialEmailState;
 };
 
@@ -48,6 +57,10 @@ const reducerSubject = (state, action) => {
     return {
       value: action.value,
     };
+  }
+
+  if (action.type === "SUBJECT_RESET") {
+    return initialSubjectState;
   }
 
   return initialSubjectState;
@@ -72,6 +85,10 @@ const reducerMessage = (state, action) => {
     };
   }
 
+  if (action.type === "MESSAGE_RESET") {
+    return initialMessageState;
+  }
+
   return initialMessageState;
 };
 
@@ -90,8 +107,6 @@ const EmailForm = () => {
     reducerMessage,
     initialMessageState
   );
-
-  console.log(message);
 
   // -----------------------------------------------------------------
   const nameChangeHandler = (event) => {
@@ -127,64 +142,80 @@ const EmailForm = () => {
     if (!email.isValid || !message.isValid) return;
 
     const enteredData = {
+      subject: subject.value,
       name: name.value,
       email: email.value,
-      subject: subject.value,
       message: message.value,
     };
 
     console.log(enteredData);
+
+    // --- Send Email with emailJS package
+    emailjs
+      .send(
+        "service_m6p05tp",
+        "template_m435ep8",
+        enteredData,
+        "eFCMDW8FMMSuUmchN"
+      )
+      .then(
+        (result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    // --- Reset Inputs
+    dispatchName({ type: "NAME_RESET" });
+    dispatchSubject({ type: "SUBJECT_RESET" });
+    dispatchEmail({ type: "EMAIL_RESET" });
+    dispatchMessage({ type: "MESSAGE_RESET" });
   };
   // -----------------------------------------------------------------
 
   return (
     <FormContainer>
       <form onSubmit={submitHandler}>
-        <ControlGroup>
-          <Input
-            id="name"
-            type="text"
-            placeholder="Name"
-            value={name.value}
-            onChange={nameChangeHandler}
-            onBlur={nameBlurHandler}
-          />
-        </ControlGroup>
+        <Input
+          id="name"
+          type="text"
+          placeholder="Name"
+          value={name.value}
+          onChange={nameChangeHandler}
+          onBlur={nameBlurHandler}
+        />
 
-        <ControlGroup className={!email.isValid === false ? "invalid" : ""}>
-          <Input
-            id="email"
-            type="text"
-            placeholder="Email"
-            value={email.value}
-            isValid={email.isValid}
-            onChange={emailChangeHandler}
-            onBlur={emailBlurHandler}
-          />
-        </ControlGroup>
+        <Input
+          id="email"
+          type="text"
+          placeholder="Email"
+          value={email.value}
+          isValid={email.isValid}
+          onChange={emailChangeHandler}
+          onBlur={emailBlurHandler}
+        />
 
-        <ControlGroup>
-          <Input
-            id="subject"
-            type="text"
-            placeholder="Subject"
-            value={subject.value}
-            onChange={subjectChangeHandler}
-            onBlur={subjectBlurHandler}
-          />
-        </ControlGroup>
+        <Input
+          id="subject"
+          type="text"
+          placeholder="Subject"
+          value={subject.value}
+          onChange={subjectChangeHandler}
+          onBlur={subjectBlurHandler}
+        />
 
-        <ControlGroup className={!message.isValid === false ? "invalid" : ""}>
-          <TextArea
-            id="message"
-            placeholder="Message"
-            isValid={message.isValid}
-            onChange={messageChangeHandler}
-            onBlur={messageBlurHandler}
-          >
-            {message.value}
-          </TextArea>
-        </ControlGroup>
+        <TextArea
+          id="message"
+          placeholder="Message"
+          value={message.value}
+          isValid={message.isValid}
+          onChange={messageChangeHandler}
+          onBlur={messageBlurHandler}
+        >
+          {message.value}
+        </TextArea>
 
         <SubmitButton type="submit">Send Message!</SubmitButton>
       </form>

@@ -1,10 +1,10 @@
 import React from "react";
 
-import { LabelS, InputS } from "./Input.style";
+import { ControlS, LabelS, InputS } from "./Input.style";
 
 const Input = (props) => {
   return (
-    <>
+    <ControlS isValid={props.isValid}>
       <InputS
         id={props.id}
         name={props.id}
@@ -16,7 +16,7 @@ const Input = (props) => {
         onBlur={props.onBlur}
       />
       <LabelS htmlFor={props.id} />
-    </>
+    </ControlS>
   );
 };
 

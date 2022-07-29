@@ -1,10 +1,10 @@
 import React from "react";
 
-import { LabelS, TextAreaS } from "./TextArea.style";
+import { ControlS, LabelS, TextAreaS } from "./TextArea.style";
 
 const TextArea = (props) => {
   return (
-    <>
+    <ControlS isValid={props.isValid}>
       <TextAreaS
         id={props.id}
         name={props.id}
@@ -19,7 +19,7 @@ const TextArea = (props) => {
         {props.value}
       </TextAreaS>
       <LabelS htmlFor={props.id} />
-    </>
+    </ControlS>
   );
 };
 

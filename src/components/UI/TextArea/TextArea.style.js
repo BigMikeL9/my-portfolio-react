@@ -1,5 +1,25 @@
 import styled, { css } from "styled-components/macro";
 
+export const ControlS = styled.div`
+  position: relative;
+  overflow: hidden;
+
+  ${({ isValid }) =>
+    isValid === false
+      ? css`
+          label:after {
+            background-color: red;
+            transition: unset;
+            transform: translateX(0);
+          }
+        `
+      : css`
+          label:after {
+            background-color: #08fdd8;
+          }
+        `}
+`;
+
 export const LabelS = styled.label`
   &:after {
     content: "";
@@ -48,19 +68,7 @@ export const TextAreaS = styled.textarea`
     outline: none;
 
     & + label:after {
-      ${({ isValid }) =>
-        isValid === false
-          ? css`
-              & + label:after {
-                background-color: red;
-                transform: translateX(0);
-              }
-            `
-          : css`
-              transition: all 0.3s ease-out;
-              background-color: #08fdd8;
-              transform: translateX(0);
-            `}
+      transform: translateX(0);
     }
   }
 `;
