@@ -40,6 +40,30 @@ const worksData = [
     role: "Development",
     overview: "Landing page that advertises the Bankit App",
   },
+
+  {
+    id: "bankit-app",
+    type: "website",
+    images: {
+      overview: BankitApp,
+      development: BankitApp,
+      prototyping: BankitApp,
+      challenges: BankitApp,
+    },
+    altText: "An image of Bankit. A website that advertises the Bankit App.",
+    title: "Bankit Website",
+    stack: "HTML / CSS / JavaScript",
+    details: {
+      overview: `A Fully Responsive landing page that advertises the Bankit App. Where users can explore all the App's features and services, and even sign-up an account to the Bankit Web Application. 
+      `,
+      development: `This landing page features multiple DOM Manipulation and DOM Traversing techniques through Capturing and Bubbling, by using the Event Delegation event handling pattern. Featured techniques include smooth scrolling and hover animations to child elements through their parent element, lazy loading images and sections reveal on scroll through the Intersection Observer API, a tab and slider components and multiple other techniques that brings the page to life. This landing page was created using HTML5, CSS3, and`,
+      prototyping: `Add prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details hereAdd prototyping details here`,
+      challenges: null,
+    },
+    url: `http://bankit.mikelkamel.com/`,
+    role: "Development",
+    overview: "Landing page that advertises the Bankit App",
+  },
 ];
 
 export default worksData;

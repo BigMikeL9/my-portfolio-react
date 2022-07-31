@@ -35,6 +35,10 @@ export const H2 = styled.h2`
   margin-bottom: ${({ mb }) => (mb ? mb : "")};
   margin-top: ${({ mt }) => (mt ? mt : "")};
   color: ${({ theme }) => theme.colors.primary};
+
+  @media ${devices.mobile_M} {
+    font-size: 6.5rem;
+  }
 `;
 
 // -- Works Item Title

@@ -16,7 +16,7 @@ import {
   HashLinkS,
 } from "./NavBarDrawer.style";
 
-const NavBarDrawer = (props) => {
+const NavBarDrawer = () => {
   const location = useLocation();
   const dispatch = useDispatch();
 

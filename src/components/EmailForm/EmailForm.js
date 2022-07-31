@@ -1,10 +1,12 @@
-import React, { useReducer } from "react";
+import React, { useState, useReducer } from "react";
 import emailjs from "@emailjs/browser";
 
 import Input from "../UI/Input/Input";
 import TextArea from "../UI/TextArea/TextArea";
+import Spinner from "../UI/Spinner/Spinner";
 
-import { FormContainer, SubmitButton } from "./EmailForm.style";
+import { FormContainer, ErrorMessage, SubmitButton } from "./EmailForm.style";
+import { useEffect } from "react";
 
 // ---------------------------------------------
 // Name
@@ -108,30 +110,49 @@ const EmailForm = () => {
     initialMessageState
   );
 
+  const [status, setStatus] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // -----------------------------------------------------------------
+  // Reset Send Message button after submission
+  useEffect(() => {
+    let runLater;
+
+    if (status === "sent") {
+      runLater = setTimeout(() => {
+        setStatus(null);
+      }, 3000);
+    }
+
+    return () => {
+      clearTimeout(runLater);
+    };
+  }, [status]);
+
   // -----------------------------------------------------------------
   const nameChangeHandler = (event) => {
     dispatchName({ type: "NAME_INPUT", value: event.target.value });
   };
 
-  const nameBlurHandler = () => {};
+  // const nameBlurHandler = () => {};
 
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: "EMAIL_INPUT", value: event.target.value });
   };
 
-  const emailBlurHandler = () => {};
+  // const emailBlurHandler = () => {};
 
   const subjectChangeHandler = (event) => {
     dispatchSubject({ type: "SUBJECT_INPUT", value: event.target.value });
   };
 
-  const subjectBlurHandler = () => {};
+  // const subjectBlurHandler = () => {};
 
   const messageChangeHandler = (event) => {
     dispatchMessage({ type: "MESSAGE_INPUT", value: event.target.value });
   };
 
-  const messageBlurHandler = () => {};
+  // const messageBlurHandler = () => {};
 
   // ----------
   const submitHandler = async (event) => {
@@ -141,6 +162,8 @@ const EmailForm = () => {
     dispatchMessage({ type: "MESSAGE_SUBMIT" });
 
     if (!email.isValid || !message.isValid) return;
+
+    setIsLoading(true);
 
     const enteredData = {
       subject: subject.value,
@@ -161,9 +184,14 @@ const EmailForm = () => {
       );
 
       console.log(response);
+      setStatus("sent");
     } catch (error) {
       console.log(error.text);
+
+      setStatus("error");
     }
+
+    setIsLoading(false);
 
     // --- Reset Inputs
     dispatchName({ type: "NAME_RESET" });
@@ -173,8 +201,28 @@ const EmailForm = () => {
   };
   // -----------------------------------------------------------------
 
+  // -- Submit Button content
+  let buttonContent = `Send Message!`;
+
+  if (isLoading) {
+    buttonContent = <Spinner />;
+  }
+
+  if (status === "sent") {
+    buttonContent = `Message Sent 😊`;
+  }
+
+  if (status === "error") {
+    buttonContent = `Error Error!!! 😱`;
+  }
+  // -----------------------------------------------------------------
+
   return (
     <FormContainer>
+      <ErrorMessage isValid={email.isValid && message.isValid}>
+        Please Enter Required Fields 🙏
+      </ErrorMessage>
+
       <form onSubmit={submitHandler}>
         <Input
           id="name"
@@ -182,7 +230,7 @@ const EmailForm = () => {
           placeholder="Name"
           value={name.value}
           onChange={nameChangeHandler}
-          onBlur={nameBlurHandler}
+          // onBlur={nameBlurHandler}
         />
 
         <Input
@@ -192,7 +240,7 @@ const EmailForm = () => {
           value={email.value}
           isValid={email.isValid}
           onChange={emailChangeHandler}
-          onBlur={emailBlurHandler}
+          // onBlur={emailBlurHandler}
         />
 
         <Input
@@ -201,7 +249,7 @@ const EmailForm = () => {
           placeholder="Subject"
           value={subject.value}
           onChange={subjectChangeHandler}
-          onBlur={subjectBlurHandler}
+          // onBlur={subjectBlurHandler}
         />
 
         <TextArea
@@ -210,12 +258,12 @@ const EmailForm = () => {
           value={message.value}
           isValid={message.isValid}
           onChange={messageChangeHandler}
-          onBlur={messageBlurHandler}
+          // onBlur={messageBlurHandler}
         >
           {message.value}
         </TextArea>
 
-        <SubmitButton type="submit">Send Message!</SubmitButton>
+        <SubmitButton type="submit">{buttonContent}</SubmitButton>
       </form>
     </FormContainer>
   );

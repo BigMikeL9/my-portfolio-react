@@ -4,6 +4,6 @@ export const WorksListS = styled.ul`
   margin-top: 4rem;
 
   & > *:not(:last-child) {
-    margin-bottom: 20rem;
+    margin-bottom: 16rem;
   }
 `;

@@ -1,8 +1,34 @@
-import styled from "styled-components/macro";
+import styled, { keyframes } from "styled-components/macro";
 
 import devices from "../../../styles/Devices";
 
 import { Section } from "../../../layout/Section/Section.style";
+
+// --------------------------------------------------------
+const fadeInRight = keyframes`
+    0% {
+      opacity: 0;
+      transform: translateX(70%)
+    }
+
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
+`;
+
+const fadeInUp = keyframes`
+    0% {
+      opacity: 0;
+      transform: translateY(40%)
+    }
+
+    100%{
+      opacity: 1;
+      transform: translateY(0);
+    }
+`;
+// --------------------------------------------------------
 
 export const HeroSection = styled(Section)`
   height: 100vh;
@@ -97,6 +123,8 @@ export const PortfolioText = styled.div`
     letter-spacing: 0.1em;
     text-shadow: 0 10px 15px rgb(2 11 22 / 20%);
 
+    /* animation: ${fadeInUp} 1s cubic-bezier(0.65, 0, 0.35, 1) forwards; */
+
     color: ${({ theme }) => theme.colors.secondary};
 
     @media ${devices.tablet} {
@@ -119,6 +147,8 @@ export const Cloud2fContainer = styled.div`
   bottom: -18.53211%;
   right: -28.6238532%;
   width: 87.155%;
+
+  /* animation: ${fadeInRight} 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards; */
 `;
 
 export const Cloud3fContainer = styled.div`
@@ -127,6 +157,8 @@ export const Cloud3fContainer = styled.div`
   bottom: -5.137614678%;
   left: -49.357798%;
   width: 87.155%;
+
+  /* animation: ${fadeInRight} 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards; */
 `;
 
 export const Cloud1bContainer = styled.div`
@@ -135,6 +167,8 @@ export const Cloud1bContainer = styled.div`
   top: -22.38532%;
   right: -7.706422%;
   width: 69.724%;
+
+  /* animation: ${fadeInRight} 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards; */
 `;
 
 export const Cloud2bContainer = styled.div`
@@ -143,9 +177,13 @@ export const Cloud2bContainer = styled.div`
   top: -5.504587%;
   left: -38.715596%;
   width: 87.155%;
+
+  /* animation: ${fadeInRight} 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards; */
 `;
 
-export const MoonContainer = styled.div``;
+export const MoonContainer = styled.div`
+  /* animation: ${fadeInRight} 1s cubic-bezier(0.65, 0, 0.35, 1) forwards; */
+`;
 
 export const StarsContainer = styled.div`
   height: 1385px;

@@ -4,7 +4,7 @@ import { Section } from "../../../layout/Section/Section.style";
 
 export const ContactSection = styled(Section)`
   width: 100%;
-  padding-top: 10rem;
+  padding: 12rem 0;
   background-image: ${({ theme }) => theme.backgrounds.contact};
 
   min-height: 100vh;
