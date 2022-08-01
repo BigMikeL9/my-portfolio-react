@@ -125,5 +125,6 @@ export const DetailTitle = styled.h2`
 `;
 
 export const DetailText = styled.p`
+  font-size: max(12px, 1.6rem);
   flex: 1;
 `;

@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux/es/exports";
 import disableScroll from "disable-scroll";
 
@@ -13,11 +13,12 @@ import {
   NavDrawerContainer,
   NavList,
   NavItem,
-  HashLinkS,
+  NavLinkS,
 } from "./NavBarDrawer.style";
 
 const NavBarDrawer = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const navStore = useSelector((state) => state.nav);
@@ -28,7 +29,25 @@ const NavBarDrawer = () => {
     disableScroll.off();
   };
 
-  // BUG  --> solve later: DELAY scroll when hoing from one page to another. Or just use 'react-scroll' package instead of 'reduc-hash-link' package
+  const navLinkHandler = (event) => {
+    dispatch(navActions.closeMenu());
+    disableScroll.off();
+
+    // -- If current page doesn't have element with navLink hash, go to Homepage --> then scroll to element with hash
+    if (location.pathname !== "/") {
+      navigate("/", { replace: true });
+
+      setTimeout(() => {
+        const scrollToSection = document.getElementById(
+          `${event.target.dataset.hash}`
+        );
+
+        scrollToSection.scrollIntoView({ behavior: "smooth" });
+
+        // console.log(scrollToSection);
+      }, 1200);
+    }
+  };
 
   return (
     <>
@@ -38,20 +57,35 @@ const NavBarDrawer = () => {
           <NavList>
             {navData.map((data) => (
               <NavItem key={data.to} isOpen={isOpen}>
-                <HashLinkS
-                  smooth
+                <NavLinkS
+                  // smooth
                   // scroll={(el) =>
                   //   setTimeout(
                   //     () => el.scrollIntoView({ behavior: "smooth" }),
                   //     location.pathname.includes("works-detail") ? 500 : 0
                   //   )
                   // }
+                  // to={data.to}
+                  // onClick={closeMenuHandler}
+                  // className={`/${location.hash}` === data.to ? "active" : ""}
+
                   to={data.to}
-                  onClick={closeMenuHandler}
-                  className={`/${location.hash}` === data.to ? "active" : ""}
+                  data-hash={data.to}
+                  onClick={navLinkHandler}
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  // offset={50}
+                  duration={0}
+                  // delay={1000}
+                  // isDynamic={true}
+                  // onSetActive={this.handleSetActive}
+                  // onSetInactive={this.handleSetInactive}
+                  // ignoreCancelEvents={false}
+                  spyThrottle={500}
                 >
                   {data.text}
-                </HashLinkS>
+                </NavLinkS>
               </NavItem>
             ))}
 

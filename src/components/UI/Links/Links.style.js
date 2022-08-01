@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
+import devices from "../../../styles/Devices";
+
 export const AnchorTagS = styled.a`
   display: inline-block;
   font-size: 1.8rem;
@@ -15,6 +17,10 @@ export const AnchorTagS = styled.a`
 
   margin-top: ${({ mt }) => (mt ? mt : "")};
   margin-bottom: ${({ mb }) => (mb ? mb : "")};
+
+  @media ${devices.mobile_L} {
+    padding: 9px 18px;
+  }
 
   &:hover,
   &:focus {
@@ -38,6 +44,10 @@ export const VisitLinkR = styled(Link)`
 
   margin-top: ${({ mt }) => (mt ? mt : "")};
   margin-bottom: ${({ mb }) => (mb ? mb : "")};
+
+  @media ${devices.mobile_L} {
+    padding: 9px 18px;
+  }
 
   &:hover,
   &:focus {
