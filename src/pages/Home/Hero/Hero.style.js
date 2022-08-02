@@ -55,7 +55,7 @@ export const HeroTitleContainer = styled.div`
   @media ${devices.mobile_M} {
     align-self: flex-end;
     margin-top: unset;
-    bottom: 6rem;
+    bottom: 10rem;
   }
 `;
 
@@ -83,8 +83,8 @@ export const HeroImageContainer = styled.div`
   }
 
   @media ${devices.mobile_M} {
-    width: 165vw;
-    height: 165vw;
+    width: 170vw;
+    height: 170vw;
     left: 50%;
     top: -28rem;
     transform: translate3d(-50%, 0, 0);
@@ -129,6 +129,10 @@ export const PortfolioText = styled.div`
 
     @media ${devices.tablet} {
       font-size: min(40px, 3.8rem);
+    }
+
+    @media ${devices.mobile_M} {
+      font-size: 30px;
     }
   }
 `;
@@ -200,8 +204,8 @@ export const StarsContainer = styled.div`
   }
 
   @media ${devices.mobile_M} {
-    width: 165vw;
-    height: 165vw;
+    width: 170vw;
+    height: 170vw;
     left: 50%;
     top: -8rem;
     transform: translate3d(-50%, 0, 0);
@@ -224,8 +228,8 @@ export const LightsContainer = styled.div`
   }
 
   @media ${devices.mobile_M} {
-    width: 165vw;
-    height: 165vw;
+    width: 170vw;
+    height: 170vw;
     left: 50%;
     top: -28rem;
     transform: translate3d(-50%, 0, 0);

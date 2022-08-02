@@ -1,17 +1,27 @@
-import BankitApp from "../assets/img/bankit-app.webp";
-import BankitWeb from "../assets/img/bankit-website.webp";
-import BatNewsLetter from "../assets/img/bat-newletter-api.webp";
-import CountryStates from "../assets/img/country-states.webp";
-import DiceGame from "../assets/img/dice-game.webp";
-import DrumKit from "../assets/img/drumkit.webp";
-import ExpenseTracker from "../assets/img/expense-tracker-react.webp";
-import Freelance from "../assets/img/freelance.webp";
-import GuessNumber from "../assets/img/guess-the-number-name.webp";
-import Kardio from "../assets/img/kardio-dev-app.webp";
-import SanitizingEg from "../assets/img/sanitizingeg.webp";
-import SimonGame from "../assets/img/simon-game.webp";
-import PigGame from "../assets/img/the-pig-game.webp";
-import TopDoge from "../assets/img/topdoge.webp";
+import BankitApp from "../assets/img/bankit-app.jpg";
+import BankitWeb from "../assets/img/bankit-website.jpg";
+import CountryStates from "../assets/img/country-states.jpg";
+import SimonGame from "../assets/img/simon-game.jpg";
+import GuessNumber from "../assets/img/guess-the-number-name.jpg";
+import KardioDev from "../assets/img/kardio-dev-app.jpg";
+import PigGame from "../assets/img/the-pig-game.jpg";
+import Tours from "../assets/img/tours.jpg";
+import FenkoHotel from "../assets/img/fenko-hotel.jpg";
+import NexterHomes from "../assets/img/nexter-homes.jpg";
+import Freelance from "../assets/img/freelance.jpg";
+import DiceGame from "../assets/img/dice-game.jpg";
+import SanitizingEg from "../assets/img/sanitizingeg.jpg";
+
+// -------------------------------------------------------------------
+// REMEMBER -> still need to add React apps
+// -------------------------------------------------------------------
+
+import NlmDreamAnatomy from "../assets/img/nlm-dream-anatomy.jpg";
+import NlmDreamAnatomy_Prototype from "../assets/img/nlm-dream-anatomy-protoype.jpg";
+import Aahrpp from "../assets/img/aahrpp.jpg";
+import Nceed from "../assets/img/nceed-eating-disorder.jpg";
+import NapeoAnnualConference from "../assets/img/napeo-annual-conference.jpg";
+import Clc from "../assets/img/clc-trade-center.jpg";
 
 // NOTE: 'images' property can have nested 'overview, development, prototyping & challenges' properties just like 'details' property. And will show that image before its corresponding text.
 // If any if the nested potteries inside 'details' property have empty stings, then they will not be rendered.

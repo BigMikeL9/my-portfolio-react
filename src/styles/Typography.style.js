@@ -72,7 +72,7 @@ export const H4 = styled.h4`
   }
 
   @media ${devices.mobile_M} {
-    font-size: 14px;
+    font-size: 16px;
   }
 `;
 

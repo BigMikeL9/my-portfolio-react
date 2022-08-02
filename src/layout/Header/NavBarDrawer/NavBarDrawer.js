@@ -21,34 +21,45 @@ const NavBarDrawer = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // -------------------
+  // --- Redux Store
   const navStore = useSelector((state) => state.nav);
   const { isOpen } = navStore;
+
+  // -------------------
+  const isHomePage = location.pathname === "/";
+
+  // -------------------
 
   const closeMenuHandler = () => {
     dispatch(navActions.closeMenu());
     disableScroll.off();
   };
 
+  // -------------------
   const navLinkHandler = (event) => {
     dispatch(navActions.closeMenu());
     disableScroll.off();
 
-    // -- If current page doesn't have element with navLink hash, go to Homepage --> then scroll to element with hash
-    if (location.pathname !== "/") {
+    // -- If current page is NOT homepage,
+    if (!isHomePage) {
+      // -- Go to Homepage
       navigate("/", { replace: true });
 
-      setTimeout(() => {
+      const runLater = setTimeout(() => {
+        // -- Then scroll to element with hash
         const scrollToSection = document.getElementById(
           `${event.target.dataset.hash}`
         );
 
-        scrollToSection.scrollIntoView({ behavior: "smooth" });
+        scrollToSection.scrollIntoView({ behavior: "instant" });
 
         // console.log(scrollToSection);
       }, 1200);
     }
   };
 
+  // -------------------
   return (
     <>
       <NavDrawer isOpen={isOpen}>
@@ -58,25 +69,14 @@ const NavBarDrawer = () => {
             {navData.map((data) => (
               <NavItem key={data.to} isOpen={isOpen}>
                 <NavLinkS
-                  // smooth
-                  // scroll={(el) =>
-                  //   setTimeout(
-                  //     () => el.scrollIntoView({ behavior: "smooth" }),
-                  //     location.pathname.includes("works-detail") ? 500 : 0
-                  //   )
-                  // }
-                  // to={data.to}
-                  // onClick={closeMenuHandler}
-                  // className={`/${location.hash}` === data.to ? "active" : ""}
-
                   to={data.to}
                   data-hash={data.to}
                   onClick={navLinkHandler}
-                  spy={true}
                   smooth={true}
-                  hashSpy={true}
+                  duration={500}
+                  // spy={isHomePage ? true : false}
+                  // hashSpy={isHomePage ? true : false}
                   // offset={50}
-                  duration={0}
                   // delay={1000}
                   // isDynamic={true}
                   // onSetActive={this.handleSetActive}

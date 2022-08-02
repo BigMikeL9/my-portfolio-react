@@ -43,7 +43,11 @@ export const DetailImageContainer = styled.div`
   padding: 7rem 0;
 
   @media ${devices.tablet} {
-    padding: 7rem;
+    padding: 5rem;
+  }
+
+  @media ${devices.mobile_L} {
+    padding: 3rem;
   }
 `;
 
@@ -125,6 +129,6 @@ export const DetailTitle = styled.h2`
 `;
 
 export const DetailText = styled.p`
-  font-size: max(12px, 1.6rem);
+  font-size: max(14px, 1.6rem);
   flex: 1;
 `;

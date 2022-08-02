@@ -68,7 +68,7 @@ export const GlobalStyles = createGlobalStyle`
       text-size-adjust: 100%;
       box-sizing: border-box;
       overflow-x: hidden;
-      scroll-behavior: smooth;
+      ${"" /* scroll-behavior: smooth; */}
       
       background-image: ${({ theme }) => theme.backgrounds.body};
 
@@ -106,7 +106,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
       font-family: "futura_reg", "Helvetica Neue", "Helvetica", "Arial", "Avenir",
         "Hiragino Sans", sans-serif;
-      font-size: 1.6rem;
+      font-size: max(12px, 1.6rem);
       text-size-adjust: 100%;
       overflow-x: hidden;
       font-weight: 400;

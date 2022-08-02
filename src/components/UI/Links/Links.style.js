@@ -19,7 +19,7 @@ export const AnchorTagS = styled.a`
   margin-bottom: ${({ mb }) => (mb ? mb : "")};
 
   @media ${devices.mobile_L} {
-    padding: 9px 18px;
+    padding: 10px 18px;
   }
 
   &:hover,
@@ -46,7 +46,7 @@ export const VisitLinkR = styled(Link)`
   margin-bottom: ${({ mb }) => (mb ? mb : "")};
 
   @media ${devices.mobile_L} {
-    padding: 9px 18px;
+    padding: 10px 18px;
   }
 
   &:hover,
