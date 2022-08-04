@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 import devices from "../../../../styles/Devices";
 
@@ -13,9 +13,13 @@ export const WorksItemS = styled.li`
 
   .my-atropos {
     flex: 0 1 60%;
-    box-shadow: 0 0 4rem rgb(255 255 255 / 50%);
+
+    box-shadow: ${({ inView }) =>
+      inView ? "0 0 4rem rgb(255 255 255 / 50%)" : ""};
+    filter: ${({ inView }) => (inView ? "" : "blur(10px)")};
     background-color: rgb(255 255 255 / 50%);
     border-radius: 8px;
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 `;
 

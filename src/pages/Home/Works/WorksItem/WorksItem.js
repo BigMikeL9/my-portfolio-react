@@ -1,5 +1,6 @@
 import React from "react";
 import Atropos from "atropos/react";
+import { useInView } from "react-intersection-observer";
 
 import {
   WorksItemS,
@@ -23,11 +24,15 @@ const RandomlinkTextArr = [
 ];
 
 const WorksItem = (props) => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.8,
+  });
+
   // const RandomButtonText =
   //   RandomlinkTextArr[Math.floor(Math.random() * RandomlinkTextArr.length + 1)];
 
   return (
-    <WorksItemS id={props.id}>
+    <WorksItemS id={props.id} ref={ref} inView={inView}>
       <Atropos className="my-atropos" rotateXMax={3} rotateYMax={3}>
         <WorksImageContainer>
           <a

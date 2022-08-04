@@ -2,10 +2,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux/es/exports";
 import disableScroll from "disable-scroll";
 
+import { navActions } from "../../../store/navSlice";
+
 import { navBarData as navData } from "../../../data/navBarData";
 import SocialIcons from "../../../components/SocialIcons/SocialIcons";
-
-import { navActions } from "../../../store/navSlice";
 
 import {
   Backdrop,
@@ -46,7 +46,8 @@ const NavBarDrawer = () => {
       // -- Go to Homepage
       navigate("/", { replace: true });
 
-      const runLater = setTimeout(() => {
+      // ⭐⭐⭐ NOTE: 'NavBarDrawer' button never unmounts, so we dont need to 'clearTimeout()'
+      const delayTransition = setTimeout(() => {
         // -- Then scroll to element with hash
         const scrollToSection = document.getElementById(
           `${event.target.dataset.hash}`
