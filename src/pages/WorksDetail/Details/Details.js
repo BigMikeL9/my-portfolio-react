@@ -12,6 +12,8 @@ import {
 } from "./Details.style";
 
 const Details = (props) => {
+  console.log(props);
+
   return (
     <DetailGrid>
       {props.workDetails.map((detail, detail_Index) => {
@@ -21,7 +23,7 @@ const Details = (props) => {
               <DetailImageContainer>
                 <DetailImage
                   src={detail.image}
-                  alt={`${detail.title} of ${detail.id}`}
+                  alt={`${detail.title} image of ${detail.id}`}
                 />
               </DetailImageContainer>
             )}

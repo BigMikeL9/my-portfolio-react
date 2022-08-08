@@ -50,10 +50,12 @@ const WorkDetail = (props) => {
     (currentWork) => currentWork.id === params.workId
   );
 
+  console.log(currentWork);
+
   const workDetails = Object.entries(currentWork.details).map((detail) => {
     return {
       id: currentWork.title,
-      title: detail[0],
+      title: `${detail[0].slice(0, 1).toUpperCase()}${detail[0].slice(1)}`,
       content: detail[1],
       image: currentWork.images[detail[0]],
     };

@@ -59,9 +59,13 @@ export const DetailImage = styled.img`
 export const DetailContainer = styled.div`
   grid-column: centered-content-start / centered-content-end;
   background-color: #fff;
-  margin: 4rem 0;
+  margin: 8rem 0;
   display: flex;
   align-items: center;
+
+  @media ${devices.laptop} {
+    margin: 6rem 0;
+  }
 
   @media ${devices.tablet} {
     position: relative;
@@ -116,7 +120,7 @@ export const DetailTitle = styled.h2`
   font-family: "futura_medium";
   text-transform: uppercase;
 
-  flex: 0 1 50%;
+  flex: 0 1 45%;
 
   @media ${devices.tablet} {
     padding-top: 0.5rem;

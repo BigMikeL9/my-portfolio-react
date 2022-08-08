@@ -6,7 +6,7 @@ export const InfoContainer = styled.div`
   max-width: 1200px;
   width: 100%;
   margin: auto;
-  padding: 0 8.5% 0;
+  padding: 0 6% 0;
 `;
 
 export const InfoList = styled.ul`
