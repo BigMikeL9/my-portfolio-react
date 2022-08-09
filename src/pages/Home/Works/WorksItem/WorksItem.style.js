@@ -11,6 +11,10 @@ export const WorksItemS = styled.li`
     flex-direction: column;
   }
 
+  /* @media (orientation: landscape) {
+    max-width: 85%;
+  } */
+
   .my-atropos {
     flex: 0 1 60%;
 
@@ -75,6 +79,14 @@ export const WorksDescription = styled.div`
 
 export const WorksStack = styled.p`
   font-family: "futura_medium";
-  font-size: max(12px, 1.8rem);
+  font-size: max(12px, 1.6rem);
   letter-spacing: 0.1em;
+
+  @media ${devices.mobile_L} {
+    font-size: max(12px, 1.4rem);
+  }
+
+  @media ${devices.mobile_M} {
+    font-size: 11px;
+  }
 `;

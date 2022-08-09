@@ -12,8 +12,6 @@ import {
 } from "./Details.style";
 
 const Details = (props) => {
-  console.log(props);
-
   return (
     <DetailGrid>
       {props.workDetails.map((detail, detail_Index) => {

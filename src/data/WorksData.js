@@ -8,12 +8,18 @@ import Tours from "../assets/img/tours.jpg";
 import FenkoHotel from "../assets/img/fenko-hotel.jpg";
 import NexterHomes from "../assets/img/nexter-homes.jpg";
 import Freelance from "../assets/img/freelance.jpg";
+import Fresco from "../assets/img/fresco.jpg";
 import SimonGame from "../assets/img/simon-game.jpg";
 import DiceGame from "../assets/img/dice-game.jpg";
 import SanitizingEg from "../assets/img/sanitizingeg.jpg";
 
 // -------------------------------------------------------------------
-// REMEMBER -> still need to add React apps
+/* REMEMBER -> still need to add React apps 
+
+    - Food order app 
+    - expense tracker
+    
+*/
 // -------------------------------------------------------------------
 
 import NlmDreamAnatomy from "../assets/img/nlm-dream-anatomy.jpg";
@@ -53,6 +59,55 @@ const worksData = [
       challenges: `Navigation between sections and assets in different sections was definitely one of the challenges I faced during development, either it be through thumbnails in the gallery section (last section of the exhibition) or through unique URL parameters. Scrolling to a section and then triggering an event to swiper to scroll to the target asset in that section was my go to solution to tackle this challenge. Exhibition loading speed was also definitely a concern since the website had a lot of content. Lazy-loading images as well as dynamically generating assets and thumbnails asynchronously, was the best solution in my opinion to improve the page loading speed. Another challenge and to which Alex (Astiata's Backend Developer) helped me tackle, was the logic to dynamically position the scrollbar bullets in relation to the position of their corresponding sub-sections' positions, in each section.`,
     },
     url: "https://www.nlm.nih.gov/exhibition/dream-anatomy/astriata-exhibition.html",
+  },
+
+  {
+    id: "fresco",
+    type: "web-application",
+    images: {
+      overview: Fresco,
+      development: null,
+      prototyping: null,
+      challenges: null,
+    },
+    altText: "An image of the Fresco Web-Application. A food ordering app.",
+    title: "Fresco",
+    role: "Development",
+    stack: "HTML / CSS / JavaScript / ReactJS",
+    overview: "................",
+    details: {
+      overview: ` ................................`,
+      development: null,
+      prototyping: null,
+      challenges: null,
+    },
+    url: `http://fresco.mikelkamel.com/`,
+    github: `https://github.com/BigMikeL9/react-food-order-app`,
+  },
+
+  {
+    id: "expensio",
+    type: "web-application",
+    images: {
+      overview: Fresco,
+      development: null,
+      prototyping: null,
+      challenges: null,
+    },
+    altText:
+      "An image of the Expensio Web-Application. An expense tracker app.",
+    title: "Expensio",
+    role: "Development",
+    stack: "HTML / CSS / JavaScript / ReactJS",
+    overview: "................",
+    details: {
+      overview: ` ................................`,
+      development: null,
+      prototyping: null,
+      challenges: null,
+    },
+    url: `http://expensio.mikelkamel.com/`,
+    github: `https://github.com/BigMikeL9/react-expense-tracker-app/tree/main/react-expense-tracker`,
   },
 
   {
@@ -245,7 +300,7 @@ const worksData = [
     },
     altText:
       "An image of Tours Website. A website that advertises a Touring Agency.",
-    title: "Fenko",
+    title: "Tours",
     role: "Development",
     stack: "HTML / CSS",
     overview: "A website that advertises a Touring Agency",
@@ -298,7 +353,7 @@ const worksData = [
       "An image of Freelance Website. A Fully Responsive Website that advertises different services being offered by the great Mikel Kamel.",
     title: "Freelance",
     role: "Development",
-    stack: "HTML / CSS / JavaScript",
+    stack: "HTML / CSS ",
     overview: "Freelancing website created by the great Mikel Kamel.",
     details: {
       overview: `One of my first ever Websites. It was created specifically for freelancing which advertises the different services is used to offer back in the day.

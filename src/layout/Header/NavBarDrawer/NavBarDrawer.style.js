@@ -69,6 +69,10 @@ export const NavList = styled.ul`
 
   & > *:not(:first-child) {
     padding-top: 6rem;
+
+    /* @media (orientation: landscape) {
+      padding-top: 3rem;
+    } */
   }
 
   & > *:last-child {
@@ -117,6 +121,10 @@ export const NavLinkS = styled(Link)`
     font-size: 5rem;
     text-shadow: 0 3px 20px rgb(2 11 22 / 20%);
   }
+
+  /* @media (orientation: landscape) {
+    font-size: 3rem;
+  } */
 
   &:after {
     content: "";

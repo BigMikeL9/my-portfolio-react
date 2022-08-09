@@ -133,6 +133,6 @@ export const DetailTitle = styled.h2`
 `;
 
 export const DetailText = styled.p`
-  font-size: max(14px, 1.6rem);
+  font-size: max(14px, 1.7rem);
   flex: 1;
 `;

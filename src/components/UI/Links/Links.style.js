@@ -32,12 +32,12 @@ export const AnchorTagS = styled.a`
 // -- React Router styled link
 export const VisitLinkR = styled(Link)`
   display: inline-block;
-  font-size: 1.8rem;
+  font-size: max(11px, 1.6rem);
   color: ${({ theme }) => theme.colors.primary};
   background: ${({ theme }) => theme.colors.secondary};
   line-height: 1;
   font-weight: bold;
-  padding: 1.2rem 2.6rem;
+  padding: 1.2rem 2.4rem;
   border-radius: 50px;
   transition: 0.3s;
   letter-spacing: 0.1em;
@@ -46,7 +46,8 @@ export const VisitLinkR = styled(Link)`
   margin-bottom: ${({ mb }) => (mb ? mb : "")};
 
   @media ${devices.mobile_L} {
-    padding: 10px 18px;
+    padding: 8px 12px;
+    font-size: 10px;
   }
 
   &:hover,

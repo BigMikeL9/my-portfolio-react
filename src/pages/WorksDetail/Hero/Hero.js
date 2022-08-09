@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { H4 } from "../../../styles/Typography.style";
@@ -9,11 +9,18 @@ import {
   HeroSectionInner,
   HeroTitleContainer,
   HeroTitle,
+  ButtonsContainer,
+  GithubIcon,
 } from "./Hero.style";
+import { FiGithub } from "react-icons/fi";
 
 const Hero = (props) => {
+  const githubIconRef = useRef();
+
+  const { title, type, url, github } = props.currentWork;
+
   // --------------------------------------------------
-  /* -- Pass 'inView' value to Navbar thought props drilling, inorder to change color when 'WorkDetail' page's Hero section is NOT in view. 
+  /* -- Pass 'inView' value to Navbar throught props drilling, inorder to change color when 'WorkDetail' page's Hero section is NOT in view. 
 
    -- Lifting state up to 'App.js' --> then passing it down to 'Header.js'  -->  then to 'NavBar.js'
   */
@@ -29,17 +36,34 @@ const Hero = (props) => {
   }, [inView, onDetailPageHeroExitView]);
   // -----------------------------------------------------------
 
+  const iconClickHandler = () => {
+    githubIconRef.current.blur();
+  };
+
   return (
     <HeroSection ref={ref}>
       <HeroSectionInner>
         <HeroTitleContainer>
-          <HeroTitle>{props.currentWork.title}</HeroTitle>
+          <HeroTitle>{title}</HeroTitle>
           <Divider mb={"2rem"} />
-          <H4>{props.currentWork.type}</H4>
+          <H4>{type}</H4>
 
-          <AnchorTagS href={props.currentWork.url} target="_blank" mt={"4rem"}>
-            Visit Site
-          </AnchorTagS>
+          <ButtonsContainer>
+            <AnchorTagS href={url} target="_blank">
+              Visit Site
+            </AnchorTagS>
+
+            {github && (
+              <GithubIcon
+                href={github}
+                target="_blank"
+                ref={githubIconRef}
+                onClick={iconClickHandler}
+              >
+                <FiGithub />
+              </GithubIcon>
+            )}
+          </ButtonsContainer>
         </HeroTitleContainer>
 
         {/* <HeroImageContainer>

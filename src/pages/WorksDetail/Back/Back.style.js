@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 
+import devices from "../../../styles/Devices";
+
 import Button from "../../../components/UI/Button/Button";
 
 export const BackButtonContainer = styled.div`
@@ -10,6 +12,10 @@ export const BackButtonContainer = styled.div`
   width: 100%;
 
   padding: 20rem 0;
+
+  @media ${devices.mobile_L} {
+    padding: 12rem 0;
+  }
 `;
 
 export const BackButtonS = styled(Button)`

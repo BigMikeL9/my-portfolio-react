@@ -57,6 +57,10 @@ export const HeroTitleContainer = styled.div`
     margin-top: unset;
     bottom: 10rem;
   }
+
+  @media (orientation: landscape) {
+    margin-top: 5rem;
+  }
 `;
 
 export const HeroImageContainer = styled.div`

@@ -30,14 +30,14 @@ export const Icon = styled.a`
   margin-top: ${({ mt }) => (mt ? mt : "")};
   top: ${({ top }) => (top ? top : "")};
 
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.primary_Hover};
-  }
-
   @media ${devices.tablet} {
     font-size: 3.5rem;
     text-align: center;
+  }
+
+  &:hover,
+  &:focus {
+    color: ${({ theme }) => theme.colors.primary_Hover};
   }
 `;
 

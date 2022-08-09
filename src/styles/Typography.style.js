@@ -44,7 +44,7 @@ export const H2 = styled.h2`
 // -- Works Item Title
 export const H3 = styled.h3`
   font-family: "futura_medium";
-  font-size: 5rem;
+  font-size: 3.6rem;
   letter-spacing: 0.2em;
 
   margin: ${({ margin }) => (margin ? margin : "")};
@@ -52,6 +52,14 @@ export const H3 = styled.h3`
   margin-top: ${({ mt }) => (mt ? mt : "")};
   color: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.secondary};
+
+  @media ${devices.laptop_L} {
+    font-size: 3rem;
+  }
+
+  @media ${devices.mobile_M} {
+    font-size: 2.5rem;
+  }
 `;
 
 // -- Lead text

@@ -50,8 +50,6 @@ const WorkDetail = (props) => {
     (currentWork) => currentWork.id === params.workId
   );
 
-  console.log(currentWork);
-
   const workDetails = Object.entries(currentWork.details).map((detail) => {
     return {
       id: currentWork.title,

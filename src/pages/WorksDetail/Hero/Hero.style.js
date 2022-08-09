@@ -14,6 +14,11 @@ export const HeroSection = styled(Section)`
   @media ${devices.tablet} {
     /* height: 70vh; */
   }
+
+  /* @media  (orientation: landscape) {
+    height: 90vh;
+    padding-top: 5rem;
+  } */
 `;
 
 export const HeroSectionInner = styled(SectionInner)`
@@ -34,7 +39,12 @@ export const HeroTitle = styled.h1`
   text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
 
   @media ${devices.laptop} {
-    font-size: 8rem;
+    font-size: 6.5rem;
+  }
+
+  @media ${devices.mobile_L} {
+    font-size: 5rem;
+    line-height: 1.2;
   }
 `;
 
@@ -48,3 +58,36 @@ export const HeroImageContainer = styled.div`
 `;
 
 export const HeroImage = styled.img``;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 4rem;
+`;
+
+export const GithubIcon = styled.a`
+  font-size: 3rem;
+  display: inline;
+  transition: all 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  color: ${({ theme }) => theme.colors.primary};
+
+  margin: ${({ margin }) => (margin ? margin : "")};
+  margin-bottom: ${({ mb }) => (mb ? mb : "")};
+  margin-top: ${({ mt }) => (mt ? mt : "")};
+  top: ${({ top }) => (top ? top : "")};
+
+  &:hover,
+  &:focus {
+    color: ${({ theme }) => theme.colors.primary_Hover};
+  }
+
+  @media ${devices.tablet} {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+`;

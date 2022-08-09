@@ -57,13 +57,13 @@ const bongoCat_Animation = () => {
     .add(animatePawState(cat.pawRight.up), "start+=0.19")
     .timeScale(1.6);
 
-  gsap.from(".terminal-code line", {
-    drawSVG: "0%",
-    duration: 0.1,
-    stagger: 0.1,
-    ease: "none",
-    repeat: -1,
-  });
+  // gsap.from(".terminal-code line", {
+  //   drawSVG: "0%",
+  //   duration: 0.1,
+  //   stagger: 0.1,
+  //   ease: "none",
+  //   repeat: -1,
+  // });
 
   // typing for pipe function doesn't seem to be working for usage when partially applied?
   const noteElFn = gsap.utils.pipe(gsap.utils.toArray, gsap.utils.shuffle);
