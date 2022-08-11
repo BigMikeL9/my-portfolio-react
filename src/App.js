@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     // -- Check if detail page is mounted
-    setDetailPageMounted(pathname.includes("works-detail"));
+    setDetailPageMounted(pathname.includes("works"));
   }, [detailPageMounted, pathname]);
 
   // -- Get 'InView' state of 'Hero section' in 'WorkDetail' page inorder to pass it down to 'NavBar.js' through 'Header.js'
@@ -70,7 +70,7 @@ function App() {
               />
 
               <Route
-                path="/works-detail/:workId"
+                path="/works/:workId"
                 element={
                   <WorkDetail
                     onDetailPageHeroExitView={detailPageHeroExitViewHandler}

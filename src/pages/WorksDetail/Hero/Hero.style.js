@@ -11,13 +11,14 @@ export const HeroSection = styled(Section)`
   color: #fff;
   background-color: ${({ theme }) => theme.backgrounds.detailPage_Hero};
 
-  @media ${devices.mobile_L} {
-    height: 55vh;
-  }
-
   @media ${devices.laptop} and (max-height: 420px) and (orientation: landscape) {
     height: 90vh;
     padding-top: 6rem;
+  }
+
+  // 280px
+  @media only screen and (max-width: 17.5em) {
+    padding-top: 8rem;
   }
 `;
 
@@ -49,6 +50,11 @@ export const HeroTitle = styled.h1`
   @media ${devices.mobile_L} {
     font-size: 5rem;
     line-height: 1.2;
+  }
+
+  // max-width: 1510px. min-width: 900px. max-height: 900px. min-height: 667px.
+  @media only screen and (max-width: 94.375em) and (min-width: 56.25em) and (max-height: 46.875em) and (min-height: 41.69em) {
+    font-size: 6rem;
   }
 
   @media ${devices.laptop} and (max-height: 420px) and (orientation: landscape) {

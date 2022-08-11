@@ -106,7 +106,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
       font-family: "futura_reg", "Helvetica Neue", "Helvetica", "Arial", "Avenir",
         "Hiragino Sans", sans-serif;
-      font-size: max(12px, 1.6rem);
+      font-size: max(13px, 1.6rem);
       text-size-adjust: 100%;
       overflow-x: hidden;
       font-weight: 400;

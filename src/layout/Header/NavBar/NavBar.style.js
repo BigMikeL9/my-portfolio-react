@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import { Link as LinkR } from "react-router-dom";
+import BackButton from "../../../components/BackButton/BackButton";
 
 import Button from "../../../components/UI/Button/Button";
 
@@ -40,6 +41,45 @@ export const NavLogo = styled(LinkR)`
   &:hover,
   &:focus {
     color: ${({ theme }) => theme.colors.primary_Hover};
+  }
+`;
+
+export const BackButtonS = styled(BackButton)`
+  position: fixed;
+  top: 12rem;
+  left: 4rem;
+  display: block;
+  width: 6.4rem;
+  overflow: hidden;
+  color: #fff;
+  z-index: 300;
+  transition: all 0.3s;
+
+  @media ${devices.mobile_L} {
+    top: 10rem;
+    width: 5rem;
+  }
+
+  // 280px
+  @media only screen and (max-width: 17.5em) {
+    top: 9rem;
+  }
+
+  @media ${devices.laptop} and (max-height: 420px) and (orientation: landscape) {
+    top: 7rem;
+    width: 4rem;
+  }
+
+  /* transition-delay: ${({ isHomepage, detailPageMounted }) =>
+    isHomepage ? "0s" : "0.5s"}; */
+  opacity: ${({ detailPageMounted }) =>
+    detailPageMounted && detailPageMounted ? "1" : "0"};
+  visibility: ${({ detailPageMounted }) =>
+    detailPageMounted && detailPageMounted ? "visible" : "hidden"};
+
+  &:hover,
+  &:focus {
+    transform: translate3d(-15%, 0, 0);
   }
 `;
 

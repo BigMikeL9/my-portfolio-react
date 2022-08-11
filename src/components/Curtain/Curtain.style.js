@@ -95,7 +95,7 @@ export const CurtainS = styled.div`
     props.page &&
     css`
       animation: ${slideLeftRight} 2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-      z-index: 999;
+      z-index: 9999;
     `}
 `;
 
