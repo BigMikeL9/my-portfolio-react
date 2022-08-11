@@ -86,7 +86,7 @@ const worksData = [
   },
 
   {
-    id: "expensio",
+    id: "wallee",
     type: "web-application",
     images: {
       overview: Fresco,
@@ -96,7 +96,7 @@ const worksData = [
     },
     altText:
       "An image of the Expensio Web-Application. An expense tracker app.",
-    title: "Expensio",
+    title: "Wallee",
     role: "Development",
     stack: "HTML / CSS / JavaScript / ReactJS",
     overview: "................",
@@ -106,7 +106,7 @@ const worksData = [
       prototyping: null,
       challenges: null,
     },
-    url: `http://expensio.mikelkamel.com/`,
+    url: `http://wallee.mikelkamel.com/`,
     github: `https://github.com/BigMikeL9/react-expense-tracker-app/tree/main/react-expense-tracker`,
   },
 

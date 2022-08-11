@@ -11,14 +11,14 @@ export const HeroSection = styled(Section)`
   color: #fff;
   background-color: ${({ theme }) => theme.backgrounds.detailPage_Hero};
 
-  @media ${devices.tablet} {
-    /* height: 70vh; */
+  @media ${devices.mobile_L} {
+    height: 55vh;
   }
 
-  /* @media  (orientation: landscape) {
+  @media ${devices.laptop} and (max-height: 420px) and (orientation: landscape) {
     height: 90vh;
-    padding-top: 5rem;
-  } */
+    padding-top: 6rem;
+  }
 `;
 
 export const HeroSectionInner = styled(SectionInner)`
@@ -30,13 +30,17 @@ export const HeroSectionInner = styled(SectionInner)`
 export const HeroTitleContainer = styled.div``;
 
 export const HeroTitle = styled.h1`
-  font-size: 12rem;
+  font-size: 10rem;
   line-height: 1;
   letter-spacing: 0.1em;
   margin-bottom: 1.6rem;
   font-family: "futura_medium";
   font-weight: normal;
   text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
+
+  @media ${devices.laptop_L} {
+    font-size: 8rem;
+  }
 
   @media ${devices.laptop} {
     font-size: 6.5rem;
@@ -45,6 +49,10 @@ export const HeroTitle = styled.h1`
   @media ${devices.mobile_L} {
     font-size: 5rem;
     line-height: 1.2;
+  }
+
+  @media ${devices.laptop} and (max-height: 420px) and (orientation: landscape) {
+    font-size: 4rem;
   }
 `;
 
@@ -64,6 +72,10 @@ export const ButtonsContainer = styled.div`
   align-items: center;
   gap: 3rem;
   margin-top: 4rem;
+
+  @media ${devices.laptop} and (max-height: 420px) and (orientation: landscape) {
+    margin-top: 2rem;
+  }
 `;
 
 export const GithubIcon = styled.a`

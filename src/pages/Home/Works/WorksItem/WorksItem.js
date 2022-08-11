@@ -52,7 +52,7 @@ const WorksItem = (props) => {
 
         <WorksStack>{props.stack}</WorksStack>
 
-        <VisitLinkR to={`/works-detail/${props.id}`} mt={"1rem"}>
+        <VisitLinkR to={`/works-detail/${props.id}`} mt={"2rem"}>
           Show Me More
         </VisitLinkR>
       </WorksDescription>

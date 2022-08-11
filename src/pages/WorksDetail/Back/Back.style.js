@@ -2,10 +2,12 @@ import styled from "styled-components/macro";
 
 import devices from "../../../styles/Devices";
 
-import Button from "../../../components/UI/Button/Button";
+// import Button from "../../../components/UI/Button/Button";
+import { Link as LinkR } from "react-router-dom";
 
 export const BackButtonContainer = styled.div`
   background-color: #fff;
+  color: #020b16;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +20,7 @@ export const BackButtonContainer = styled.div`
   }
 `;
 
-export const BackButtonS = styled(Button)`
+export const BackButtonS = styled(LinkR)`
   display: inline-block;
   font-size: 3.2rem;
   color: #020b16;

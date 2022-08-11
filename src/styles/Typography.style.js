@@ -58,7 +58,7 @@ export const H3 = styled.h3`
   }
 
   @media ${devices.mobile_M} {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 `;
 

@@ -58,6 +58,7 @@ const WorkDetail = (props) => {
       image: currentWork.images[detail[0]],
     };
   });
+
   // --------------------------------------------------------------
 
   return (
@@ -89,7 +90,7 @@ const WorkDetail = (props) => {
 
         <Content currentWork={currentWork} workDetails={workDetails} />
 
-        <Back />
+        <Back currentWorkId={currentWork.id} />
       </motion.div>
     </>
   );

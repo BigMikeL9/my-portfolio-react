@@ -5,15 +5,15 @@ import devices from "../../../../styles/Devices";
 export const WorksItemS = styled.li`
   display: flex;
   justify-content: center;
-  gap: 5rem 8rem;
+  gap: 4rem 8rem;
 
   @media ${devices.tablet} {
     flex-direction: column;
   }
 
-  /* @media (orientation: landscape) {
-    max-width: 85%;
-  } */
+  @media ${devices.laptop} and (max-height: 420px) and (orientation: landscape) {
+    max-width: 75%;
+  }
 
   .my-atropos {
     flex: 0 1 60%;
@@ -24,6 +24,11 @@ export const WorksItemS = styled.li`
     background-color: rgb(255 255 255 / 50%);
     border-radius: 8px;
     transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    @media ${devices.laptop} and (orientation: landscape) {
+      box-shadow: 0 0 4rem rgb(255 255 255 / 50%);
+      filter: unset;
+    }
   }
 `;
 
@@ -87,6 +92,6 @@ export const WorksStack = styled.p`
   }
 
   @media ${devices.mobile_M} {
-    font-size: 11px;
+    font-size: 10px;
   }
 `;

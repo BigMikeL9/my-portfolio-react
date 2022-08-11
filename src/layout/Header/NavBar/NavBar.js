@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux/es/exports";
 import disableScroll from "disable-scroll";
 
@@ -9,15 +10,14 @@ import { navActions } from "../../../store/navSlice";
 
 const NavBar = (props) => {
   const dispatch = useDispatch();
+  const navLogoRef = useRef();
 
   // -- Redux store
   const navStore = useSelector((state) => state.nav);
   const { isOpen } = navStore;
 
-  // console.log("Nav Menu is Open: ", isOpen);
-
-  const navLogoHandler = (event) => {
-    event.target.blur();
+  const navLogoHandler = () => {
+    navLogoRef.current.blur();
   };
 
   const menuIconHandler = (event) => {
@@ -34,7 +34,7 @@ const NavBar = (props) => {
         isOpen={isOpen}
       >
         <Nav>
-          <NavLogo to="/" onClick={navLogoHandler}>
+          <NavLogo to="/" onClick={navLogoHandler} ref={navLogoRef}>
             Mikel Kamel
           </NavLogo>
 

@@ -1,19 +1,35 @@
-import React from "react";
-
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 
 import { BackButtonContainer, BackButtonS } from "./Back.style";
 
-const Back = () => {
-  const navigate = useNavigate();
+const Back = (props) => {
+  const { currentWorkId } = props;
+
+  let runLater;
+
+  console.log(runLater);
+
+  // TODO: need to take another look at 'clearTimout()' after component is unmounted.
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(runLater);
+    };
+  }, [runLater]);
 
   const backButtonHandler = () => {
-    navigate(-1, { replace: true });
+    runLater = setTimeout(() => {
+      let scrollDiv =
+        document.getElementById(`${currentWorkId}`).offsetTop - 100;
+      window.scrollTo({ top: scrollDiv, behavior: "instant" });
+    }, 1200);
   };
 
   return (
     <BackButtonContainer>
-      <BackButtonS onClick={backButtonHandler}>Back</BackButtonS>
+      <BackButtonS to="/" onClick={backButtonHandler}>
+        Back
+      </BackButtonS>
     </BackButtonContainer>
   );
 };
