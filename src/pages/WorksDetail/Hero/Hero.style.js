@@ -52,8 +52,8 @@ export const HeroTitle = styled.h1`
     line-height: 1.2;
   }
 
-  // max-width: 1510px. min-width: 900px. max-height: 900px. min-height: 667px.
-  @media only screen and (max-width: 94.375em) and (min-width: 56.25em) and (max-height: 46.875em) and (min-height: 41.69em) {
+  // max-width: 1550px. min-width: 900px. max-height: 900px. min-height: 667px.
+  @media only screen and (max-width: 96.875em) and (min-width: 56.25em) and (max-height: 46.875em) and (min-height: 41.69em) {
     font-size: 6rem;
   }
 

@@ -51,15 +51,69 @@ const worksData = [
     overview:
       "A website I developed for the National Library of Medicine as part of their Exhibition program.",
     details: {
-      overview: `The National Library of Medicine - Exhibition Program was created with the goal of producing online exhibitions that stimulate enthusiasm for history and encourage people to learn about medicine, themselves, and their communities. Since 1996, NLM have presented inspiring stories about people, science and medicine, and history drawn from the renowned collection of the National Library of Medicine.
+      overview: `The National Library of Medicine - Exhibition Program was created with the goal of producing online exhibitions that stimulate enthusiasm for history and encourage people to learn about medicine, themselves, and their communities.
 
       Drawn mainly from the collections of the National Library of Medicine, Dream Anatomy shows off the anatomical imagination of the human body made possible by the printing press, from 1500 to the present.
       `,
-      development: `The Dream Anatomy exhibition was designed by Astriata's design team and developed by myself. The Website features multiple sections with each containing sub-sections that contain assets. The user can horizontally navigate through these assets using the mouse wheel, arrow keys, the tab key or through a custom built scroll bar at the bottom of the exhibition. The scroll bar contains bullets which represents the start of sub-sections in each section. I used Swiper package to horizontally navigate between assets in each section. Built-in Intersection Observer API to trigger multiple functionalities such as section transitions and lazy-loading images in assets. The Exhibition follows best accessibility practices and is compatible with screen readers. It was created using Vanilla JavaScript, HTML, and Sass.`,
+      development: `The Dream Anatomy exhibition was designed by Astriata's design team and developed by myself as Astriata's Front-End Developer. The Website features multiple sections with each containing sub-sections that contain assets. The user can horizontally navigate through these assets using the mouse wheel, arrow keys, the tab key or through a custom built scroll bar at the bottom of the exhibition. The scroll bar contains bullets which represents the start of sub-sections in each section. I used Swiper package to horizontally navigate between assets in each section. Built-in Intersection Observer API to trigger multiple functionalities such as section transitions and lazy-loading images in assets. The Exhibition follows best accessibility practices and is compatible with screen readers. It was created using Vanilla JavaScript, HTML, and Sass.`,
       prototyping: `During the prototyping phase, I tested multiple packages to see which would be most suitable with the project's navigation requirements. One of them was the GSAP package which I used to build the prototype. After building the prototype, I decided that Swiper would be a better choice since its core features revolved around sliders and slider functionalities, like events that gets triggered when a slider is at the start or end, or dynamically generating slides in sections, which was useful since the layout of the exhibition changed on tablet and mobile screens. All of these Swiper features and ease of use made it the better choice. `,
-      challenges: `Navigation between sections and assets in different sections was definitely one of the challenges I faced during development, either it be through thumbnails in the gallery section (last section of the exhibition) or through unique URL parameters. Scrolling to a section and then triggering an event to swiper to scroll to the target asset in that section was my go to solution to tackle this challenge. Exhibition loading speed was also definitely a concern since the website had a lot of content. Lazy-loading images as well as dynamically generating assets and thumbnails asynchronously, was the best solution in my opinion to improve the page loading speed. Another challenge and to which Alex (Astiata's Backend Developer) helped me tackle, was the logic to dynamically position the scrollbar bullets in relation to the position of their corresponding sub-sections' positions, in each section.`,
+      challenges: `Navigation between sections and assets in different sections was definitely one of the challenges I faced during development, either it be through thumbnails in the gallery section (last section of the exhibition) or through unique URL parameters. Scrolling to a section and then triggering an event to swiper to scroll to the target asset in that section, was my go to solution to tackle this challenge. Exhibition loading speed was also definitely a concern since the website had a lot of content. Lazy-loading images as well as dynamically generating assets and thumbnails asynchronously, was the best solution in my opinion to improve the page loading speed. Another challenge and to which Alex (Astriata's Backend Developer) helped me tackle, was the logic to dynamically position the scrollbar bullets in relation to the position of their corresponding sub-sections, in each section.`,
     },
     url: "https://www.nlm.nih.gov/exhibition/dream-anatomy/astriata-exhibition.html",
+  },
+
+  {
+    id: "aahhrpp",
+    type: "website",
+    images: {
+      overview: Aahrpp,
+      development: null,
+      prototyping: null,
+      challenges: null,
+    },
+    altText:
+      "An image of the The Association for the Accreditation of Human Research Protection Programs, Inc website.",
+    title: "AAHRPP",
+    role: "Development",
+    stack: "HTML / CSS / JavaScript",
+    overview:
+      "A website I developed for the Association for the Accreditation of Human Research Protection Programs, Inc.",
+    details: {
+      overview: `The Association for the Accreditation of Human Research Protection Programs, Inc. (AAHRPP) promotes high-quality research through an accreditation process that helps organizations worldwide strengthen their human research protection programs (HRPPs).
+      `,
+      development: `The AAHRPP website was designed by Astriata's design team. Front-End development was done by myself as Astriata's Front-End Developer, and CMS integration using Sitefinity was done by Alex as Astriata's Back-End Developer. The website features over 30 pages with 100+ users a day. As Astriata's development team, me and Alex worked together to produce the best product for the client, while tackling bugs, QA tasks, and new feature requests by the client along the development phase. The website follows best SEO and accessibility practices and is compatible with screen readers.
+      `,
+      prototyping: ``,
+      challenges: ``,
+    },
+    url: "https://aahrpp.org/",
+  },
+
+  {
+    id: "nceed",
+    type: "web-application",
+    images: {
+      overview: Nceed,
+      development: null,
+      prototyping: null,
+      challenges: null,
+    },
+    altText:
+      "An image of the National Center of Excellence for Eating Disorders' web application for Screening, Brief Intervention, and Referral to Treatment for Eating Disorders.",
+    title: "NCEED - SBIRT-ED",
+    role: "Development",
+    stack: "HTML / CSS / JavaScript",
+    overview:
+      "A web-application developed for the National Center of Excellence for Eating Disorders.",
+    details: {
+      overview: `The National Center of Excellence for Eating Disorders is one of the nation’s first center of excellence, dedicated to eating disorders. The SBIRT-ED web-application, which stands for Screening, Brief Intervention, and Referral to Treatment for Eating Disorders, is an easy-to-access tool for primary care providers, which provides real-time risk level results for patients to help them screen for eating disorders.
+      `,
+      development: `The SBIRT-ED web-application was designed by Astriata's design team I was responsible for its Front-End development. The web-application consisted of multiple forms, which depending on the user's input, would take them to a different form until they finish the screening and the result is displayed on the screen. The web-application follows best SEO and accessibility practices and is compatible with screen readers.
+      `,
+      prototyping: ``,
+      challenges: ``,
+    },
+    url: "https://eatingdisorderscreener.org/",
   },
 
   {
