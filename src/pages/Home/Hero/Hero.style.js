@@ -55,7 +55,7 @@ export const HeroTitleContainer = styled.div`
   @media ${devices.mobile_M} {
     align-self: flex-end;
     margin-top: unset;
-    bottom: 10rem;
+    bottom: 13rem;
   }
 
   @media (orientation: landscape) {

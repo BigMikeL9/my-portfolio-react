@@ -25,22 +25,21 @@ const Home = (props) => {
 
   return (
     <>
-      {/* // ! DONT FORGET TO EDIT THIS 👇👇👇👇 */}
       <Helmet prioritizeSeoTags>
         <title>Mikel Kamel</title>
         <meta
           name="description"
-          content="Complete description of the content showed in this sample page."
+          content="Portfolio of Mikel Kamel. A Front-End Web-Developer."
         />
 
-        <meta property="og:title" content="My Sample Page" />
+        <meta property="og:title" content="Mikel Kamel" />
 
         <meta
           property="og:description"
-          content="Complete description of the content showed in this sample page for Open Graph."
+          content="Portfolio of Mikel Kamel. A Front-End Web-Developer."
         />
         <meta property="og:url" content="https://mikelkamel.com/" />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="profile:mikel " />
       </Helmet>
 
       <motion.div

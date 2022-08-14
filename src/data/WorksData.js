@@ -340,7 +340,7 @@ const worksData = [
       prototyping: null,
       challenges: null,
     },
-    url: `http://bankit.mikelkamel.com/`,
+    url: `http://nexter.mikelkamel.com/`,
     github: `https://github.com/BigMikeL9/Nexter`,
   },
 
@@ -366,7 +366,7 @@ const worksData = [
       prototyping: null,
       challenges: null,
     },
-    url: `http://bankit.mikelkamel.com/`,
+    url: `http://tour.mikelkamel.com/`,
     github: `https://github.com/BigMikeL9/tour_website`,
   },
 
@@ -391,7 +391,7 @@ const worksData = [
       prototyping: null,
       challenges: null,
     },
-    url: `http://bankit.mikelkamel.com/`,
+    url: `http://fenko.mikelkamel.com/`,
     github: `https://github.com/BigMikeL9/Fenko`,
   },
 
