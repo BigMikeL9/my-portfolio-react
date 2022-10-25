@@ -15,7 +15,7 @@ import DiceGame from "../assets/img/dice-game.jpg";
 import SanitizingEg from "../assets/img/sanitizingeg.jpg";
 
 // -------------------------------------------------------------------
-/* REMEMBER -> still need to add React apps 
+/* TODO -> still need to add React apps 
 
     - Food order app 
     - expense tracker
