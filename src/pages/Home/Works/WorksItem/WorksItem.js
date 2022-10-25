@@ -1,18 +1,18 @@
-import React from "react";
 import Atropos from "atropos/react";
+import React from "react";
 import { useInView } from "react-intersection-observer";
 
 import {
-  WorksItemS,
-  WorksDescription,
-  WorksImageContainer,
-  WorksImage,
   GlowWrap,
+  WorksDescription,
+  WorksImage,
+  WorksImageContainer,
+  WorksItemS,
   WorksStack,
 } from "../WorksItem/WorksItem.style";
 
-import { H3 } from "../../../../styles/Typography.style";
 import { VisitLinkR } from "../../../../components/UI/Links/Links.style";
+import { H3 } from "../../../../styles/Typography.style";
 
 const RandomlinkTextArr = [
   "Scout",
