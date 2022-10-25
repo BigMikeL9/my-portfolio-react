@@ -59,7 +59,7 @@ const worksData = [
       prototyping: `During the prototyping phase, I tested multiple packages to see which would be most suitable with the project's navigation requirements. One of them was the GSAP package which I used to build the prototype. After building the prototype, I decided that Swiper would be a better choice since its core features revolved around sliders and slider functionalities, like events that gets triggered when a slider is at the start or end, or dynamically generating slides in sections, which was useful since the layout of the exhibition changed on tablet and mobile screens. All of these Swiper features and ease of use made it the better choice. `,
       challenges: `Navigation between sections and assets in different sections was definitely one of the challenges I faced during development, either it be through thumbnails in the gallery section (last section of the exhibition) or through unique URL parameters. Scrolling to a section and then triggering an event to swiper to scroll to the target asset in that section, was my go to solution to tackle this challenge. Exhibition loading speed was also definitely a concern since the website had a lot of content. Lazy-loading images as well as dynamically generating assets and thumbnails asynchronously, was the best solution in my opinion to improve the page loading speed. Another challenge and to which Alex (Astriata's Backend Developer) helped me tackle, was the logic to dynamically position the scrollbar bullets in relation to the position of their corresponding sub-sections, in each section.`,
     },
-    url: "https://www.nlm.nih.gov/exhibition/dream-anatomy/astriata-exhibition.html",
+    url: "https://www.nlm.nih.gov/exhibition/dream-anatomy/index.html",
   },
 
   {
