@@ -15,7 +15,7 @@ import Tours from "../assets/img/tours.jpg";
 import Wallee from "../assets/img/wallee.jpg";
 
 // -------------------------------------------------------------------
-/* REMEMBER -> still need to add React apps 
+/* TODO -> still need to add React apps 
 
     - Food order app 
     - expense tracker
