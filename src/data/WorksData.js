@@ -1,18 +1,18 @@
 import BankitApp from "../assets/img/bankit-app.jpg";
 import BankitWeb from "../assets/img/bankit-website.jpg";
 import CountryStats from "../assets/img/country-states.jpg";
-import GuessNumber from "../assets/img/guess-the-number-name.jpg";
-import KardioDev from "../assets/img/kardio-dev-app.jpg";
-import PigGame from "../assets/img/the-pig-game.jpg";
-import Tours from "../assets/img/tours.jpg";
+import DiceGame from "../assets/img/dice-game.jpg";
 import FenkoHotel from "../assets/img/fenko-hotel.jpg";
-import NexterHomes from "../assets/img/nexter-homes.jpg";
 import Freelance from "../assets/img/freelance.jpg";
 import Fresco from "../assets/img/fresco.jpg";
-import Wallee from "../assets/img/wallee.jpg";
-import SimonGame from "../assets/img/simon-game.jpg";
-import DiceGame from "../assets/img/dice-game.jpg";
+import GuessNumber from "../assets/img/guess-the-number-name.jpg";
+import KardioDev from "../assets/img/kardio-dev-app.jpg";
+import NexterHomes from "../assets/img/nexter-homes.jpg";
 import SanitizingEg from "../assets/img/sanitizingeg.jpg";
+import SimonGame from "../assets/img/simon-game.jpg";
+import PigGame from "../assets/img/the-pig-game.jpg";
+import Tours from "../assets/img/tours.jpg";
+import Wallee from "../assets/img/wallee.jpg";
 
 // -------------------------------------------------------------------
 /* REMEMBER -> still need to add React apps 
@@ -23,12 +23,12 @@ import SanitizingEg from "../assets/img/sanitizingeg.jpg";
 */
 // -------------------------------------------------------------------
 
-import NlmDreamAnatomy from "../assets/img/nlm-dream-anatomy.jpg";
-import NlmDreamAnatomy_Prototype from "../assets/img/nlm-dream-anatomy-protoype.jpg";
 import Aahrpp from "../assets/img/aahrpp.jpg";
-import Nceed from "../assets/img/nceed-eating-disorder.jpg";
-import NapeoAnnualConference from "../assets/img/napeo-annual-conference.jpg";
 import Clc from "../assets/img/clc-trade-center.jpg";
+import NapeoAnnualConference from "../assets/img/napeo-annual-conference.jpg";
+import Nceed from "../assets/img/nceed-eating-disorder.jpg";
+import NlmDreamAnatomy_Prototype from "../assets/img/nlm-dream-anatomy-protoype.jpg";
+import NlmDreamAnatomy from "../assets/img/nlm-dream-anatomy.jpg";
 
 // NOTE: 'images' property can have nested 'overview, development, prototyping & challenges' properties just like 'details' property. And will show that image before its corresponding text.
 // If any if the nested potteries inside 'details' property have empty stings, then they will not be rendered.
@@ -49,7 +49,7 @@ const worksData = [
     role: "Development",
     stack: "HTML / CSS / JavaScript",
     overview:
-      "A website I developed for the National Library of Medicine as part of their Exhibition program.",
+      "Produced, designed and developed by Astriata. I was responsible for Front-End development of the National Library of Medicine exhibition, as part of Astriata's team",
     details: {
       overview: `The National Library of Medicine - Exhibition Program was created with the goal of producing online exhibitions that stimulate enthusiasm for history and encourage people to learn about medicine, themselves, and their communities.
 
@@ -77,7 +77,7 @@ const worksData = [
     role: "Development",
     stack: "HTML / CSS / JavaScript",
     overview:
-      "A website I developed for the Association for the Accreditation of Human Research Protection Programs, Inc.",
+      "Produced, designed and developed by Astriata. I was responsible for Front-End development for the Association for the Accreditation of Human Research Protection Programs, Inc. website, as part of Astriata's team.",
     details: {
       overview: `The Association for the Accreditation of Human Research Protection Programs, Inc. (AAHRPP) promotes high-quality research through an accreditation process that helps organizations worldwide strengthen their human research protection programs (HRPPs).
       `,
@@ -104,7 +104,7 @@ const worksData = [
     role: "Development",
     stack: "HTML / CSS / JavaScript",
     overview:
-      "A web-application developed for the National Center of Excellence for Eating Disorders.",
+      "Produced, designed and developed by Astriata. I was responsible for Front-End development for the National Center of Excellence for Eating Disorders web application, as part of Astriata's team.",
     details: {
       overview: `The National Center of Excellence for Eating Disorders is one of the nation’s first center of excellence, dedicated to eating disorders. The SBIRT-ED web-application, which stands for Screening, Brief Intervention, and Referral to Treatment for Eating Disorders, is an easy-to-access tool for primary care providers, which provides real-time risk level results for patients to help them screen for eating disorders.
       `,
