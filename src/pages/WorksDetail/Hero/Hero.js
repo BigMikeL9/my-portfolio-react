@@ -49,9 +49,10 @@ const Hero = (props) => {
           <H4>{type}</H4>
 
           <ButtonsContainer>
-            <AnchorTagS href={url} target="_blank">
+          {url && (<AnchorTagS href={url} target="_blank">
               Visit Site
-            </AnchorTagS>
+            </AnchorTagS>)}
+
 
             {github && (
               <GithubIcon

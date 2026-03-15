@@ -4,7 +4,6 @@ import disableScroll from "disable-scroll";
 
 import { navActions } from "../../../store/navSlice";
 
-import { navBarData as navData } from "../../../data/navBarData";
 import SocialIcons from "../../../components/SocialIcons/SocialIcons";
 
 import {
@@ -15,6 +14,7 @@ import {
   NavItem,
   NavLinkS,
 } from "./NavBarDrawer.style";
+import { navBarData } from "../../../data/NavBarData";
 
 const NavBarDrawer = () => {
   const location = useLocation();
@@ -67,7 +67,7 @@ const NavBarDrawer = () => {
         <Backdrop onClick={closeMenuHandler} />
         <NavDrawerContainer isOpen={isOpen}>
           <NavList>
-            {navData.map((data) => (
+            {navBarData.map((data) => (
               <NavItem key={data.to} isOpen={isOpen}>
                 <NavLinkS
                   to={data.to}

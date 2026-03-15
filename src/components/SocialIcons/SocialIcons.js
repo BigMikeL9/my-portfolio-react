@@ -6,7 +6,7 @@ import { RiLinkedinFill } from "react-icons/ri";
 import { AiFillGithub, AiOutlineCloudDownload } from "react-icons/ai";
 import { FaItchIo } from "react-icons/fa";
 
-import resumePDF from "../../assets/resume/mikel_kamel-resume.pdf";
+import resumePDF from "../../assets/resume/mikel_kamel_resume.pdf";
 
 const SocialIcons = (props) => {
   return (
@@ -14,13 +14,11 @@ const SocialIcons = (props) => {
       <IconsContainer isOpen={props.isOpen}>
         <Icon
           href={resumePDF}
-          download="Mikel Kamel - Resume"
+          download="mikel-kamel-resume.pdf"
           title="Download Resume"
           top={"3px"}
         >
           <AiOutlineCloudDownload size={"2.8rem"} />
-
-          {/* <HoverTitle>Download Resume</HoverTitle> */}
         </Icon>
 
         <Icon

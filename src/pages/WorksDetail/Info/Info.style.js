@@ -3,7 +3,6 @@ import styled from "styled-components/macro";
 import devices from "../../../styles/Devices";
 
 export const InfoContainer = styled.div`
-  max-width: 1200px;
   width: 100%;
   margin: auto;
   padding: 0 6% 0;
@@ -15,14 +14,22 @@ export const InfoList = styled.ul`
   align-items: flex-start;
   gap: 4rem 8rem;
   padding: 7rem 0;
+  
+
+  & > :nth-child(2) {
+    max-width: 32rem;
+  }
+
+  & > :last-child {
+    flex: 1;
+  }
 
   @media ${devices.laptop} {
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   @media ${devices.mobile_L} {
-    flex-direction: column;
-    align-items: flex-start;
   }
 `;
 

@@ -1,8 +1,7 @@
 import React from "react";
 
-import worksData from "../../../../data/worksData";
+import worksData from "../../../../data/WorksData";
 import WorkItem from "../WorksItem/WorksItem";
-
 import { WorksListS } from "./WorksList.style";
 
 const WorksList = () => {

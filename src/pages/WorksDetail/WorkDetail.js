@@ -3,7 +3,7 @@ import { useParams, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, useIsPresent } from "framer-motion";
 
-import worksData from "../../data/worksData";
+import worksData from "../../data/WorksData";
 
 import Hero from "./Hero/Hero";
 import Content from "./Content/Content";

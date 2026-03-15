@@ -14,8 +14,8 @@ const Contact = () => {
         <H2>Get In Touch</H2>
         <Divider />
 
-        <MailToLink href="mailto:mikel1832yahoo.com">
-          mikel1832yahoo.com
+        <MailToLink href="mailto:mikel.kamel.wark@gmail.com">
+          mikel.kamel.wark@gmail.com
         </MailToLink>
 
         <EmailForm />
