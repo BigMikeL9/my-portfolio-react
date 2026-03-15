@@ -1,45 +1,45 @@
-import styled, { css } from "styled-components/macro";
-import devices from "../../styles/Devices";
+import styled from 'styled-components/macro'
+import devices from '../../styles/Devices'
 
 export const IconsContainer = styled.div`
-  display: flex;
-  gap: 0 3rem;
-  margin-right: 6.4rem;
+    display: flex;
+    gap: 0 3rem;
+    margin-right: 6.4rem;
 
-  @media ${devices.tablet} {
-    gap: 0 4rem;
-    margin-right: 0;
-    align-items: center;
-    justify-content: center;
-  }
-`;
+    @media ${devices.tablet} {
+        gap: 0 4rem;
+        margin-right: 0;
+        align-items: center;
+        justify-content: center;
+    }
+`
 
 export const Icon = styled.a`
-  font-size: 2.4rem;
-  display: inline-block;
-  transition: all 0.3s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  position: relative;
+    font-size: 2.4rem;
+    display: inline-block;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
 
-  color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primary};
 
-  margin: ${({ margin }) => (margin ? margin : "")};
-  margin-bottom: ${({ mb }) => (mb ? mb : "")};
-  margin-top: ${({ mt }) => (mt ? mt : "")};
-  top: ${({ top }) => (top ? top : "")};
+    margin: ${({ margin }) => (margin ? margin : '')};
+    margin-bottom: ${({ mb }) => (mb ? mb : '')};
+    margin-top: ${({ mt }) => (mt ? mt : '')};
+    top: ${({ top }) => (top ? top : '')};
 
-  @media ${devices.tablet} {
-    font-size: 3.5rem;
-    text-align: center;
-  }
+    @media ${devices.tablet} {
+        font-size: 3.5rem;
+        text-align: center;
+    }
 
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.primary_Hover};
-  }
-`;
+    &:hover,
+    &:focus {
+        color: ${({ theme }) => theme.colors.primary_Hover};
+    }
+`
 
 // export const HoverTitle = styled.span`
 //   position: absolute;

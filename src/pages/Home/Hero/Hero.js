@@ -36,7 +36,7 @@ import {
 } from './Hero.style'
 
 const Hero = () => {
-    const [ref, inView, entry] = useInView()
+    const [ref] = useInView()
     const heroImageRef = useRef()
 
     // console.log(inView);
