@@ -22,7 +22,7 @@ const SocialIcons = (props) => {
                 </Icon>
 
                 <Icon
-                    href="https://www.linkedin.com/in/mikel-kamel-65502b209/"
+                    href="https://www.linkedin.com/in/mikelkamel/"
                     target="_blank"
                 >
                     <RiLinkedinFill />

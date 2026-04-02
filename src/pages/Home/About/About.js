@@ -12,48 +12,32 @@ const About = () => {
                 <H2>About Me</H2>
                 <Divider />
 
-                <P>👋 Hello!</P>
+                <P>👋 I'm Mikel — a software engineer specializing in <span> React, TypeScript, C#, and .NET. </span></P>
 
                 <P mt={'1rem'}>
-                    I’m Mikel — a Software Engineer specializing in{' '}
-                    <span> React, TypeScript, C#, and .NET </span>, building
-                    full-stack web and desktop applications.
+                    I spend most of my time building platforms and enterprise tooling at TÜV SÜD, where my work reaches 3,000+ engineers across 12+ countries. The problems I find most interesting aren't the flashy ones — they're the ones where the constraints are real: systems that have to work offline, forms that need to evolve without redeployment, data that can't leave the building.
                 </P>
 
                 <P mt={'2rem'}>
-                    My work focuses on{' '}
-                    <span> internal platforms and enterprise tooling </span>,
-                    where reliability, flexibility, and maintainability matter
-                    as much as features. I enjoy designing systems that simplify
-                    complex workflows and help teams operate more efficiently.
+                    Some of what I've built:
+                </P>
+
+                <P mt={'2rem'}
+                   pl={'4rem'}>
+                   ▸ <span>SMARTS ReportBuilder</span> — an offline-capable desktop reporting platform with an embedded local database and a template-driven architecture. Engineers can generate and manage inspection reports with no internet connection, and report structures can change without touching the application code.
+                </P>
+
+                <P mt={'2rem'}
+                   pl={'4rem'}>
+                   ▸ An <span>AI-assisted internal chatbot</span> (Azure + OpenAI) that converts plain English questions into SQL queries, executed through secure .NET APIs against on-premise enterprise databases — making operational data accessible to engineers who'd never write a query themselves.
                 </P>
 
                 <P mt={'2rem'}>
-                    At TÜV SÜD, I develop engineering platforms used by globally
-                    distributed teams. One example is
-                    <span> SMARTS ReportBuilder </span>, an offline-capable
-                    reporting system with a template-driven architecture that
-                    allows report structures and forms to evolve without
-                    requiring application updates.
+                    Before I was a software engineer, I was a civil engineer. I've been the person stuck using clunky internal tools, and that shapes how I think about every interface I build.
                 </P>
-
+               
                 <P mt={'2rem'}>
-                    I have also contributed to an
-                    <span> AI-assisted internal chatbot </span>
-                    built with Azure and OpenAI, which converts natural language
-                    questions into SQL queries executed through secure .NET APIs
-                    against on-premise enterprise databases.
-                </P>
-
-                <P mt={'2rem'}>
-                    I’m particularly interested in systems that combine{' '}
-                    <span>
-                        modern frontend technologies with strong backend
-                        architecture
-                    </span>{' '}
-                    — whether that means building dynamic reporting engines,
-                    modernizing deployment workflows, or integrating AI-powered
-                    tools with enterprise data systems.
+                    If you want to talk shop, I'm always up for it — reach me at <span>mikel.kamel.wark@gmail.com</span>.
                 </P>
             </SectionInner>
         </AboutSection>

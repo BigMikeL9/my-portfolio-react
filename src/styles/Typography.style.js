@@ -95,6 +95,7 @@ export const P = styled.p`
   margin-bottom: ${({ mb }) => (mb ? mb : "")};
   margin-top: ${({ mt }) => (mt ? mt : "")};
   color: ${({ theme }) => theme.colors.primary};
+  padding-left: ${({ pl }) => (pl ? pl : "")};
 
   span {
     color: ${({ theme }) => theme.colors.secondary};
