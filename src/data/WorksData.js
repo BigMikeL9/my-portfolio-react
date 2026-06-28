@@ -10,6 +10,9 @@ import NexterHomes from '../assets/img/nexter-homes.jpg'
 import PigGame from '../assets/img/the-pig-game.jpg'
 import Tours from '../assets/img/tours.jpg'
 import Wallee from '../assets/img/wallee.jpg'
+import Bridges_Explorer_1 from '../assets/img/bridge-risk-explorer-1.png'
+import Bridges_Explorer_2 from '../assets/img/bridge-risk-explorer-2.png'
+import Bridges_Explorer_3 from '../assets/img/bridge-risk-explorer-3.png'
 import Smarts_1 from '../assets/img/smarts_1.png'
 import Smarts_3 from '../assets/img/smarts_3.png'
 import Smarts_4 from '../assets/img/smarts_4.png'
@@ -44,6 +47,47 @@ import NlmDreamAnatomy from '../assets/img/nlm-dream-anatomy.jpg'
 // If any if the nested potteries inside 'details' property have empty stings, then they will not be rendered.
 
 const worksData = [
+    {
+        id: 'bridge-risk-explorer',
+        type: 'Full-Stack Geospatial Data Application',
+        images: {
+            overview: Bridges_Explorer_1,
+            development: Bridges_Explorer_2,
+            prototyping: Bridges_Explorer_3,
+        },
+        altText:
+            'Bridge Risk Explorer dashboard showing National Bridge Inventory bridge risk data, map view, and inspection details.',
+        title: 'Bridge Risk Explorer',
+        role: 'Product Design / Full-Stack Development / Data Visualization',
+        stack: 'Next.js / React / TypeScript / PostgreSQL / PostGIS / Prisma / Tailwind CSS / MapLibre / TanStack Query',
+        overview:
+            'Full-stack infrastructure risk exploration tool built on the National Bridge Inventory. The application helps users identify, prioritize, and inspect bridges through a synchronized dashboard, data grid, map view, risk hotspots, and details inspector.',
+
+        details: {
+            overview: `Bridge Risk Explorer is a full-stack geospatial application built to help infrastructure planners explore bridge condition and risk across the National Bridge Inventory.
+
+The product combines a dashboard overview, high-performance bridge grid, interactive MapLibre map, risk hotspot summaries, and detailed bridge inspection panels. The goal was to turn a large, raw federal dataset into a focused decision-support workspace for identifying bridges that may require closer attention.`,
+
+            development: `I built the application with Next.js, React, TypeScript, PostgreSQL, PostGIS, Prisma, Tailwind CSS, TanStack Query, and MapLibre.
+
+The system includes a streaming import pipeline that reads FHWA/NBI delimited text files, normalizes raw bridge fields, converts NBI coordinate formats, derives bridge age and inspection dates, classifies bridge condition, and assigns transparent rule-based priority levels. Raw FHWA field names are isolated to the importer, while the database, API, and frontend use a clean flat Bridge domain model.
+
+The frontend includes a dark, data-dense dashboard, synchronized explorer grid and map views, URL-backed filters, state/county filtering, risk hotspots, map marker interactions, and a details inspector that explains priority reasons and key bridge metadata.`,
+
+            prototyping: `The project started with product and architecture planning before implementation. I focused on keeping the scope narrow but polished: dashboard overview, explorer grid, map, filters, hotspots, and details inspection.
+
+I used AI tools to accelerate implementation in small reviewable phases, while making the product and architecture decisions myself. Key design decisions included a flat domain model, a dedicated importer boundary, purpose-built API DTOs, national-safe map queries, cached dashboard summaries, and transparent priority rules instead of an arbitrary risk score.`,
+
+            challenges: `The largest challenge was turning a large, messy FHWA/NBI text dataset into a responsive product experience.
+
+This required building a streaming CSV import pipeline instead of loading the full file into memory, normalizing inconsistent text and date formats, converting NBI latitude and longitude values into decimal coordinates, and generating state/county lookup data from official reference files.
+
+Another challenge was keeping the application fast on a national dataset. I added database indexes, bounded map queries, marker limits, cached dashboard summaries, and Supabase/Vercel deployment configuration using the transaction pooler to avoid serverless connection issues.`,
+        },
+
+        url: 'https://bridge-explorer-nine.vercel.app/dashboard',
+        github: 'https://github.com/BigMikeL9/bridge-explorer',
+    },
     {
         id: 'smarts-reportbuilder',
         type: 'Internal Reporting Platform (Cross-Platform Desktop Application)',
